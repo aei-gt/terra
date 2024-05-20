@@ -1,0 +1,355 @@
+{
+ "actions": [],
+ "autoname": "format:I-{#####}",
+ "creation": "2024-05-19 12:10:16.844371",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "informaci\u00f3n_catastral_tab",
+  "propietario",
+  "direcci\u00f3n_de_notificacion",
+  "column_break_uski",
+  "representante_legal",
+  "direccion_representante_legal",
+  "ubicaci\u00f3n_y_referencias_section",
+  "ubicacion_catastral",
+  "inmueble_serviciosgl",
+  "grupo_fha",
+  "inmueble_estado",
+  "column_break_geyd",
+  "zona_catastral",
+  "aldea_sector",
+  "colonia_bloque",
+  "datos_del_inmueble_section",
+  "finca",
+  "folio",
+  "libro",
+  "registro",
+  "column_break_mora",
+  "valor_del_terreno",
+  "valor_de_construccion",
+  "valor_de_cultivo",
+  "valor_total",
+  "column_break_vhuf",
+  "area_del_terreno_en_m2",
+  "area_de_construcci\u00f3n_en_m2",
+  "area_de_cultivos_en_m2",
+  "estado_catastral",
+  "copropietarios_section",
+  "copropietarios",
+  "tab_break_mcsq",
+  "servicios",
+  "ficha_catastral_tab",
+  "ficha",
+  "tab_break_lfui",
+  "tabla_de_licencias_de_construccions_section",
+  "licencia",
+  "tab_break_sabv",
+  "historico",
+  "tab_6_tab",
+  "otros_inmuebles_del_propietario_section",
+  "listado_de_otros_inmuebles",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "propietario",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Propietario:",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "informaci\u00f3n_catastral_tab",
+   "fieldtype": "Tab Break",
+   "label": "Informaci\u00f3n Catastral"
+  },
+  {
+   "bold": 1,
+   "fieldname": "tab_break_mcsq",
+   "fieldtype": "Tab Break",
+   "label": "Servicios del Inmueble"
+  },
+  {
+   "bold": 1,
+   "fieldname": "ficha_catastral_tab",
+   "fieldtype": "Tab Break",
+   "label": "Ficha Catastral"
+  },
+  {
+   "bold": 1,
+   "fieldname": "tab_break_lfui",
+   "fieldtype": "Tab Break",
+   "label": "Licencia de Construcci\u00f3n"
+  },
+  {
+   "bold": 1,
+   "fieldname": "tab_break_sabv",
+   "fieldtype": "Tab Break",
+   "label": "Historial"
+  },
+  {
+   "fieldname": "copropietarios_section",
+   "fieldtype": "Section Break",
+   "label": "Copropiedad"
+  },
+  {
+   "fieldname": "servicios",
+   "fieldtype": "Data",
+   "label": "servicios del inmueble tmp"
+  },
+  {
+   "fieldname": "ficha",
+   "fieldtype": "Data",
+   "label": "ficha catastral"
+  },
+  {
+   "fieldname": "licencia",
+   "fieldtype": "Data",
+   "label": "licencia"
+  },
+  {
+   "fieldname": "historico",
+   "fieldtype": "Text",
+   "label": "Notas del inmueble"
+  },
+  {
+   "fieldname": "datos_del_inmueble_section",
+   "fieldtype": "Section Break",
+   "label": "Datos del Inmueble"
+  },
+  {
+   "fieldname": "finca",
+   "fieldtype": "Data",
+   "label": "Finca:"
+  },
+  {
+   "fieldname": "folio",
+   "fieldtype": "Data",
+   "label": "Folio:"
+  },
+  {
+   "fieldname": "libro",
+   "fieldtype": "Data",
+   "label": "Libro:"
+  },
+  {
+   "default": "GUATEMALA",
+   "fieldname": "registro",
+   "fieldtype": "Select",
+   "label": "Registro:",
+   "options": "GUATEMALA\nDERECHOS POSESORIOS\nSIN REGISTRO"
+  },
+  {
+   "fieldname": "column_break_mora",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "valor_del_terreno",
+   "fieldtype": "Currency",
+   "label": "Valor del Terreno:",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "valor_total",
+   "fieldtype": "Currency",
+   "label": "Valor  Fiscal Afecto:",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_vhuf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "area_del_terreno_en_m2",
+   "fieldtype": "Float",
+   "label": "Area del Terreno en M2:",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "area_de_construcci\u00f3n_en_m2",
+   "fieldtype": "Float",
+   "label": "Area de Construcci\u00f3n en M2:",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "area_de_cultivos_en_m2",
+   "fieldtype": "Float",
+   "label": "Area de Cultivos en M2:",
+   "precision": "2"
+  },
+  {
+   "fieldname": "ubicaci\u00f3n_y_referencias_section",
+   "fieldtype": "Section Break",
+   "label": "Ubicaci\u00f3n y Referencias"
+  },
+  {
+   "fieldname": "ubicacion_catastral",
+   "fieldtype": "Data",
+   "label": "Ubicaci\u00f3n Catastral (Direcci\u00f3n)",
+   "length": 400,
+   "reqd": 1
+  },
+  {
+   "fieldname": "grupo_fha",
+   "fieldtype": "Link",
+   "label": "Grupo de FHA:",
+   "options": "catastro_fha"
+  },
+  {
+   "fieldname": "column_break_geyd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Z-00",
+   "fieldname": "zona_catastral",
+   "fieldtype": "Link",
+   "label": "Zona:",
+   "options": "catastro_zona"
+  },
+  {
+   "default": "SM-00-00",
+   "fieldname": "aldea_sector",
+   "fieldtype": "Link",
+   "label": "Aldea/Sector:",
+   "options": "sector_manzana"
+  },
+  {
+   "default": "00-000",
+   "fieldname": "colonia_bloque",
+   "fieldtype": "Link",
+   "label": "Colonia/Bloque:",
+   "options": "catastro_colonia_bloque"
+  },
+  {
+   "default": "0",
+   "fieldname": "valor_de_construccion",
+   "fieldtype": "Currency",
+   "label": "Valor de Construcci\u00f3n:",
+   "precision": "2"
+  },
+  {
+   "default": "0",
+   "fieldname": "valor_de_cultivo",
+   "fieldtype": "Currency",
+   "label": "Valor de Cultivo:",
+   "precision": "2"
+  },
+  {
+   "bold": 1,
+   "fieldname": "tab_6_tab",
+   "fieldtype": "Tab Break",
+   "label": "Otros Inmuebles"
+  },
+  {
+   "fieldname": "otros_inmuebles_del_propietario_section",
+   "fieldtype": "Section Break",
+   "label": "Inmuebles Relacionados"
+  },
+  {
+   "fieldname": "listado_de_otros_inmuebles",
+   "fieldtype": "Table",
+   "label": "Listado de Inmuebles",
+   "options": "catastro_contribuyente_detalle"
+  },
+  {
+   "fieldname": "copropietarios",
+   "fieldtype": "Table",
+   "label": "Nombre de Copropietarios",
+   "options": "inmueble_copropietario"
+  },
+  {
+   "fieldname": "tabla_de_licencias_de_construccions_section",
+   "fieldtype": "Section Break",
+   "label": "tabla de licencias de construccions"
+  },
+  {
+   "fieldname": "direcci\u00f3n_de_notificacion",
+   "fieldtype": "Data",
+   "label": "Direcci\u00f3n de Notificaci\u00f3n:",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_uski",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "representante_legal",
+   "fieldtype": "Data",
+   "label": "Representante Legal:",
+   "read_only": 1
+  },
+  {
+   "fieldname": "direccion_representante_legal",
+   "fieldtype": "Data",
+   "label": "Direcci\u00f3n del Representante Legal:",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "inmueble_serviciosgl",
+   "fieldtype": "Data",
+   "label": "C\u00f3digo SERVICIOS GL:"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "catastro_inmueble",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "bold": 1,
+   "default": "HABILITADO",
+   "fieldname": "inmueble_estado",
+   "fieldtype": "Select",
+   "label": "Estado del Inmueble",
+   "options": "HABILITADO\nBLOQUEADO\nEC FASE 1\nEC FASE 2\nEC MANDATARIO\nEN REVISION"
+  },
+  {
+   "default": "SIN OPERAR",
+   "fieldname": "estado_catastral",
+   "fieldtype": "Select",
+   "label": "Estado Catastral:",
+   "options": "CATASTRADO REGULAR\nCATASTRADO IRREGULAR\nEN PROCESO\nSIN OPERAR"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-05-19 19:22:33.876387",
+ "modified_by": "Administrator",
+ "module": "TERRA",
+ "name": "catastro_inmueble",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "ubicacion_catastral",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
