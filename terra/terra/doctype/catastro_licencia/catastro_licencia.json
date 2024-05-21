@@ -6,32 +6,42 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "datos_generales_tab",
   "datos_generales_section",
   "id_catastro",
-  "propietario",
+  "propietario_inmueble",
   "representante_legal",
   "column_break_rdcs",
   "fecha_solicitud",
   "fecha_emicion",
-  "fecha_finaliza"
+  "fecha_finaliza",
+  "section_break_ynky",
+  "licencia_tipo",
+  "column_break_bmsw",
+  "licencia_valor",
+  "licencia_operada",
+  "section_break_rvpt",
+  "licencia_descripcion",
+  "detalle_de_licencia_tab",
+  "licencia_area_construccion",
+  "licencia_niveles",
+  "column_break_xzbk",
+  "licencia_factor",
+  "licencia_categoria"
  ],
  "fields": [
   {
    "fieldname": "id_catastro",
    "fieldtype": "Link",
-   "label": "ID Catastro",
-   "options": "catastro_inmueble"
-  },
-  {
-   "fieldname": "propietario",
-   "fieldtype": "Link",
-   "label": "Propietario",
-   "options": "Customer"
+   "in_list_view": 1,
+   "label": "ID Inmueble de Catastro:",
+   "options": "catastro_inmueble",
+   "reqd": 1
   },
   {
    "fieldname": "representante_legal",
    "fieldtype": "Data",
-   "label": "Representante Legal"
+   "label": "Representante Legal:"
   },
   {
    "fieldname": "column_break_rdcs",
@@ -40,27 +50,116 @@
   {
    "fieldname": "fecha_solicitud",
    "fieldtype": "Date",
-   "label": "Fecha de Solicitud"
+   "label": "Fecha de Solicitud:"
   },
   {
    "fieldname": "fecha_emicion",
    "fieldtype": "Date",
-   "label": "Fecha de Emisi\u00f3n"
+   "label": "Fecha de Emisi\u00f3n:"
   },
   {
    "fieldname": "fecha_finaliza",
    "fieldtype": "Date",
-   "label": "Fecha de Finalizaci\u00f3n"
+   "label": "Fecha de Finalizaci\u00f3n:"
   },
   {
    "fieldname": "datos_generales_section",
    "fieldtype": "Section Break",
    "label": "Datos Generales"
+  },
+  {
+   "fieldname": "section_break_rvpt",
+   "fieldtype": "Section Break",
+   "label": "Datos Generales:"
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "fieldname": "licencia_valor",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Valor Total de la Licencia:",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_ynky",
+   "fieldtype": "Section Break",
+   "label": "Datos de Valuaci\u00f3n"
+  },
+  {
+   "default": "VIVIENDA FORMAL",
+   "fieldname": "licencia_tipo",
+   "fieldtype": "Select",
+   "label": "Tipo de Construcci\u00f3n:",
+   "options": "VIVIENDA MINIMA\nVIVIENDA FORMAL\nURBANIZCION\nOTRO"
+  },
+  {
+   "fieldname": "column_break_bmsw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "licencia_operada",
+   "fieldtype": "Check",
+   "label": "Operada en Catastro:",
+   "options": "0"
+  },
+  {
+   "fieldname": "licencia_descripcion",
+   "fieldtype": "Small Text",
+   "label": "Descripci\u00f3n:"
+  },
+  {
+   "fieldname": "propietario_inmueble",
+   "fieldtype": "Link",
+   "label": "Propietario:",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "datos_generales_tab",
+   "fieldtype": "Tab Break",
+   "label": "Datos Generales"
+  },
+  {
+   "fieldname": "detalle_de_licencia_tab",
+   "fieldtype": "Tab Break",
+   "label": "Detalle de Licencia"
+  },
+  {
+   "default": "0",
+   "fieldname": "licencia_area_construccion",
+   "fieldtype": "Float",
+   "label": "\u00c1rea de Construcci\u00f3n (M2):",
+   "precision": "2"
+  },
+  {
+   "default": "1",
+   "fieldname": "licencia_niveles",
+   "fieldtype": "Int",
+   "label": "Niveles:"
+  },
+  {
+   "fieldname": "column_break_xzbk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "SIN FACTOR EDAD",
+   "fieldname": "licencia_factor",
+   "fieldtype": "Select",
+   "label": "Categor\u00eda/Factor:",
+   "options": "SIN FACTOR EDAD"
+  },
+  {
+   "default": "TIPO \"A\"",
+   "fieldname": "licencia_categoria",
+   "fieldtype": "Select",
+   "label": "Tipo:",
+   "options": "TIPO \"A\"\nTIPO \"B\"\nTIPO \"C\""
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-19 19:02:00.533338",
+ "modified": "2024-05-20 13:47:54.682610",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_licencia",

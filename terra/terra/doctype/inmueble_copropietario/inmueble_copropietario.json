@@ -6,7 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "inmueble_id",
-  "copropietario"
+  "nombre_copropietario"
  ],
  "fields": [
   {
@@ -16,7 +16,7 @@
    "options": "catastro_inmueble"
   },
   {
-   "fieldname": "copropietario",
+   "fieldname": "nombre_copropietario",
    "fieldtype": "Link",
    "label": "Copropietario",
    "options": "Customer"
@@ -25,7 +25,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-19 18:54:46.027578",
+ "modified": "2024-05-20 20:17:15.632073",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "inmueble_copropietario",
