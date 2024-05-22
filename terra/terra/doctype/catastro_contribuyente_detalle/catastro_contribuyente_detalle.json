@@ -5,18 +5,29 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_ffyd"
+  "id",
+  "propietario"
  ],
  "fields": [
   {
-   "fieldname": "section_break_ffyd",
-   "fieldtype": "Section Break"
+   "fieldname": "id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "ID",
+   "options": "catastro_inmueble"
+  },
+  {
+   "fieldname": "propietario",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": " Propietario",
+   "options": "Customer"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-21 03:16:38.004611",
+ "modified": "2024-05-22 06:49:46.095154",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_contribuyente_detalle",

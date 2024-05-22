@@ -21,6 +21,32 @@ frappe.ui.form.on("catastro_inmueble", {
             })
         }
     },
+    propietario(frm){
+        if(frm.doc.propietario){
+            frappe.db.get_list('catastro_inmueble', {
+                fields: ['*'],
+                filters: {
+                    propietario: frm.doc.propietario
+                }
+            }).then(records => {
+                console.log(records);
+                if(records && records.length > 0 ){
+                    frm.doc.propietario = []
+                    for(let row of records){
+                        frm.add_child('listado_de_otros_inmuebles', {
+                            id : row.name,
+                            propietario : row.propietario 
+                        })
+                    }
+                    frm.refresh_field('listado_de_otros_inmuebles');
+                }
+            })
+        }
+        else{
+            frm.doc.listado_de_otros_inmuebles = []
+            frm.refresh_field('listado_de_otros_inmuebles');
+        }
+    }
 
 });
 frappe.ui.form.on('inmueble_copropietario', {
