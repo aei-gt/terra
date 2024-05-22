@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"rA-7V8CgCh\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">CATASTRO Y LICENCIAS</span>\",\"col\":12}},{\"id\":\"K39NxfCI59\",\"type\":\"card\",\"data\":{\"card_name\":\"Operaciones Generales\",\"col\":4}},{\"id\":\"t8oYdGgn6s\",\"type\":\"card\",\"data\":{\"card_name\":\"Catalogos de Operaci\u00f3n\",\"col\":4}}]",
- "creation": "2024-05-01 23:05:08.144660",
+ "creation": "2024-05-21 01:55:12.704191",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -11,7 +11,7 @@
  "idx": 0,
  "indicator_color": "",
  "is_hidden": 0,
- "label": "CATASTRO",
+ "label": "Catastro & Licencias",
  "links": [
   {
    "hidden": 0,
@@ -102,10 +102,10 @@
    "type": "Link"
   }
  ],
- "modified": "2024-05-19 19:20:27.196878",
+ "modified": "2024-05-21 01:56:09.319845",
  "modified_by": "Administrator",
  "module": "TERRA",
- "name": "CATASTRO",
+ "name": "Catastro & Licencias",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
@@ -114,5 +114,5 @@
  "roles": [],
  "sequence_id": 40.0,
  "shortcuts": [],
- "title": "CATASTRO"
+ "title": "Catastro & Licencias"
 }

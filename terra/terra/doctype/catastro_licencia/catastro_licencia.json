@@ -39,6 +39,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "propietario_inmueble.custom_representante_legal",
    "fieldname": "representante_legal",
    "fieldtype": "Data",
    "label": "Representante Legal:"
@@ -110,10 +111,12 @@
    "label": "Descripci\u00f3n:"
   },
   {
+   "fetch_from": "id_catastro.propietario",
    "fieldname": "propietario_inmueble",
    "fieldtype": "Link",
    "label": "Propietario:",
-   "options": "Customer"
+   "options": "Customer",
+   "read_only": 1
   },
   {
    "fieldname": "datos_generales_tab",
@@ -159,7 +162,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-20 13:47:54.682610",
+ "modified": "2024-05-21 08:03:47.124791",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_licencia",

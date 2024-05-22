@@ -65,6 +65,12 @@
   "tab_break_lfui",
   "tabla_de_licencias_de_construccions_section",
   "licencia",
+  "section_break_sz6g",
+  "id",
+  "column_break_z4ia",
+  "catastro_licencia_details",
+  "catastro_licencia_data_section",
+  "data",
   "tab_break_sabv",
   "historico",
   "tab_6_tab",
@@ -466,12 +472,42 @@
    "fieldname": "datos_generales_section",
    "fieldtype": "Section Break",
    "label": "Datos Generales"
+  },
+  {
+   "fieldname": "id",
+   "fieldtype": "Link",
+   "label": "ID",
+   "options": "catastro_licencia"
+  },
+  {
+   "fieldname": "section_break_sz6g",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_z4ia",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "catastro_licencia_data_section",
+   "fieldtype": "Section Break",
+   "label": " Catastro Licencia Data"
+  },
+  {
+   "fieldname": "data",
+   "fieldtype": "Table",
+   "label": "Data",
+   "options": "catastro_licencia_data"
+  },
+  {
+   "fieldname": "catastro_licencia_details",
+   "fieldtype": "Button",
+   "label": " Catastro Licencia Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-20 20:11:31.933023",
+ "modified": "2024-05-21 06:48:16.891752",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
