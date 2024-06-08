@@ -39,10 +39,12 @@
    "reqd": 1
   },
   {
-   "fetch_from": "propietario_inmueble.custom_representante_legal",
+   "bold": 1,
+   "fetch_from": "id_catastro.representante_legal",
    "fieldname": "representante_legal",
    "fieldtype": "Data",
-   "label": "Representante Legal:"
+   "label": "Representante Legal:",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_rdcs",
@@ -111,11 +113,11 @@
    "label": "Descripci\u00f3n:"
   },
   {
-   "fetch_from": "id_catastro.propietario",
+   "bold": 1,
+   "fetch_from": "id_catastro.customer_name",
    "fieldname": "propietario_inmueble",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Propietario:",
-   "options": "Customer",
    "read_only": 1
   },
   {
@@ -162,7 +164,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-21 08:03:47.124791",
+ "modified": "2024-06-06 01:54:29.224822",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_licencia",

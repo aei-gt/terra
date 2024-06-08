@@ -9,9 +9,10 @@
   "datos_generales_section",
   "propietario",
   "direcci\u00f3n_de_notificacion",
+  "customer_name",
   "column_break_uski",
-  "representante_legal",
   "direccion_representante_legal",
+  "representante_legal",
   "ubicaci\u00f3n_y_referencias_section",
   "ubicacion_catastral",
   "inmueble_serviciosgl",
@@ -79,14 +80,6 @@
   "amended_from"
  ],
  "fields": [
-  {
-   "fieldname": "propietario",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Propietario:",
-   "options": "Customer",
-   "reqd": 1
-  },
   {
    "bold": 1,
    "fieldname": "informaci\u00f3n_catastral_tab",
@@ -304,10 +297,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "propietario.custom_representante_legal",
    "fieldname": "representante_legal",
    "fieldtype": "Data",
-   "label": "Representante Legal:",
-   "read_only": 1
+   "hidden": 1,
+   "label": "Representante Legal"
   },
   {
    "fieldname": "direccion_representante_legal",
@@ -502,12 +496,28 @@
    "fieldname": "catastro_licencia_details",
    "fieldtype": "Button",
    "label": " Catastro Licencia Details"
+  },
+  {
+   "bold": 1,
+   "fetch_from": "propietario.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Propietario",
+   "read_only": 1
+  },
+  {
+   "fieldname": "propietario",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Propietario Id",
+   "options": "Customer",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-21 06:48:16.891752",
+ "modified": "2024-06-06 00:38:11.711587",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
