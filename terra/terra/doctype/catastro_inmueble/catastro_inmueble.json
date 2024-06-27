@@ -484,7 +484,6 @@
    "label": " Catastro Licencia Details"
   },
   {
-<<<<<<< Updated upstream
    "bold": 1,
    "fetch_from": "propietario.customer_name",
    "fieldname": "customer_name",
@@ -499,9 +498,10 @@
    "label": "Propietario Id",
    "options": "Customer",
    "reqd": 1
-=======
+  },
+  {
    "fieldname": "notas_generales_section",
-   "fieldtype": "Section Break",
+   "fieldtype": "Tab Break",
    "label": "Notas Generales"
   },
   {
@@ -513,7 +513,6 @@
    "fieldname": "nota_servicios",
    "fieldtype": "Small Text",
    "label": "Observaciones"
->>>>>>> Stashed changes
   }
  ],
  "index_web_pages_for_search": 1,
