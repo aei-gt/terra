@@ -40,7 +40,8 @@
   "copropietarios_section",
   "copropietarios",
   "tab_break_mcsq",
-  "servicios",
+  "notas_de_servicios_section",
+  "nota_servicios",
   "ficha_catastral_tab",
   "datos_del_terreno_section",
   "inmueble_registro_m2",
@@ -64,15 +65,14 @@
   "terreno_factor_sbn",
   "terreno_interior_ma",
   "tab_break_lfui",
-  "tabla_de_licencias_de_construccions_section",
-  "licencia",
   "section_break_sz6g",
   "id",
-  "column_break_z4ia",
   "catastro_licencia_details",
+  "column_break_z4ia",
   "catastro_licencia_data_section",
   "data",
   "tab_break_sabv",
+  "notas_generales_section",
   "historico",
   "tab_6_tab",
   "otros_inmuebles_del_propietario_section",
@@ -115,16 +115,6 @@
    "fieldname": "copropietarios_section",
    "fieldtype": "Section Break",
    "label": "Copropiedad"
-  },
-  {
-   "fieldname": "servicios",
-   "fieldtype": "Data",
-   "label": "servicios del inmueble tmp"
-  },
-  {
-   "fieldname": "licencia",
-   "fieldtype": "Data",
-   "label": "licencia"
   },
   {
    "fieldname": "historico",
@@ -280,11 +270,6 @@
    "fieldtype": "Table",
    "label": "Nombre de Copropietarios",
    "options": "inmueble_copropietario"
-  },
-  {
-   "fieldname": "tabla_de_licencias_de_construccions_section",
-   "fieldtype": "Section Break",
-   "label": "tabla de licencias de construccions"
   },
   {
    "fieldname": "direcci\u00f3n_de_notificacion",
@@ -490,7 +475,8 @@
    "fieldname": "data",
    "fieldtype": "Table",
    "label": "Data",
-   "options": "catastro_licencia_data"
+   "options": "catastro_licencia_data",
+   "read_only": 1
   },
   {
    "fieldname": "catastro_licencia_details",
@@ -498,6 +484,7 @@
    "label": " Catastro Licencia Details"
   },
   {
+<<<<<<< Updated upstream
    "bold": 1,
    "fetch_from": "propietario.customer_name",
    "fieldname": "customer_name",
@@ -512,12 +499,30 @@
    "label": "Propietario Id",
    "options": "Customer",
    "reqd": 1
+=======
+   "fieldname": "notas_generales_section",
+   "fieldtype": "Section Break",
+   "label": "Notas Generales"
+  },
+  {
+   "fieldname": "notas_de_servicios_section",
+   "fieldtype": "Section Break",
+   "label": "Notas de Servicios"
+  },
+  {
+   "fieldname": "nota_servicios",
+   "fieldtype": "Small Text",
+   "label": "Observaciones"
+>>>>>>> Stashed changes
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
+<<<<<<< Updated upstream
  "modified": "2024-06-06 00:38:11.711587",
+=======
+ "modified": "2024-06-03 10:39:33.674601",
+>>>>>>> Stashed changes
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",

@@ -17,7 +17,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-19 16:07:54.813091",
+ "modified": "2024-06-02 14:43:53.058831",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_fha",
@@ -37,6 +37,7 @@
    "write": 1
   }
  ],
+ "search_fields": "banco_nombre",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
