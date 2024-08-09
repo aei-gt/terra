@@ -27,7 +27,9 @@
   "licencia_niveles",
   "column_break_xzbk",
   "licencia_factor",
-  "licencia_categoria"
+  "licencia_categoria",
+  "detalle__licencia__propietario_tab",
+  "licencia_propietario"
  ],
  "fields": [
   {
@@ -117,8 +119,7 @@
    "fetch_from": "id_catastro.customer_name",
    "fieldname": "propietario_inmueble",
    "fieldtype": "Data",
-   "label": "Propietario:",
-   "read_only": 1
+   "label": "Propietario:"
   },
   {
    "fieldname": "datos_generales_tab",
@@ -160,11 +161,22 @@
    "fieldtype": "Select",
    "label": "Tipo:",
    "options": "TIPO \"A\"\nTIPO \"B\"\nTIPO \"C\""
+  },
+  {
+   "fieldname": "licencia_propietario",
+   "fieldtype": "Table",
+   "label": "Licencia Propietario",
+   "options": "Licencia Propietario"
+  },
+  {
+   "fieldname": "detalle__licencia__propietario_tab",
+   "fieldtype": "Tab Break",
+   "label": "Detalle  Licencia  Propietario "
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-06 01:54:29.224822",
+ "modified": "2024-08-09 04:07:15.393115",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_licencia",

@@ -5,12 +5,16 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "catastro_inmueble_tab",
   "datos_del_contribuyente_section",
   "contribuyente_nombre",
   "column_break_sgqm",
   "catastro_saldo",
   "section_break_kniz",
-  "inmueble_detalle"
+  "inmueble_detalle",
+  "lora_tab",
+  "datos_de_los_iicencia_section",
+  "detalle_de_licencia"
  ],
  "fields": [
   {
@@ -46,11 +50,32 @@
    "fieldtype": "Currency",
    "label": "Saldo Global Catastro",
    "precision": "2"
+  },
+  {
+   "fieldname": "lora_tab",
+   "fieldtype": "Tab Break",
+   "label": "Catastro Licencia"
+  },
+  {
+   "fieldname": "catastro_inmueble_tab",
+   "fieldtype": "Tab Break",
+   "label": "Catastro Inmueble"
+  },
+  {
+   "fieldname": "datos_de_los_iicencia_section",
+   "fieldtype": "Section Break",
+   "label": "Datos de los Iicencia"
+  },
+  {
+   "fieldname": "detalle_de_licencia",
+   "fieldtype": "Table",
+   "label": "Detalle de licencia",
+   "options": "Licencia Propietario"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-19 16:48:41.288027",
+ "modified": "2024-08-09 21:10:22.843370",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_contribuyente",

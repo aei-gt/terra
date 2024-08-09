@@ -1,40 +1,42 @@
 {
  "actions": [],
- "creation": "2024-05-19 16:32:30.426962",
+ "allow_rename": 1,
+ "creation": "2024-08-09 03:51:11.324433",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "inmueble_id",
-  "column_break_vepc",
+  "licencia_id",
+  "column_break_omwd",
   "propietario"
  ],
  "fields": [
   {
+   "fieldname": "licencia_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Licencia ID",
+   "options": "catastro_licencia"
+  },
+  {
    "fieldname": "propietario",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": " Propietario",
+   "label": "Propietario",
    "options": "Customer"
   },
   {
-   "fieldname": "column_break_vepc",
+   "fieldname": "column_break_omwd",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "inmueble_id",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Inmueble Id",
-   "options": "catastro_inmueble"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-09 16:13:37.621739",
+ "modified": "2024-08-09 03:56:04.821030",
  "modified_by": "Administrator",
  "module": "TERRA",
- "name": "catastro_contribuyente_detalle",
+ "name": "Licencia Propietario",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",
