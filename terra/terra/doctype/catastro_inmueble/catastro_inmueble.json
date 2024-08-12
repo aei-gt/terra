@@ -488,8 +488,7 @@
    "fetch_from": "propietario.customer_name",
    "fieldname": "customer_name",
    "fieldtype": "Data",
-   "label": "Propietario",
-   "read_only": 1
+   "label": "Propietario"
   },
   {
    "fieldname": "propietario",
@@ -517,7 +516,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-09 04:58:23.613134",
+ "modified": "2024-08-12 11:20:01.193821",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",

@@ -7,10 +7,10 @@ frappe.ui.form.on("catastro_contribuyente", {
             frappe.db.get_list('catastro_contribuyente', {
                 fields: ['*'],
                 filters: {
-                    customer_name: frm.doc.contribuyente_nombre
+                    customer_name : frm.doc.contribuyente_nombre
                 }
             }).then(records => {
-                console.log(records);
+                // console.log(records);
                 if(records && records.length > 0 ){
                     for(let row of records){
                         frm.add_child('inmueble_detalle', {
@@ -23,7 +23,7 @@ frappe.ui.form.on("catastro_contribuyente", {
             })
         }
         else{
-            frm.doc.listado_de_otros_inmuebles = []
+            frm.doc.inmueble_detalle = []
             frm.refresh_field('inmueble_detalle');
         }
 
