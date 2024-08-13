@@ -4,7 +4,7 @@
 frappe.ui.form.on("catastro_contribuyente", {
 	contribuyente_nombre(frm) {
         if(frm.doc.contribuyente_nombre){
-            frappe.db.get_list('catastro_contribuyente', {
+            frappe.db.get_list('catastro_inmueble', {
                 fields: ['*'],
                 filters: {
                     customer_name : frm.doc.contribuyente_nombre
