@@ -263,7 +263,7 @@
    "fieldname": "listado_de_otros_inmuebles",
    "fieldtype": "Table",
    "label": "Listado de Inmuebles",
-   "options": "catastro_contribuyente_detalle"
+   "options": "catastro_contribuyente_detalles"
   },
   {
    "fieldname": "copropietarios",
@@ -516,7 +516,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-12 11:20:01.193821",
+ "modified": "2024-08-15 06:32:51.176564",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
