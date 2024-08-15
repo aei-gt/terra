@@ -1,0 +1,45 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-15 06:30:32.616525",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "inmueble_id",
+  "column_break_syxp",
+  "propietario"
+ ],
+ "fields": [
+  {
+   "fieldname": "inmueble_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Inmueble Id",
+   "options": "catastro_inmueble"
+  },
+  {
+   "fieldname": "propietario",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Propietario",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_syxp",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-15 06:32:08.031077",
+ "modified_by": "Administrator",
+ "module": "TERRA",
+ "name": "catastro_contribuyente_detalles",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
