@@ -29,6 +29,7 @@ frappe.ui.form.on("catastro_contribuyente", {
 
 
         if(frm.doc.contribuyente_nombre){
+            
             frappe.db.get_list('catastro_licencia', {
                 fields: ['*'],
                 filters: {
