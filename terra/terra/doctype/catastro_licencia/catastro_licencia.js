@@ -10,7 +10,7 @@ frappe.ui.form.on("catastro_licencia", {
                     propietario_inmueble: frm.doc.propietario_inmueble
                 }
             }).then(records => {
-                console.log(records);
+                frm.clear_table('licencia_propietario');
                 if(records && records.length > 0 ){
                     for(let row of records){
                         frm.add_child('licencia_propietario', {

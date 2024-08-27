@@ -10,7 +10,7 @@ frappe.ui.form.on("catastro_contribuyente", {
                     customer_name : frm.doc.contribuyente_nombre
                 }
             }).then(records => {
-                // console.log(records);
+                frm.clear_table('inmueble_detalle');
                 if(records && records.length > 0 ){
                     for(let row of records){
                         frm.add_child('inmueble_detalle', {
@@ -35,7 +35,8 @@ frappe.ui.form.on("catastro_contribuyente", {
                     propietario_inmueble: frm.doc.contribuyente_nombre
                 }
             }).then(records => {
-                // console.log(records);
+                frm.clear_table('detalle_de_licencia');
+                
                 if(records && records.length > 0 ){
                     for(let row of records){
                         frm.add_child('detalle_de_licencia', {
