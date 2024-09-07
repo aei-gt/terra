@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:CC-{####}",
  "creation": "2024-05-19 16:30:18.200193",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -75,10 +76,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-15 06:33:55.239468",
+ "modified": "2024-09-07 05:56:50.625821",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_contribuyente",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

@@ -6,24 +6,8 @@ frappe.ui.form.on("catastro_inmueble", {
         frm.add_custom_button('Catastro Base on Propietario', function() {
             frappe.set_route("query-report", "Catastro Inmueble Base on Propietario", { propietario: frm.doc.propietario });
         });
-    },
-    catastro_licencia_details(frm){
-        if(frm.doc.id){
-            frappe.db.get_doc('catastro_licencia',frm.doc.id)
-            .then(doc => {
-                frm.add_child('data', {
-                    id:doc.id_catastro,
-                    licencia_tipo:doc.licencia_tipo,
-                    licencia_descripcion: doc.licencia_descripcion,
-                    fecha_finaliza:doc.fecha_finaliza,
-                    licencia_valor:doc.licencia_valor
-                });
-                
-                frm.refresh_field('data');
-            })
-        }
-    },
-    propietario(frm){
+
+
         if(frm.doc.propietario){
             frappe.db.get_list('catastro_inmueble', {
                 fields: ['*'],
@@ -31,15 +15,19 @@ frappe.ui.form.on("catastro_inmueble", {
                     customer_name: frm.doc.propietario
                 }
             }).then(records => {
-                frm.clear_table('listado_de_otros_inmuebles');
-                if(records && records.length > 0 ){
-                    for(let row of records){
-                        frm.add_child('listado_de_otros_inmuebles', {
-                            inmueble_id: row.name,
-                            propietario : row.customer_name
-                        })
+                if (records && records.length > 0) {
+                    if(records.length != frm.doc.listado_de_otros_inmuebles.length){
+                        frm.clear_table('listado_de_otros_inmuebles');
+                        for (let row of records) {
+    
+                            frm.add_child('listado_de_otros_inmuebles', {
+                                inmueble_id: row.name,
+                                propietario: row.customer_name
+                            });
+                        }
+                        frm.refresh_field('listado_de_otros_inmuebles');
+                        frm.save()
                     }
-                    frm.refresh_field('listado_de_otros_inmuebles');
                 }
             })
         }
@@ -48,6 +36,40 @@ frappe.ui.form.on("catastro_inmueble", {
             frm.refresh_field('listado_de_otros_inmuebles');
         }
     },
+    
+    
+
+        propietario(frm){
+            if(frm.doc.propietario){
+                frappe.db.get_list('catastro_inmueble', {
+                    fields: ['*'],
+                    filters: {
+                        customer_name: frm.doc.propietario
+                    }
+                }).then(records => {
+                    frm.clear_table('listado_de_otros_inmuebles');
+                    if(records && records.length > 0 ){
+                        for(let row of records){
+                            frm.add_child('listado_de_otros_inmuebles', {
+                                inmueble_id: row.name,
+                                propietario : row.customer_name
+                            })
+                        }
+                        frm.refresh_field('listado_de_otros_inmuebles');
+                    }
+                })
+            }
+            else{
+                frm.doc.listado_de_otros_inmuebles = []
+                frm.refresh_field('listado_de_otros_inmuebles');
+            }
+        },
+    
+    
+    
+    
+    
+  
 
 
 });

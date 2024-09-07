@@ -1,19 +1,35 @@
 # Copyright (c) 2024, AEI and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 class catastro_inmueble(Document):
-    
-    # @frappe.whitelist()
-  
-    # def get_data(self):
-    #     docs = frappe.get_all("catastro_inmueble", self.propietario)   
-    #     for row in docs:
-    #         self.append("listado_de_otros_inmuebles", {
-    #             "id": row.name,
-    #             "propietario" : row.propietari
-    #         })
-    #     self.save()    
-    #     return
     pass
+#     def on_update(self):
+#         change_customer(self)
+#         frappe.db.commit()
+#         old_doc = self.get_doc_before_save()
+#         change_customer(old_doc)
+#         frappe.db.commit()
+
+# def change_customer(self):
+#     changed_docs = frappe.get_all("catastro_inmueble", {"propietario": self.propietario}, ["name","propietario"])
+#     total_len = len(changed_docs)
+#     for row in changed_docs:
+#         inmueble_doc = frappe.get_doc("catastro_inmueble",row.name)
+#         if len(inmueble_doc.listado_de_otros_inmuebles)==total_len:
+#             count=0
+#             for changed_newrow in changed_docs:
+#                 for newrow in inmueble_doc.listado_de_otros_inmuebles:
+#                     if newrow.inmueble_id == changed_newrow.name:
+#                         count+=1
+#                     if newrow.propietario == changed_newrow.propietario:
+#                         count+=1
+#             continue
+#         inmueble_doc.listado_de_otros_inmuebles=[]
+#         for item in changed_docs:
+#             inmueble_doc.append('listado_de_otros_inmuebles', {
+#                 'inmueble_id': item.name,
+#                 'propietario': item.propietario
+#             })
+#         inmueble_doc.save()
