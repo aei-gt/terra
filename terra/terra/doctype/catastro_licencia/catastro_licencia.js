@@ -30,3 +30,16 @@ frappe.ui.form.on("catastro_licencia", {
 
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+

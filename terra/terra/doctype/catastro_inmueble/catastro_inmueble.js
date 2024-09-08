@@ -37,41 +37,32 @@ frappe.ui.form.on("catastro_inmueble", {
         }
     },
     
-    
 
-        propietario(frm){
-            if(frm.doc.propietario){
-                frappe.db.get_list('catastro_inmueble', {
-                    fields: ['*'],
-                    filters: {
-                        customer_name: frm.doc.propietario
+    propietario(frm){
+        if(frm.doc.propietario){
+            frappe.db.get_list('catastro_inmueble', {
+                fields: ['*'],
+                filters: {
+                    customer_name: frm.doc.propietario
+                }
+            }).then(records => {
+                frm.clear_table('listado_de_otros_inmuebles');
+                if(records && records.length > 0 ){
+                    for(let row of records){
+                        frm.add_child('listado_de_otros_inmuebles', {
+                            inmueble_id: row.name,
+                            propietario : row.customer_name
+                        })
                     }
-                }).then(records => {
-                    frm.clear_table('listado_de_otros_inmuebles');
-                    if(records && records.length > 0 ){
-                        for(let row of records){
-                            frm.add_child('listado_de_otros_inmuebles', {
-                                inmueble_id: row.name,
-                                propietario : row.customer_name
-                            })
-                        }
-                        frm.refresh_field('listado_de_otros_inmuebles');
-                    }
-                })
-            }
-            else{
-                frm.doc.listado_de_otros_inmuebles = []
-                frm.refresh_field('listado_de_otros_inmuebles');
-            }
-        },
-    
-    
-    
-    
-    
-  
-
-
+                    frm.refresh_field('listado_de_otros_inmuebles');
+                }
+            })
+        }
+        else{
+            frm.doc.listado_de_otros_inmuebles = []
+            frm.refresh_field('listado_de_otros_inmuebles');
+        }
+    },
 });
 frappe.ui.form.on('inmueble_copropietario', {
     nombre_copropietario:function(frm, cdt, cdn) {
