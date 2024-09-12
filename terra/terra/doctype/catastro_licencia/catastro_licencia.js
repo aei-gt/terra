@@ -2,6 +2,11 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("catastro_licencia", {
+    refresh(frm){
+        frm.add_custom_button('Catastro Base on Propietario', function() {
+            frappe.set_route("query-report", "Catastro Contribuyente", { propietario: frm.doc.propietario_inmueble });
+        });
+    },
     id_catastro(frm){
         if(frm.doc.propietario_inmueble){
             frappe.db.get_list('catastro_licencia', {
@@ -27,7 +32,7 @@ frappe.ui.form.on("catastro_licencia", {
             frm.refresh_field('licencia_propietario');
         }
     }
-
+    
 });
 
 

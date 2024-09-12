@@ -4,15 +4,18 @@
 frappe.ui.form.on("catastro_inmueble", {
     refresh: function(frm) {
         frm.add_custom_button('Catastro Base on Propietario', function() {
-            frappe.set_route("query-report", "Catastro Inmueble Base on Propietario", { propietario: frm.doc.propietario });
+            frappe.set_route("query-report", "Catastro Contribuyente", { propietario: frm.doc.propietario });
         });
+
+
 
 
         if(frm.doc.propietario){
             frappe.db.get_list('catastro_inmueble', {
                 fields: ['*'],
                 filters: {
-                    customer_name: frm.doc.propietario
+                    customer_name: frm.doc.propietario,
+                    name: ['!=', frm.doc.name]
                 }
             }).then(records => {
                 if (records && records.length > 0) {
@@ -63,11 +66,50 @@ frappe.ui.form.on("catastro_inmueble", {
             frm.refresh_field('listado_de_otros_inmuebles');
         }
     },
-});
-frappe.ui.form.on('inmueble_copropietario', {
-    nombre_copropietario:function(frm, cdt, cdn) {
-        let row = locals[cdt][cdn];
-        frappe.model.set_value(row.doctype , row.name , "inmueble_id"  , frm.doc.name)
+
+
+
+
+    licencia_id(frm){
+        if (frm.doc.licencia_id){
+            frappe.db.get_list('catastro_licencia', {
+                fields: ['*'],
+                filters: {
+                    propietario_inmueble: frm.doc.propietario
+                }
+            }).then(records => {
+                frm.clear_table('data');
+                if(records && records.length > 0 ){
+                    for(let row of records){
+                        frm.add_child('data', {
+                            id: row.name,
+                            licencia_tipo : row.licencia_tipo,
+                            licencia_descripcion:row.licencia_descripcion,
+                            fecha_finaliza:row.creation,
+                            licencia_valor:row.licencia_categoria,
+
+                        })
+                    }
+                    frm.refresh_field('data');
+                }
+            })
+        }
+        else{
+            frm.doc.data=[]
+            frm.data.refresh_field("data")
+        }
     }
-})
+
+
+
+
+
+});
+
+// frappe.ui.form.on('inmueble_copropietario', {
+//     nombre_copropietario:function(frm, cdt, cdn) {
+//         let row = locals[cdt][cdn];
+//         frappe.model.set_value(row.doctype , row.name , "inmueble_id"  , frm.doc.name)
+//     }
+// })
 

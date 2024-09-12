@@ -13,10 +13,9 @@
  "fields": [
   {
    "fieldname": "licencia_id",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Licencia ID",
-   "options": "catastro_licencia"
+   "label": "Licencia ID"
   },
   {
    "fieldname": "propietario",
@@ -33,7 +32,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-09 03:56:04.821030",
+ "modified": "2024-09-12 04:00:10.676752",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "Licencia Propietario",
