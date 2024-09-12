@@ -1,46 +1,42 @@
 {
- "actions": [],
- "autoname": "autoincrement",
- "creation": "2024-05-19 15:12:48.178202",
- "doctype": "DocType",
- "editable_grid": 1,
- "engine": "InnoDB",
- "field_order": [
-  "nombre_copropietario",
-  "inmueble_id"
- ],
- "fields": [
-  {
-   "fieldname": "nombre_copropietario",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Copropietario",
-   "options": "Customer"
-  },
-  {
-   "fieldname": "inmueble_id",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Inmueble id",
-   "options": "inmueble_copropietario",
-   "read_only": 1
-  }
- ],
- "index_web_pages_for_search": 1,
- "istable": 1,
- "links": [],
-<<<<<<< Updated upstream
- "modified": "2024-09-12 04:01:23.303014",
-=======
- "modified": "2024-09-11 21:23:57.125306",
->>>>>>> Stashed changes
- "modified_by": "Administrator",
- "module": "TERRA",
- "name": "inmueble_copropietario",
- "naming_rule": "Autoincrement",
- "owner": "Administrator",
- "permissions": [],
- "sort_field": "modified",
- "sort_order": "DESC",
- "states": []
-}
+    "actions": [],
+    "autoname": "autoincrement",
+    "creation": "2024-05-19 15:12:48.178202",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "nombre_copropietario",
+     "inmueble_id"
+    ],
+    "fields": [
+     {
+      "fieldname": "nombre_copropietario",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Copropietario",
+      "options": "Customer"
+     },
+     {
+      "fieldname": "inmueble_id",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Inmueble id",
+      "options": "inmueble_copropietario",
+      "read_only": 1
+     }
+    ],
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2024-09-11 21:23:57.125306",
+    "modified_by": "Administrator",
+    "module": "TERRA",
+    "name": "inmueble_copropietario",
+    "naming_rule": "Autoincrement",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+   }
