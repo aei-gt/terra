@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class catastro_contribuyente_detalles(Document):
+class CatastroContribuyente(Document):
 	pass

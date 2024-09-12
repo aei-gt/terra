@@ -29,7 +29,9 @@
   "licencia_factor",
   "licencia_categoria",
   "detalle__licencia__propietario_tab",
-  "licencia_propietario"
+  "catastro_licencia_section",
+  "column_break_4kcd",
+  "html_field"
  ],
  "fields": [
   {
@@ -163,20 +165,28 @@
    "options": "TIPO \"A\"\nTIPO \"B\"\nTIPO \"C\""
   },
   {
-   "fieldname": "licencia_propietario",
-   "fieldtype": "Table",
-   "label": "Licencia Propietario",
-   "options": "catastro_licencia_propietario"
-  },
-  {
    "fieldname": "detalle__licencia__propietario_tab",
    "fieldtype": "Tab Break",
    "label": "Detalle  Licencia  Propietario "
+  },
+  {
+   "fieldname": "html_field",
+   "fieldtype": "HTML",
+   "label": "Html Field"
+  },
+  {
+   "fieldname": "catastro_licencia_section",
+   "fieldtype": "Section Break",
+   "label": "Catastro Licencia"
+  },
+  {
+   "fieldname": "column_break_4kcd",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-11 14:41:25.939964",
+ "modified": "2024-09-12 09:21:07.678214",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_licencia",

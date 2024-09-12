@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-12 09:30:53.571128",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "propietario_id",
+  "html_first",
+  "html_second"
+ ],
+ "fields": [
+  {
+   "fieldname": "propietario_id",
+   "fieldtype": "Link",
+   "label": "Propietario Id",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "html_first",
+   "fieldtype": "HTML",
+   "label": "html_first"
+  },
+  {
+   "fieldname": "html_second",
+   "fieldtype": "HTML",
+   "label": "html_second"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-09-12 09:32:18.521871",
+ "modified_by": "Administrator",
+ "module": "TERRA",
+ "name": "Catastro Contribuyente",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
