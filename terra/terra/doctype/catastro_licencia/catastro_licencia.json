@@ -166,7 +166,7 @@
    "fieldname": "licencia_propietario",
    "fieldtype": "Table",
    "label": "Licencia Propietario",
-   "options": "Licencia Propietario"
+   "options": "catastro_licencia_propietario"
   },
   {
    "fieldname": "detalle__licencia__propietario_tab",
@@ -176,7 +176,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-09 04:07:15.393115",
+ "modified": "2024-09-11 14:41:25.939964",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_licencia",

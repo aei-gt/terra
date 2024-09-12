@@ -66,7 +66,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Operaciones Generales",
-   "link_count": 3,
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -100,9 +100,29 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gesti\u00f3n de Contribuyente",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Avisos y Movimientos",
+   "link_count": 0,
+   "link_to": "catastro_movimiento",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-05-21 01:56:09.319845",
+ "modified": "2024-09-11 12:15:40.896552",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "Catastro & Licencias",

@@ -35,7 +35,7 @@
  "modified": "2024-09-12 04:00:10.676752",
  "modified_by": "Administrator",
  "module": "TERRA",
- "name": "Licencia Propietario",
+ "name": "catastro_licencia_propietario",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

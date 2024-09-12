@@ -64,11 +64,17 @@
   "terreno_pendiente",
   "terreno_factor_sbn",
   "terreno_interior_ma",
+  "colindancia",
+  "colindantes",
   "tab_break_lfui",
+<<<<<<< Updated upstream
   "licencia_id",
+=======
+>>>>>>> Stashed changes
   "catastro_licencia_data_section",
   "data",
   "tab_break_sabv",
+  "historial_de_movimientos",
   "notas_generales_section",
   "historico",
   "tab_6_tab",
@@ -126,16 +132,22 @@
   {
    "fieldname": "finca",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Finca:"
   },
   {
    "fieldname": "folio",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Folio:"
   },
   {
    "fieldname": "libro",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Libro:"
   },
   {
@@ -211,14 +223,12 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "Z-00",
    "fieldname": "zona_catastral",
    "fieldtype": "Link",
    "label": "Zona:",
    "options": "catastro_zona"
   },
   {
-   "default": "SM-00-00",
    "fieldname": "aldea_sector",
    "fieldtype": "Link",
    "label": "Aldea/Sector:",
@@ -258,9 +268,9 @@
   },
   {
    "fieldname": "listado_de_otros_inmuebles",
-   "fieldtype": "Table",
+   "fieldtype": "HTML",
    "label": "Listado de Inmuebles",
-   "options": "catastro_contribuyente_detalles"
+   "options": "<table>\n  <tbody><tr>\n    <th>Company</th>\n    <th>Contact</th>\n    <th>Country</th>\n  </tr>\n  <tr>\n    <td>Alfreds Futterkiste</td>\n    <td>Maria Anders</td>\n    <td>Germany</td>\n  </tr>\n  <tr>\n    <td>Centro comercial Moctezuma</td>\n    <td>Francisco Chang</td>\n    <td>Mexico</td>\n  </tr>\n</tbody></table>\n"
   },
   {
    "fieldname": "copropietarios",
@@ -455,6 +465,16 @@
    "label": " Catastro Licencia Data"
   },
   {
+<<<<<<< Updated upstream
+=======
+   "fieldname": "data",
+   "fieldtype": "Table",
+   "label": "Data",
+   "options": "catastro_licencia_data",
+   "read_only": 1
+  },
+  {
+>>>>>>> Stashed changes
    "bold": 1,
    "fetch_from": "propietario.customer_name",
    "fieldname": "customer_name",
@@ -485,6 +505,7 @@
    "label": "Observaciones"
   },
   {
+<<<<<<< Updated upstream
    "fieldname": "licencia_id",
    "fieldtype": "Link",
    "label": "Licencia ID",
@@ -496,11 +517,31 @@
    "label": "Data",
    "options": "catastro_licencia_data",
    "read_only": 1
+=======
+   "fieldname": "colindancia",
+   "fieldtype": "Section Break",
+   "label": "Colindancias"
+  },
+  {
+   "fieldname": "colindantes",
+   "fieldtype": "Table",
+   "options": "catastro_colindancia"
+  },
+  {
+   "fieldname": "historial_de_movimientos",
+   "fieldtype": "HTML",
+   "label": "Historial de Movimientos",
+   "options": "\n\n\n<style>\ntable {\n  font-family: arial, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\ntd, th {\n  border: 1px solid #dddddd;\n  text-align: left;\n  padding: 8px;\n}\n\ntr:nth-child(even) {\n  background-color: #dddddd;\n}\n</style>\n\n\n\n<h2>HTML Table</h2>\n\n<table>\n  <tbody><tr>\n    <th>Company</th>\n    <th>Contact</th>\n    <th>Country</th>\n  </tr>\n  <tr>\n    <td>Alfreds Futterkiste</td>\n    <td>Maria Anders</td>\n    <td>Germany</td>\n  </tr>\n  <tr>\n    <td>Centro comercial Moctezuma</td>\n    <td>Francisco Chang</td>\n    <td>Mexico</td>\n  </tr>\n  <tr>\n    <td>Ernst Handel</td>\n    <td>Roland Mendel</td>\n    <td>Austria</td>\n  </tr>\n  <tr>\n    <td>Island Trading</td>\n    <td>Helen Bennett</td>\n    <td>UK</td>\n  </tr>\n  <tr>\n    <td>Laughing Bacchus Winecellars</td>\n    <td>Yoshi Tannamuri</td>\n    <td>Canada</td>\n  </tr>\n  <tr>\n    <td>Magazzini Alimentari Riuniti</td>\n    <td>Giovanni Rovelli</td>\n    <td>Italy</td>\n  </tr>\n</tbody></table>\n\n\n\n\n"
+>>>>>>> Stashed changes
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
+<<<<<<< Updated upstream
  "modified": "2024-09-12 03:43:41.277547",
+=======
+ "modified": "2024-09-11 21:39:27.435510",
+>>>>>>> Stashed changes
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",

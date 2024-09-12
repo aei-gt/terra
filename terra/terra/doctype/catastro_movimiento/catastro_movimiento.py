@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class LicenciaPropietario(Document):
+class catastro_movimiento(Document):
 	pass

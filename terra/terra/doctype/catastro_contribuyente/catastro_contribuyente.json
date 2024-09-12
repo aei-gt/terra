@@ -71,12 +71,12 @@
    "fieldname": "detalle_de_licencia",
    "fieldtype": "Table",
    "label": "Detalle de licencia",
-   "options": "Licencia Propietario"
+   "options": "catastro_licencia_propietario"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-07 05:56:50.625821",
+ "modified": "2024-09-11 14:41:26.326738",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_contribuyente",
