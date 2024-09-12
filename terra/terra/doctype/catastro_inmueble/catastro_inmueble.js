@@ -79,10 +79,10 @@ frappe.ui.form.on("catastro_inmueble", {
                     propietario_inmueble: frm.doc.propietario
                 }
             }).then(records => {
-                frm.clear_table('data');
+                frm.clear_table('data1');
                 if(records && records.length > 0 ){
                     for(let row of records){
-                        frm.add_child('data', {
+                        frm.add_child('data1', {
                             id: row.name,
                             licencia_tipo : row.licencia_tipo,
                             licencia_descripcion:row.licencia_descripcion,
@@ -91,13 +91,13 @@ frappe.ui.form.on("catastro_inmueble", {
 
                         })
                     }
-                    frm.refresh_field('data');
+                    frm.refresh_field('data1');
                 }
             })
         }
         else{
-            frm.doc.data=[]
-            frm.data.refresh_field("data")
+            frm.doc.data1=[]
+            frm.refresh_field("data")
         }
     }
 

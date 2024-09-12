@@ -69,7 +69,7 @@
   "tab_break_lfui",
   "licencia_id",
   "catastro_licencia_data_section",
-  "data",
+  "data1",
   "tab_break_sabv",
   "historial_de_movimientos",
   "notas_generales_section",
@@ -77,7 +77,8 @@
   "tab_6_tab",
   "otros_inmuebles_del_propietario_section",
   "listado_de_otros_inmuebles",
-  "amended_from"
+  "amended_from",
+  "data"
  ],
  "fields": [
   {
@@ -527,11 +528,18 @@
    "fieldname": "tarjeta",
    "fieldtype": "Data",
    "label": "Tarjeta"
+  },
+  {
+   "fieldname": "data1",
+   "fieldtype": "Table",
+   "label": "Data",
+   "options": "catastro_licencia_data",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-12 06:38:22.855944",
+ "modified": "2024-09-12 07:25:21.487256",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
