@@ -125,7 +125,7 @@ app_license = "mit"
 
 doc_events = {
 	"Customer": {
-		"after_insert": "terra.events.customer.custom_series"
+		"before_insert": "terra.events.customer.custom_series"
 	}
 }
 
