@@ -4,7 +4,7 @@
 import frappe
 from frappe.model.document import Document
 class catastro_inmueble(Document):
-    def after_insert(self):
+    def before_insert(self):
         digits = 6
         prefix = "IUSIFRA"
 
