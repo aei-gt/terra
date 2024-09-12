@@ -46,7 +46,8 @@ frappe.ui.form.on("catastro_inmueble", {
             frappe.db.get_list('catastro_inmueble', {
                 fields: ['*'],
                 filters: {
-                    customer_name: frm.doc.propietario
+                    customer_name: frm.doc.propietario,
+                    name: ['!=', frm.doc.name]
                 }
             }).then(records => {
                 frm.clear_table('listado_de_otros_inmuebles');

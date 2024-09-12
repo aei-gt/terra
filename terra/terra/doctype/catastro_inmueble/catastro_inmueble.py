@@ -4,7 +4,28 @@
 import frappe
 from frappe.model.document import Document
 class catastro_inmueble(Document):
-    pass
+    def after_insert(self):
+        digits = 6
+        prefix = "IUSIFRA"
+
+        settings = frappe.get_single("Terra Settings")
+        if not settings.catastro_series:
+            frappe.throw("Please set counter in Terra Settings")
+
+        current_number = int(settings.catastro_series) + 1
+
+        settings.catastro_series = current_number
+        settings.save()
+
+        formatted_number = format_with_leading_zeros(current_number, digits)
+        self.tarjeta = f"{formatted_number}-{prefix}"
+
+def format_with_leading_zeros(number, digits):
+    return str(number).zfill(digits)
+    
+    
+    
+    
     # def on_update(self):
     #     change_customer(self)
     #     frappe.db.commit()
