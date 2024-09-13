@@ -7,41 +7,14 @@ frappe.ui.form.on("catastro_inmueble", {
             frappe.set_route("query-report", "Catastro Contribuyente", { propietario: frm.doc.propietario });
         });
     },
-
-    propietario(frm) {
-        if (frm.doc.propietario) {
-            frappe.db.get_list('catastro_inmueble', {
-                filters: {
-                    propietario: frm.doc.propietario,
-                    name: ['!=', frm.doc.name]
-                },
-                fields: ['*']
-            }).then(docs => {
-                console.log(docs)
-                let rows = '';
-                docs.forEach(doc => {
-                    rows += `<tr>
-                        <td>${doc.name}</td>
-                        <td>${frm.doc.propietario}</td>
-                    </tr>`;
-                });
-    
-                $('[data-fieldname="html_field"]').html(`
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Catastro Inmueble</th>
-                                <th>Propietario</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${rows}
-                        </tbody>
-                    </table>
-                `);
-            });
-        }
+    onload: function(frm) {
+        PropietarioTable(frm);
     },
+    propietario: function(frm) {
+        PropietarioTable(frm);
+    }
+
+   
     
 
 
@@ -80,4 +53,41 @@ frappe.ui.form.on("catastro_inmueble", {
 
 
 });
+
+function updatePropietarioTable(frm) {
+    if (frm.doc.propietario) {
+        frappe.db.get_list('catastro_inmueble', {
+            filters: {
+                propietario: frm.doc.propietario,
+                name: ['!=', frm.doc.name]
+            },
+            fields: ['*']
+        }).then(docs => {
+            console.log(docs);
+            let rows = '';
+            docs.forEach(doc => {
+                rows += `<tr>
+                    <td>${doc.name}</td>
+                    <td>${frm.doc.propietario}</td>
+                </tr>`;
+            });
+
+            // Update the HTML field with the new table content
+            $('[data-fieldname="html_field"]').html(`
+                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid #ddd;">
+                    <thead style="background-color: #f4f4f4;">
+                        <tr>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Catastro Inmueble</th>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Propietario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${rows}
+                    </tbody>
+                </table>
+            `);
+        });
+    }
+}
+
 
