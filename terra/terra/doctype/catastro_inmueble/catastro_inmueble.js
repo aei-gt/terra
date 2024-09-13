@@ -54,7 +54,7 @@ frappe.ui.form.on("catastro_inmueble", {
 
 });
 
-function updatePropietarioTable(frm) {
+function PropietarioTable(frm) {
     if (frm.doc.propietario) {
         frappe.db.get_list('catastro_inmueble', {
             filters: {
