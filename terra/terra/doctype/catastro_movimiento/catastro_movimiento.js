@@ -14,7 +14,7 @@ frappe.ui.form.on("catastro_movimiento", {
 
 function CastastroTrimestreTable(frm) {
     if (frm.doc.propietario) {
-        frappe.db.get_list('castastro_detalle_trimestre', {
+        frappe.db.get_list('castastro_detalles_trimestre', {
             filters: {
                 propietario: frm.doc.propietario,
                 // name: ['!=', frm.doc.propietario]

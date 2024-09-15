@@ -67,7 +67,7 @@
  "modified": "2024-09-15 10:47:58.506973",
  "modified_by": "Administrator",
  "module": "TERRA",
- "name": "castastro_detalle_trimestre",
+ "name": "castastro_detalles_trimestre",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
