@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-09-14 21:40:58.023991",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "denuncia",
+  "telefono"
+ ],
+ "fields": [
+  {
+   "fieldname": "denuncia",
+   "fieldtype": "Data",
+   "label": "denuncia"
+  },
+  {
+   "fieldname": "telefono",
+   "fieldtype": "Data",
+   "label": "telefono"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-14 23:30:45.343179",
+ "modified_by": "Administrator",
+ "module": "TERRA",
+ "name": "catastro_reporte",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
