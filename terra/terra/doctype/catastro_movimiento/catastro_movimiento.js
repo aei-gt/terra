@@ -32,7 +32,7 @@ function CastastroTrimestreTable(frm) {
                 </tr>`;
             });
 
-            $('[data-fieldname="castastro__trimestre"]').html(`
+            $('[data-fieldname="catastro_trimestre"]').html(`
                 <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #ddd;">
                     <thead style="background-color: #f4f4f4;">
                         <tr>
