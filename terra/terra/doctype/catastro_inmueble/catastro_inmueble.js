@@ -9,85 +9,105 @@ frappe.ui.form.on("catastro_inmueble", {
     },
     onload: function(frm) {
         PropietarioTable(frm);
+        frm.refresh()
     },
     propietario: function(frm) {
-        PropietarioTable(frm);
+        PropietarioTable(frm)
+        frm.refresh()
+
     }
-
-   
-    
-
-
-    // licencia_id(frm){
-    //     if (frm.doc.licencia_id){
-    //         frappe.db.get_list('catastro_licencia', {
-    //             fields: ['*'],
-    //             filters: {
-    //                 propietario_inmueble: frm.doc.propietario
-    //             }
-    //         }).then(records => {
-    //             frm.clear_table('data1');
-    //             if(records && records.length > 0 ){
-    //                 for(let row of records){
-    //                     frm.add_child('data1', {
-    //                         id: row.name,
-    //                         licencia_tipo : row.licencia_tipo,
-    //                         licencia_descripcion:row.licencia_descripcion,
-    //                         fecha_finaliza:row.creation,
-    //                         licencia_valor:row.licencia_categoria,
-
-    //                     })
-    //                 }
-    //                 frm.refresh_field('data1');
-    //             }
-    //         })
-    //     }
-    //     else{
-    //         frm.doc.data1=[]
-    //         frm.refresh_field("data")
-    //     }
-    // }
-
-
-
 
 
 });
 
 function PropietarioTable(frm) {
     if (frm.doc.propietario) {
-        frappe.db.get_list('catastro_inmueble', {
+        // frappe.db.get_list('catastro_inmueble', {
+        //     filters: {
+        //         propietario: frm.doc.propietario,
+        //         name: ['!=', frm.doc.name]
+        //     },
+        //     fields: ['*']
+        // }).then(inmueble_docs => {
+        //     let inmueble_rows = '';
+
+        //     if (inmueble_docs.length > 0) {
+        //         inmueble_docs.forEach(doc => {
+        //             inmueble_rows += `<tr>
+        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.name || ""}</td>
+        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.propietario || ""}</td>
+        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.ubicacion_catastral || ""}</td>
+        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.finca || ""}</td>
+        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.folio || ""}</td>
+        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.libro || ""}</td>
+        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.valor_total || ""}</td>
+        //             </tr>`;
+        //         });
+        //     } else {
+        //         inmueble_rows = `<tr><td colspan="7" style="padding: 8px; text-align: center; border: 1px solid #ddd;">No data available</td></tr>`;
+        //     }
+
+        //     $('[data-fieldname="html_field"]').html(`
+        //         <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #ddd;">
+        //             <thead style="background-color: #f4f4f4;">
+        //                 <tr>
+        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Catastro Inmueble</th>
+        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Propietario</th>
+        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Ubicación Catastral</th>
+        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Finca</th>
+        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Folio</th>
+        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Libro</th>
+        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Valor Fiscal Afecto</th>
+        //                 </tr>
+        //             </thead>
+        //             <tbody>
+        //                 ${inmueble_rows}
+        //             </tbody>
+        //         </table>
+        //     `);
+        // });
+
+        frappe.db.get_list('catastro_licencia', {
             filters: {
-                propietario: frm.doc.propietario,
-                name: ['!=', frm.doc.name]
+                propietario_inmueble: frm.doc.propietario,
             },
             fields: ['*']
-        }).then(docs => {
-            console.log(docs);
-            let rows = '';
-            docs.forEach(doc => {
-                rows += `<tr>
-                    <td>${doc.name}</td>
-                    <td>${frm.doc.propietario}</td>
-                </tr>`;
-            });
+        }).then(licencia_docs => {
+            let licencia_rows = '';
 
-            // Update the HTML field with the new table content
-            $('[data-fieldname="html_field"]').html(`
-                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid #ddd;">
+            if (licencia_docs.length > 0) {
+                licencia_docs.forEach(doc => {
+                    licencia_rows += `<tr>
+                        <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.name || ""}</td>
+                        <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.propietario_inmueble || ""}</td>
+                        <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.licencia_tipo || ""}</td>
+                        <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.fecha_finaliza || ""}</td>
+                        <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.licencia_valor || ""}</td>
+                    </tr>`;
+                });
+            } else {
+                licencia_rows = `<tr><td colspan="5" style="padding: 8px; text-align: center; border: 1px solid #ddd;">No data available</td></tr>`;
+            }
+
+            $('[data-fieldname="html_licencia"]').html(`
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
                     <thead style="background-color: #f4f4f4;">
                         <tr>
-                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Catastro Inmueble</th>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Catastro Licencia</th>
                             <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Propietario</th>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Tipo de Construcción</th>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Fecha de Finalización</th>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Valor Total de la Licencia</th>
                         </tr>
                     </thead>
                     <tbody>
-                        ${rows}
+                        ${licencia_rows}
                     </tbody>
                 </table>
             `);
         });
     }
 }
+
 
 

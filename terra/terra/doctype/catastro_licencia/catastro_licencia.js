@@ -10,41 +10,52 @@ frappe.ui.form.on("catastro_licencia", {
 
     onload: function(frm) {
         CatastroInmuebleTable(frm);
+        frm.refresh()
     },
     propietario_inmueble: function(frm) {
         CatastroInmuebleTable(frm);
+        frm.refresh()
     }
     
 });
-
 function CatastroInmuebleTable(frm) {
     if (frm.doc.propietario_inmueble) {
-        frappe.db.get_list('catastro_licencia', {
+        frappe.db.get_list('catastro_inmueble', {
             filters: {
-                propietario_inmueble: frm.doc.propietario_inmueble,
-                name: ['!=', frm.doc.name]
+                customer_name: frm.doc.propietario_inmueble,
+                // name: ['!=', frm.doc.propietario]
             },
             fields: ['*']
-        }).then(docs => {
-            console.log(docs);
-            let rows = '';
-            docs.forEach(doc => {
-                rows += `<tr>
-                    <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.name}</td>
-                    <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${frm.doc.propietario_inmueble}</td>
+        }).then(inmueble_docs => {
+            console.log(inmueble_docs);
+            let inmueble_rows = '';
+            inmueble_docs.forEach(doc => {
+                inmueble_rows += `<tr>
+                    <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.name || ""}</td>
+                    <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.propietario || ""}</td>
+                    <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.ubicacion_catastral || ""}</td>
+                    <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.finca || ""}</td>
+                    <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.folio || ""}</td>
+                    <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.libro || ""}</td>
+                    <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.valor_total || ""}</td>
                 </tr>`;
             });
 
-            $('[data-fieldname="html_field"]').html(`
-                <table style="width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid #ddd;">
+            $('[data-fieldname="html_inmueble"]').html(`
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #ddd;">
                     <thead style="background-color: #f4f4f4;">
                         <tr>
                             <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Catastro Inmueble</th>
                             <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Propietario</th>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Ubicación Catastral</th>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Finca</th>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Folio</th>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Libro</th>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Valor Fiscal Afecto</th>
                         </tr>
                     </thead>
                     <tbody>
-                        ${rows}
+                        ${inmueble_rows}
                     </tbody>
                 </table>
             `);

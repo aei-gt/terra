@@ -28,10 +28,9 @@
   "column_break_xzbk",
   "licencia_factor",
   "licencia_categoria",
-  "detalle__licencia__propietario_tab",
-  "catastro_licencia_section",
-  "column_break_4kcd",
-  "html_field"
+  "detalle_tab",
+  "relacionado_catasro_licencia_section",
+  "html_inmueble"
  ],
  "fields": [
   {
@@ -121,6 +120,7 @@
    "fetch_from": "id_catastro.customer_name",
    "fieldname": "propietario_inmueble",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Propietario:"
   },
   {
@@ -165,28 +165,24 @@
    "options": "TIPO \"A\"\nTIPO \"B\"\nTIPO \"C\""
   },
   {
-   "fieldname": "detalle__licencia__propietario_tab",
+   "fieldname": "detalle_tab",
    "fieldtype": "Tab Break",
-   "label": "Detalle  Licencia  Propietario "
+   "label": "Detalle Catastro Inmueble"
   },
   {
-   "fieldname": "html_field",
-   "fieldtype": "HTML",
-   "label": "Html Field"
-  },
-  {
-   "fieldname": "catastro_licencia_section",
+   "fieldname": "relacionado_catasro_licencia_section",
    "fieldtype": "Section Break",
-   "label": "Catastro Licencia"
+   "label": "Relacionado Catastro Inmueble"
   },
   {
-   "fieldname": "column_break_4kcd",
-   "fieldtype": "Column Break"
+   "fieldname": "html_inmueble",
+   "fieldtype": "HTML",
+   "label": "html_inmueble"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-12 09:21:07.678214",
+ "modified": "2024-09-15 09:21:38.534949",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_licencia",

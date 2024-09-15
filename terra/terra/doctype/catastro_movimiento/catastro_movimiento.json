@@ -6,8 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_wc65",
-  "amended_from",
   "id_catastro",
+  "propietario",
   "column_break_lsxs",
   "catastro_movimiento_tipo",
   "4",
@@ -21,23 +21,17 @@
   "column_break_evcd",
   "movimiento_notario_nombre",
   "observaciones_generales_section",
-  "movimiento_nota"
+  "movimiento_nota",
+  "amended_from",
+  "detalle_castastro__trimestre_tab",
+  "relacionado_castastro__trimestre_section",
+  "castastro__trimestre"
  ],
  "fields": [
   {
    "fieldname": "section_break_wc65",
    "fieldtype": "Section Break",
    "label": "Datos Generales"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "catastro_movimiento",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   },
   {
    "fieldname": "id_catastro",
@@ -133,12 +127,44 @@
    "fieldname": "4",
    "fieldtype": "Section Break",
    "label": "Actualizaci\u00f3n de Valor"
+  },
+  {
+   "fetch_from": "id_catastro.customer_name",
+   "fieldname": "propietario",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Propietario"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "catastro_movimiento",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "detalle_castastro__trimestre_tab",
+   "fieldtype": "Tab Break",
+   "label": "Detalle Castastro  Trimestre"
+  },
+  {
+   "fieldname": "relacionado_castastro__trimestre_section",
+   "fieldtype": "Section Break",
+   "label": "Relacionado Castastro  Trimestre"
+  },
+  {
+   "fieldname": "castastro__trimestre",
+   "fieldtype": "HTML",
+   "label": "Castastro  Trimestre"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-11 21:17:52.253332",
+ "modified": "2024-09-15 09:26:53.889242",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_movimiento",

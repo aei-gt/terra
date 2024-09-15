@@ -8,11 +8,11 @@
   "informaci\u00f3n_catastral_tab",
   "datos_generales_section",
   "propietario",
-  "direcci\u00f3n_de_notificacion",
   "customer_name",
   "column_break_uski",
   "direccion_representante_legal",
   "representante_legal",
+  "direcci\u00f3n_de_notificacion",
   "ubicaci\u00f3n_y_referencias_section",
   "ubicacion_catastral",
   "inmueble_serviciosgl",
@@ -41,6 +41,8 @@
   "tab_break_mcsq",
   "notas_de_servicios_section",
   "nota_servicios",
+  "notas_generales_section",
+  "historico",
   "ficha_catastral_tab",
   "datos_del_terreno_section",
   "inmueble_registro_m2",
@@ -64,18 +66,9 @@
   "terreno_factor_sbn",
   "terreno_interior_ma",
   "colindantes",
-  "tab_break_lfui",
-  "tab_break_sabv",
-  "historial_de_movimientos",
-  "notas_generales_section",
-  "historico",
-  "tab_6_tab",
-  "otros_inmuebles_del_propietario_section",
-  "html_field",
-  "data",
-  "testing_tab",
-  "sec_section",
-  "html_text"
+  "detalle_catastro_inmueble_tab",
+  "relacionado_catastro_inmueble_section",
+  "html_licencia"
  ],
  "fields": [
   {
@@ -95,18 +88,6 @@
    "fieldname": "ficha_catastral_tab",
    "fieldtype": "Tab Break",
    "label": "Ficha Catastral"
-  },
-  {
-   "bold": 1,
-   "fieldname": "tab_break_lfui",
-   "fieldtype": "Tab Break",
-   "label": "Licencia de Construcci\u00f3n"
-  },
-  {
-   "bold": 1,
-   "fieldname": "tab_break_sabv",
-   "fieldtype": "Tab Break",
-   "label": "Historial"
   },
   {
    "fieldname": "historico",
@@ -243,17 +224,6 @@
    "fieldtype": "Currency",
    "label": "Valor de Cultivo:",
    "precision": "2"
-  },
-  {
-   "bold": 1,
-   "fieldname": "tab_6_tab",
-   "fieldtype": "Tab Break",
-   "label": "Otros Inmuebles"
-  },
-  {
-   "fieldname": "otros_inmuebles_del_propietario_section",
-   "fieldtype": "Section Break",
-   "label": "Inmuebles Relacionados"
   },
   {
    "fieldname": "direcci\u00f3n_de_notificacion",
@@ -427,26 +397,12 @@
    "label": "Datos Generales"
   },
   {
-   "fieldname": "data",
-   "fieldtype": "Table",
-   "label": "Data",
-   "options": "catastro_licencia_data",
-   "read_only": 1
-  },
-  {
    "bold": 1,
    "fetch_from": "propietario.customer_name",
    "fieldname": "customer_name",
    "fieldtype": "Data",
-   "label": "Propietario"
-  },
-  {
-   "fieldname": "propietario",
-   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Propietario Id",
-   "options": "Customer",
-   "reqd": 1
+   "label": "Propietario"
   },
   {
    "fieldname": "notas_generales_section",
@@ -464,22 +420,9 @@
    "label": "Observaciones"
   },
   {
-   "fieldname": "data",
-   "fieldtype": "Table",
-   "label": "Data",
-   "options": "catastro_licencia_data",
-   "read_only": 1
-  },
-  {
    "fieldname": "colindantes",
    "fieldtype": "Table",
    "options": "catastro_colindancia"
-  },
-  {
-   "fieldname": "historial_de_movimientos",
-   "fieldtype": "HTML",
-   "label": "Historial de Movimientos",
-   "options": "\n\n\n<style>\ntable {\n  font-family: arial, sans-serif;\n  border-collapse: collapse;\n  width: 100%;\n}\n\ntd, th {\n  border: 1px solid #dddddd;\n  text-align: left;\n  padding: 8px;\n}\n\ntr:nth-child(even) {\n  background-color: #dddddd;\n}\n</style>\n\n\n\n<h2>HTML Table</h2>\n\n<table>\n  <tbody><tr>\n    <th>Company</th>\n    <th>Contact</th>\n    <th>Country</th>\n  </tr>\n  <tr>\n    <td>Alfreds Futterkiste</td>\n    <td>Maria Anders</td>\n    <td>Germany</td>\n  </tr>\n  <tr>\n    <td>Centro comercial Moctezuma</td>\n    <td>Francisco Chang</td>\n    <td>Mexico</td>\n  </tr>\n  <tr>\n    <td>Ernst Handel</td>\n    <td>Roland Mendel</td>\n    <td>Austria</td>\n  </tr>\n  <tr>\n    <td>Island Trading</td>\n    <td>Helen Bennett</td>\n    <td>UK</td>\n  </tr>\n  <tr>\n    <td>Laughing Bacchus Winecellars</td>\n    <td>Yoshi Tannamuri</td>\n    <td>Canada</td>\n  </tr>\n  <tr>\n    <td>Magazzini Alimentari Riuniti</td>\n    <td>Giovanni Rovelli</td>\n    <td>Italy</td>\n  </tr>\n</tbody></table>\n\n\n\n\n"
   },
   {
    "fieldname": "tarjeta",
@@ -487,29 +430,33 @@
    "label": "Tarjeta"
   },
   {
-   "fieldname": "html_field",
+   "fieldname": "html_licencia",
    "fieldtype": "HTML",
-   "label": "Html Field"
+   "label": "html_licencia"
   },
   {
-   "fieldname": "html_text",
-   "fieldtype": "HTML",
-   "label": "Html Text"
-  },
-  {
-   "fieldname": "testing_tab",
+   "bold": 1,
+   "fieldname": "detalle_catastro_inmueble_tab",
    "fieldtype": "Tab Break",
-   "label": "Testing"
+   "label": "Detalle Catastro Licencia"
   },
   {
-   "fieldname": "sec_section",
+   "fieldname": "relacionado_catastro_inmueble_section",
    "fieldtype": "Section Break",
-   "label": "sec"
+   "label": "Relacionado Catastro Licencia"
+  },
+  {
+   "fieldname": "propietario",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Propietario Id",
+   "options": "Customer",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-12 09:55:43.040222",
+ "modified": "2024-09-15 09:21:28.363324",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
