@@ -39,6 +39,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "bold": 1,
    "fetch_from": "id_catastro.customer_name",
    "fieldname": "propietario",
    "fieldtype": "Data",
@@ -63,7 +64,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-15 09:48:51.367017",
+ "modified": "2024-09-15 10:47:58.506973",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "castastro_detalle_trimestre",

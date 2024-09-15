@@ -10,6 +10,7 @@
   "propietario",
   "column_break_lsxs",
   "catastro_movimiento_tipo",
+  "amended_from",
   "4",
   "valor_del_terreno",
   "valor_de_construccion",
@@ -21,11 +22,7 @@
   "column_break_evcd",
   "movimiento_notario_nombre",
   "observaciones_generales_section",
-  "movimiento_nota",
-  "amended_from",
-  "detalle_castastro__trimestre_tab",
-  "relacionado_castastro__trimestre_section",
-  "castastro__trimestre"
+  "movimiento_nota"
  ],
  "fields": [
   {
@@ -132,7 +129,6 @@
    "fetch_from": "id_catastro.customer_name",
    "fieldname": "propietario",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Propietario"
   },
   {
@@ -144,27 +140,12 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
-  },
-  {
-   "fieldname": "detalle_castastro__trimestre_tab",
-   "fieldtype": "Tab Break",
-   "label": "Detalle Castastro  Trimestre"
-  },
-  {
-   "fieldname": "relacionado_castastro__trimestre_section",
-   "fieldtype": "Section Break",
-   "label": "Relacionado Castastro  Trimestre"
-  },
-  {
-   "fieldname": "castastro__trimestre",
-   "fieldtype": "HTML",
-   "label": "Castastro  Trimestre"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-15 09:26:53.889242",
+ "modified": "2024-09-15 10:54:11.383059",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_movimiento",

@@ -21,7 +21,7 @@ function CatastroMovimientoTable(frm) {
             fields: ['*']
         }).then(catastromovimiento_docs => {
             console.log(catastromovimiento_docs);
-            let catastromovimiento_rows = ''; // Fixed variable name
+            let catastromovimiento_rows = '';
 
             catastromovimiento_docs.forEach(doc => {
                 catastromovimiento_rows += `<tr>
