@@ -68,7 +68,9 @@
   "colindantes",
   "detalle_catastro_inmueble_tab",
   "relacionado_catastro_inmueble_section",
-  "html_licencia"
+  "html_licencia",
+  "movimientos_tab",
+  "movimientos"
  ],
  "fields": [
   {
@@ -452,11 +454,22 @@
    "label": "Propietario Id",
    "options": "Customer",
    "reqd": 1
+  },
+  {
+   "fieldname": "movimientos_tab",
+   "fieldtype": "Tab Break",
+   "label": "Movimientos"
+  },
+  {
+   "fieldname": "movimientos",
+   "fieldtype": "HTML",
+   "label": "Movimientos",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-15 09:21:28.363324",
+ "modified": "2024-09-17 11:29:57.671136",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
