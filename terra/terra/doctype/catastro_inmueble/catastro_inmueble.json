@@ -106,28 +106,32 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Finca:"
+   "label": "Finca:",
+   "reqd": 1
   },
   {
    "fieldname": "folio",
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Folio:"
+   "label": "Folio:",
+   "reqd": 1
   },
   {
    "fieldname": "libro",
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Libro:"
+   "label": "Libro:",
+   "reqd": 1
   },
   {
    "default": "GUATEMALA",
    "fieldname": "registro",
    "fieldtype": "Select",
    "label": "Registro:",
-   "options": "GUATEMALA\nDERECHOS POSESORIOS\nSIN REGISTRO"
+   "options": "GUATEMALA\nDERECHOS POSESORIOS\nSIN REGISTRO",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_mora",
@@ -400,11 +404,12 @@
   },
   {
    "bold": 1,
-   "fetch_from": "propietario.customer_name",
+   "fetch_from": "propietario.custom_matricula",
    "fieldname": "customer_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Propietario"
+   "label": "Matricula del Propietario",
+   "read_only": 1
   },
   {
    "fieldname": "notas_generales_section",
@@ -469,7 +474,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-17 11:29:57.671136",
+ "modified": "2024-09-18 13:30:28.843250",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
