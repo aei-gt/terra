@@ -22,73 +22,68 @@ frappe.ui.form.on("catastro_inmueble", {
 
 function PropietarioTable(frm) {
     if (frm.doc.propietario) {
-        // frappe.db.get_list('catastro_inmueble', {
-        //     filters: {
-        //         propietario: frm.doc.propietario,
-        //         name: ['!=', frm.doc.name]
-        //     },
-        //     fields: ['*']
-        // }).then(inmueble_docs => {
-        //     let inmueble_rows = '';
-
-        //     if (inmueble_docs.length > 0) {
-        //         inmueble_docs.forEach(doc => {
-        //             inmueble_rows += `<tr>
-        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.name || ""}</td>
-        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.propietario || ""}</td>
-        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.ubicacion_catastral || ""}</td>
-        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.finca || ""}</td>
-        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.folio || ""}</td>
-        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.libro || ""}</td>
-        //                 <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.valor_total || ""}</td>
-        //             </tr>`;
-        //         });
-        //     } else {
-        //         inmueble_rows = `<tr><td colspan="7" style="padding: 8px; text-align: center; border: 1px solid #ddd;">No data available</td></tr>`;
-        //     }
-
-        //     $('[data-fieldname="html_field"]').html(`
-        //         <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #ddd;">
-        //             <thead style="background-color: #f4f4f4;">
-        //                 <tr>
-        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Catastro Inmueble</th>
-        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Propietario</th>
-        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Ubicación Catastral</th>
-        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Finca</th>
-        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Folio</th>
-        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Libro</th>
-        //                     <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Valor Fiscal Afecto</th>
-        //                 </tr>
-        //             </thead>
-        //             <tbody>
-        //                 ${inmueble_rows}
-        //             </tbody>
-        //         </table>
-        //     `);
-        // });
-
+        // Fetch data for 'catastro_movimiento'
+        frappe.db.get_list('catastro_movimiento', {
+            filters: {
+                id_catastro: frm.doc.name,
+            },
+            fields: ['name', 'propietario', 'fecha_operacion'] // Fetch only necessary fields
+        }).then(movimiento_docs => {
+            let movimiento_rows = ''; // Corrected declaration of movimiento_rows
+    
+            if (movimiento_docs.length > 0) {
+                movimiento_docs.forEach(doc => {
+                    movimiento_rows += `
+                        <tr>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.name || ""}</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.propietario || ""}</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.fecha_operacion || ""}</td>
+                        </tr>`;
+                });
+            } else {
+                movimiento_rows = `<tr><td colspan="3" style="padding: 8px; text-align: center; border: 1px solid #ddd;">No data available</td></tr>`;
+            }
+    
+            $('[data-fieldname="movimiento"]').html(`
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #ddd;">
+                    <thead style="background-color: #f4f4f4;">
+                        <tr>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Tipo de Movimiento / Procedencia</th>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Propietario</th>
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Fecha Operacion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${movimiento_rows}
+                    </tbody>
+                </table>
+            `);
+        });
+    
+        // Fetch data for 'catastro_licencia'
         frappe.db.get_list('catastro_licencia', {
             filters: {
-                propietario_inmueble: frm.doc.propietario,
+                id_catastro: frm.doc.name,
             },
-            fields: ['*']
+            fields: ['name', 'propietario_inmueble', 'licencia_tipo', 'fecha_finaliza', 'licencia_valor']
         }).then(licencia_docs => {
             let licencia_rows = '';
-
+    
             if (licencia_docs.length > 0) {
                 licencia_docs.forEach(doc => {
-                    licencia_rows += `<tr>
-                        <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.name || ""}</td>
-                        <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.propietario_inmueble || ""}</td>
-                        <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.licencia_tipo || ""}</td>
-                        <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.fecha_finaliza || ""}</td>
-                        <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.licencia_valor || ""}</td>
-                    </tr>`;
+                    licencia_rows += `
+                        <tr>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.name || ""}</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.propietario_inmueble || ""}</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.licencia_tipo || ""}</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.fecha_finaliza || ""}</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.licencia_valor || ""}</td>
+                        </tr>`;
                 });
             } else {
                 licencia_rows = `<tr><td colspan="5" style="padding: 8px; text-align: center; border: 1px solid #ddd;">No data available</td></tr>`;
             }
-
+    
             $('[data-fieldname="html_licencia"]').html(`
                 <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
                     <thead style="background-color: #f4f4f4;">
@@ -107,7 +102,4 @@ function PropietarioTable(frm) {
             `);
         });
     }
-}
-
-
-
+}    

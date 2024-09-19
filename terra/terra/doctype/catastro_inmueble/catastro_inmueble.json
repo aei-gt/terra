@@ -70,7 +70,8 @@
   "relacionado_catastro_inmueble_section",
   "html_licencia",
   "movimientos_tab",
-  "movimientos"
+  "data_movimiento_section",
+  "movimiento"
  ],
  "fields": [
   {
@@ -466,10 +467,14 @@
    "label": "Movimientos"
   },
   {
-   "fieldname": "movimientos",
+   "fieldname": "data_movimiento_section",
+   "fieldtype": "Section Break",
+   "label": "Relacionado Movimiento"
+  },
+  {
+   "fieldname": "movimiento",
    "fieldtype": "HTML",
-   "label": "Movimientos",
-   "read_only": 1
+   "label": "Movimiento"
   }
  ],
  "index_web_pages_for_search": 1,
