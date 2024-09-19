@@ -84,16 +84,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Contribuyentes",
-   "link_count": 0,
-   "link_to": "Catastro Contribuyente",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Movimientos Catastrales",
    "link_count": 0,
    "link_to": "catastro_movimiento",
@@ -112,7 +102,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-09-17 11:23:22.055030",
+ "modified": "2024-09-19 04:16:20.429772",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "Catastro & Licencia",
