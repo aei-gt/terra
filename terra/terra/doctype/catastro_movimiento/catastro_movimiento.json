@@ -162,9 +162,8 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2024-09-19 04:03:18.347199",
+ "modified": "2024-09-19 08:19:11.277668",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_movimiento",
