@@ -5,13 +5,16 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "movimientos_section",
+  "catastro_movimiento_tipo",
+  "column_break_csti",
+  "fecha_operacion",
   "section_break_wc65",
   "id_catastro",
-  "propietario",
-  "amended_from",
+  "tarjeta",
   "column_break_lsxs",
-  "catastro_movimiento_tipo",
-  "fecha_operacion",
+  "propietario",
+  "custom_matricula",
   "4",
   "valor_del_terreno",
   "valor_de_construccion",
@@ -23,14 +26,13 @@
   "column_break_evcd",
   "movimiento_notario_nombre",
   "observaciones_generales_section",
-  "movimiento_nota",
-  "detalle_catastro_trimestre_tab",
-  "catastro_trimestre"
+  "movimiento_nota"
  ],
  "fields": [
   {
    "fieldname": "section_break_wc65",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Datos Generales"
   },
   {
@@ -38,11 +40,11 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "ID Inmueble de Catastro:",
-   "options": "catastro_inmueble",
-   "reqd": 1
+   "options": "catastro_inmueble"
   },
   {
    "bold": 1,
+   "default": "9-OTRO",
    "fieldname": "catastro_movimiento_tipo",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -58,6 +60,7 @@
   {
    "fieldname": "datos_de_notario_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Datos de Notario"
   },
   {
@@ -124,20 +127,11 @@
    "label": "Propietario"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "catastro_movimiento",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "collapsible": 1,
    "depends_on": "eval:doc.catastro_movimiento_tipo==\"4-ACTUALIZACION DE VALOR\"",
    "fieldname": "4",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Actualizaci\u00f3n de Valor"
   },
   {
@@ -145,25 +139,35 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "detalle_catastro_trimestre_tab",
-   "fieldtype": "Tab Break",
-   "label": "Detalle Catastro Trimestre"
-  },
-  {
-   "fieldname": "catastro_trimestre",
-   "fieldtype": "HTML",
-   "label": " Catastro Trimestre"
-  },
-  {
    "fieldname": "fecha_operacion",
    "fieldtype": "Date",
    "label": "Fecha Operacion",
    "reqd": 1
+  },
+  {
+   "fieldname": "movimientos_section",
+   "fieldtype": "Section Break",
+   "label": "Movimientos"
+  },
+  {
+   "fieldname": "column_break_csti",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tarjeta",
+   "fieldtype": "Data",
+   "label": "Tarjeta"
+  },
+  {
+   "fieldname": "custom_matricula",
+   "fieldtype": "Data",
+   "label": "Matricula del Propietario",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-19 08:19:11.277668",
+ "modified": "2024-09-19 09:34:53.533189",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_movimiento",
