@@ -65,6 +65,7 @@
   "terreno_pendiente",
   "terreno_factor_sbn",
   "terreno_interior_ma",
+  "catastro_colindancia_table_section",
   "colindantes",
   "detalle_catastro_inmueble_tab",
   "relacionado_catastro_inmueble_section",
@@ -430,6 +431,7 @@
   {
    "fieldname": "colindantes",
    "fieldtype": "Table",
+   "label": "Catastro Colindancia",
    "options": "catastro_colindancia"
   },
   {
@@ -475,11 +477,16 @@
    "fieldname": "movimiento",
    "fieldtype": "HTML",
    "label": "Movimiento"
+  },
+  {
+   "fieldname": "catastro_colindancia_table_section",
+   "fieldtype": "Section Break",
+   "label": "Catastro Colindancia Table"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-18 13:30:28.843250",
+ "modified": "2024-09-20 05:15:21.320924",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",

@@ -14,6 +14,7 @@
   {
    "fieldname": "id_catastro",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Id Catastro",
    "options": "catastro_inmueble"
   },
@@ -21,6 +22,7 @@
    "default": "REGULAR",
    "fieldname": "colindancia_tipo",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Tipo",
    "options": "REGULAR\nDERECHO DE PASO\nCALLE"
   },
@@ -28,6 +30,7 @@
    "default": "OTROS",
    "fieldname": "colindancia_posicion",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Posicion",
    "options": "NORTE\nSUR\nESTE\nOESTE\nOTROS"
   },
@@ -39,7 +42,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-09-14 11:20:30.824706",
+ "modified": "2024-09-20 05:14:40.362097",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_colindancia",
