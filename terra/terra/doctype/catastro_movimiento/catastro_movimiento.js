@@ -2,13 +2,37 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("catastro_movimiento", {
+    refresh: function(frm) {
+        frm.add_custom_button('Run Operations', () => {
+            if (frm.doc.catastro_movimiento_tipo == "1-INSCRIPCION NUEVA") {
+                frm.call("inscripcion_nueva");
+                frm.refresh();
+            } 
+            else if (frm.doc.catastro_movimiento_tipo == "4-ACTUALIZACION DE VALOR") {
+                frm.call("actualizacion_valor");
+                frm.refresh();
+            } 
+            else {
+                frappe.msgprint(__('No valid movimiento tipo selected.'));
+            }
+        });
+        frm.add_custom_button('Clear Fields', () => {
+            frm.call("clear_fields").then(() => {
+                frm.reload();
+            
+            });
+        });
+        
+    },
+    
     onload: function(frm) {
         CastastroTrimestreTable(frm);
-        frm.refresh()
+        frm.refresh();
     },
+
     id_catastro: function(frm) {
         CastastroTrimestreTable(frm);
-        frm.refresh()
+        frm.refresh();
     }
 });
 
@@ -16,8 +40,7 @@ function CastastroTrimestreTable(frm) {
     if (frm.doc.propietario) {
         frappe.db.get_list('castastro_detalles_trimestre', {
             filters: {
-                propietario: frm.doc.propietario,
-                // name: ['!=', frm.doc.propietario]
+                propietario: frm.doc.propietario
             },
             fields: ['*']
         }).then(castastrotrimestre_docs => {
@@ -50,4 +73,3 @@ function CastastroTrimestreTable(frm) {
         });
     }
 }
-

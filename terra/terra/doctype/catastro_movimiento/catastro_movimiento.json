@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "format:MC-{id_catastro}-{##}",
+ "autoname": "format:MC-{######}",
  "creation": "2024-09-11 12:14:46.320776",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,13 +10,16 @@
   "column_break_csti",
   "fecha_operacion",
   "section_break_wc65",
+  "column_break_earq",
   "propietario",
   "column_break_grhk",
   "custom_matricula",
   "datos_generale_section",
   "id_catastro",
-  "column_break_vvax",
   "tarjeta",
+  "column_break_vvax",
+  "inmueble_propietario",
+  "matricula_de_propietario",
   "actualizaci\u00f3n_de_valor_section",
   "valor_del_terreno",
   "valor_de_construccion",
@@ -31,6 +34,7 @@
   "ubicaci\u00f3n_catastral_direcci\u00f3n",
   "area_del_terreno_en_m2",
   "area_de_construcci\u00f3n_en_m2",
+  "area_de_cultivos_en_m2",
   "column_break_vofx",
   "finca",
   "folio",
@@ -41,7 +45,7 @@
  ],
  "fields": [
   {
-   "depends_on": "eval:doc.catastro_movimiento_tipo==\"1-INSCRIPCION NUEVA\"\n",
+   "depends_on": "eval:doc.catastro_movimiento_tipo == \"1-INSCRIPCION NUEVA\"\n \n",
    "fieldname": "section_break_wc65",
    "fieldtype": "Section Break",
    "label": "Datos Generales"
@@ -123,7 +127,8 @@
    "fieldtype": "Currency",
    "label": "Valor  Fiscal Afecto",
    "non_negative": 1,
-   "precision": "2"
+   "precision": "2",
+   "read_only": 1
   },
   {
    "fieldname": "propietario",
@@ -158,9 +163,11 @@
    "read_only": 1
   },
   {
+   "fetch_from": "propietario.custom_matricula",
    "fieldname": "custom_matricula",
    "fieldtype": "Data",
-   "label": "Matricula del Propietario"
+   "label": "Matricula del Propietario",
+   "read_only": 1
   },
   {
    "depends_on": "eval:doc.catastro_movimiento_tipo == \"1-INSCRIPCION NUEVA\" || doc.catastro_movimiento_tipo == \"4-ACTUALIZACION DE VALOR\"\n",
@@ -222,7 +229,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:doc.catastro_movimiento_tipo==\"4-ACTUALIZACION DE VALOR\"",
+   "depends_on": "eval: doc.catastro_movimiento_tipo == \"4-ACTUALIZACION DE VALOR\"\n",
    "fieldname": "datos_generale_section",
    "fieldtype": "Section Break",
    "label": "Datos Generale"
@@ -232,6 +239,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.catastro_movimiento_tipo == \"1-INSCRIPCION NUEVA\" || doc.catastro_movimiento_tipo == \"4-ACTUALIZACION DE VALOR\"\n",
    "fieldname": "column_break_vvax",
    "fieldtype": "Column Break"
   },
@@ -241,11 +249,36 @@
    "label": "Ubicaci\u00f3n Catastral (Direcci\u00f3n)",
    "length": 400,
    "mandatory_depends_on": "eval:doc.catastro_movimiento_tipo==\"1-INSCRIPCION NUEVA\"\n"
+  },
+  {
+   "fieldname": "area_de_cultivos_en_m2",
+   "fieldtype": "Float",
+   "label": "Area de Cultivos en M2",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_earq",
+   "fieldtype": "Column Break",
+   "read_only_depends_on": "eval: doc.catastro_movimiento_tipo == \"4-ACTUALIZACION DE VALOR\"\n"
+  },
+  {
+   "fetch_from": "id_catastro.propietario",
+   "fieldname": "inmueble_propietario",
+   "fieldtype": "Data",
+   "label": "Inmueble Propietario",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "id_catastro.customer_name",
+   "fieldname": "matricula_de_propietario",
+   "fieldtype": "Data",
+   "label": "Matricula de Propietario",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-20 08:17:00.231103",
+ "modified": "2024-09-23 09:53:48.567827",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_movimiento",
