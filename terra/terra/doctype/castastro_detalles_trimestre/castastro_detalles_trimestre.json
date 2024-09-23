@@ -1,16 +1,17 @@
 {
  "actions": [],
- "autoname": "format:CDT-{MM}-{####}",
+ "autoname": "autoincrement",
  "creation": "2024-09-12 03:49:55.872380",
  "doctype": "DocType",
- "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "id_catastro",
-  "propietario",
-  "column_break_sjvn",
-  "trimestre_cargo",
-  "abono",
+  "castastro_detalles_trimestre_descripcion",
+  "castastro_detalles_trimestre_fecha",
+  "castastro_detalles_trimestre_estado",
+  "castastro_detalles_trimestre_monto",
+  "castastro_detalles_trimestre_tipo_documento",
+  "castastro_detalles_trimestre_numero_documento",
   "detalle_catastro_movimiento_tab",
   "relacionado_castastro_movimiento_section",
   "castastro_movimiento"
@@ -21,30 +22,6 @@
    "fieldtype": "Link",
    "label": "ID Inmueble de Catastro:",
    "options": "catastro_inmueble"
-  },
-  {
-   "fieldname": "trimestre_cargo",
-   "fieldtype": "Currency",
-   "label": "Cargo",
-   "non_negative": 1,
-   "precision": "2"
-  },
-  {
-   "fieldname": "abono",
-   "fieldtype": "Currency",
-   "label": "Abono"
-  },
-  {
-   "fieldname": "column_break_sjvn",
-   "fieldtype": "Column Break"
-  },
-  {
-   "bold": 1,
-   "fetch_from": "id_catastro.customer_name",
-   "fieldname": "propietario",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Propietario"
   },
   {
    "fieldname": "detalle_catastro_movimiento_tab",
@@ -60,15 +37,48 @@
    "fieldname": "castastro_movimiento",
    "fieldtype": "HTML",
    "label": "Castastro Movimiento"
+  },
+  {
+   "fieldname": "castastro_detalles_trimestre_descripcion",
+   "fieldtype": "Data",
+   "label": "Descripcion"
+  },
+  {
+   "fieldname": "castastro_detalles_trimestre_fecha",
+   "fieldtype": "Date",
+   "label": "Fecha"
+  },
+  {
+   "fieldname": "castastro_detalles_trimestre_estado",
+   "fieldtype": "Select",
+   "label": "Estado",
+   "options": "PAGADO\nPOR_PAGAR"
+  },
+  {
+   "fieldname": "castastro_detalles_trimestre_monto",
+   "fieldtype": "Currency",
+   "label": "Monto",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "castastro_detalles_trimestre_tipo_documento",
+   "fieldtype": "Data",
+   "label": "Tipo Documento"
+  },
+  {
+   "fieldname": "castastro_detalles_trimestre_numero_documento",
+   "fieldtype": "Data",
+   "label": "Numero Documento"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-15 10:47:58.506973",
+ "modified": "2024-09-23 11:43:51.808640",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "castastro_detalles_trimestre",
- "naming_rule": "Expression",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {

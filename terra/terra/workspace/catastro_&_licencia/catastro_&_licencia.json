@@ -66,10 +66,20 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Gesti\u00f3n Catastral",
-   "link_count": 4,
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contribuyente",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   },
   {
    "hidden": 0,
@@ -100,9 +110,19 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "castastro_detalles_trimestre",
+   "link_count": 0,
+   "link_to": "castastro_detalles_trimestre",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-09-19 04:16:20.429772",
+ "modified": "2024-09-23 11:39:13.547056",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "Catastro & Licencia",
