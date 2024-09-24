@@ -2,29 +2,35 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("catastro_inmueble", {
+    
     refresh: function(frm) {
         frm.add_custom_button('Catastro Base on Propietario', function() {
             frappe.set_route("query-report", "Catastro Contribuyente", { propietario: frm.doc.propietario });
         });
     },
+
     onload: function(frm) {
         PropietarioTable(frm);
         frm.refresh()
     },
+
     propietario: function(frm) {
         PropietarioTable(frm)
         frm.refresh()
-
     },
+
     valor_del_terreno: function(frm) {
         sumFields(frm);
     },
+
     valor_de_cultivo: function(frm) {
         sumFields(frm);
     },
+
     valor_de_construccion: function(frm) {
         sumFields(frm);
     }
+
 });
 
 function PropietarioTable(frm) {
