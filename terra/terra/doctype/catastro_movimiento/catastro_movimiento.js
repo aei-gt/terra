@@ -24,6 +24,8 @@ frappe.ui.form.on("catastro_movimiento", {
             frm.set_df_property("matricula_de_propietario", "read_only", 1);
             frm.set_df_property("movimiento_nota", "read_only", 1);
             frm.set_df_property("custom_matricula", "read_only", 1);
+            frm.set_df_property("fecha_operacion", "read_only", 1);
+            frm.set_df_property("registro", "read_only", 1);
         }
     },
     valor_del_terreno: function(frm) {
