@@ -9,6 +9,7 @@
   "castastro_detalles_trimestre_descripcion",
   "castastro_detalles_trimestre_fecha",
   "castastro_detalles_trimestre_estado",
+  "column_break_jkdi",
   "castastro_detalles_trimestre_monto",
   "castastro_detalles_trimestre_tipo_documento",
   "castastro_detalles_trimestre_numero_documento",
@@ -70,11 +71,15 @@
    "fieldname": "castastro_detalles_trimestre_numero_documento",
    "fieldtype": "Data",
    "label": "Numero Documento"
+  },
+  {
+   "fieldname": "column_break_jkdi",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-23 11:43:51.808640",
+ "modified": "2024-09-24 07:28:48.947139",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "castastro_detalles_trimestre",

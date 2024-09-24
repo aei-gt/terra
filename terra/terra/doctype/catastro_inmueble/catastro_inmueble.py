@@ -4,6 +4,9 @@
 import frappe
 from frappe.model.document import Document
 class catastro_inmueble(Document):
+    def validate(self):
+        total_value = (self.valor_del_terreno or 0) + (self.valor_de_construccion or 0) + (self.valor_de_cultivo or 0)
+        self.valor_total = total_value
     def before_insert(self):
         digits = 6
         prefix = "IUSIFRA"

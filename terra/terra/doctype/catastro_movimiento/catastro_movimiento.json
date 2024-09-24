@@ -157,6 +157,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "id_catastro.tarjeta",
    "fieldname": "tarjeta",
    "fieldtype": "Data",
    "label": "Tarjeta",
@@ -278,7 +279,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-23 09:53:48.567827",
+ "modified": "2024-09-24 06:17:43.407479",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_movimiento",

@@ -2,8 +2,12 @@ import frappe
 from frappe.model.document import Document
 
 class catastro_movimiento(Document):
+    def validate(self):
+        if self.catastro_movimiento_tipo == "1-INSCRIPCION NUEVA":
+            self.inscripcion_nueva()
+        elif self.catastro_movimiento_tipo == "4-ACTUALIZACION DE VALOR":
+            self.actualizacion_valor()
 
-    @frappe.whitelist()
     def inscripcion_nueva(self):
         doc = frappe.get_doc({
             'doctype': 'catastro_inmueble',
@@ -22,10 +26,11 @@ class catastro_movimiento(Document):
         })
         total_value = (self.valor_del_terreno or 0) + (self.valor_de_construccion or 0) + (self.valor_de_cultivo or 0)
         doc.db_set('valor_total', total_value)
+        self.valor_total = total_value
         doc.insert()
         frappe.msgprint(f"New catastro_inmueble created: {doc.name}. Tarjeta = {doc.tarjeta}")
+        return doc
 
-    @frappe.whitelist()
     def actualizacion_valor(self):
         if self.id_catastro:
             fields = ["valor_del_terreno", "valor_de_construccion", "valor_de_cultivo", "valor_total"]
@@ -51,20 +56,18 @@ class catastro_movimiento(Document):
                         msg="These Are All The Updated Fields: {}".format(', '.join(updates.keys())), 
                         indicator='green'
                     )
-
-    @frappe.whitelist()
-    def clear_fields(self):
-        fields_to_clear = [
-            'propietario', 'finca', 'folio', 'libro', 'registro',
-            'ubicación_catastral_dirección', 'valor_del_terreno', 'valor_de_construccion',
-            'valor_de_cultivo', 'area_del_terreno_en_m2', 'area_de_construcción_en_m2',
-            'area_de_cultivos_en_m2', 'id_catastro', 'valor_total','inmueble_propietario',
-            'movimiento_notario_nombre', 'movimiento_colegiado','matricula_de_propietario',
-            'id_catastro', 'propietario','movimiento_nota','custom_matricula',
-        ]
-        
-        for field in fields_to_clear:
-            self.set(field, None)
-        self.save()
-    
-        frappe.msgprint("All fields have been cleared successfully.")
+    # @frappe.whitelist()
+    # def clear_fields(self):
+    #     self.catastro_movimiento_tipo = "9-OTRO"
+    #     fields_to_clear = [
+    #         'propietario', 'finca', 'folio', 'libro', 'registro',
+    #         'ubicación_catastral_dirección', 'valor_del_terreno', 'valor_de_construccion',
+    #         'valor_de_cultivo', 'area_del_terreno_en_m2', 'area_de_construcción_en_m2',
+    #         'area_de_cultivos_en_m2', 'id_catastro', 'valor_total','inmueble_propietario',
+    #         'movimiento_notario_nombre', 'movimiento_colegiado','matricula_de_propietario',
+    #         'id_catastro', 'propietario','movimiento_nota','custom_matricula',
+    #     ]
+    #     for field in fields_to_clear:
+    #         self.set(field, None)
+    #     self.save()
+    #     frappe.msgprint("All fields have been cleared successfully.")
