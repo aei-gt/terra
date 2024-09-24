@@ -13,9 +13,10 @@
  "fields": [
   {
    "fieldname": "propietario",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Owner Client"
+   "label": "Owner Client",
+   "options": "Customer"
   },
   {
    "fieldname": "column_break_bbuo",
@@ -38,7 +39,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-09-24 10:33:55.698784",
+ "modified": "2024-09-24 10:48:45.643604",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "inmueble_copropietario",
