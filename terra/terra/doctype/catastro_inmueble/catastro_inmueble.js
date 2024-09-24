@@ -15,21 +15,27 @@ frappe.ui.form.on("catastro_inmueble", {
         PropietarioTable(frm)
         frm.refresh()
 
+    },
+    valor_del_terreno: function(frm) {
+        sumFields(frm);
+    },
+    valor_de_cultivo: function(frm) {
+        sumFields(frm);
+    },
+    valor_de_construccion: function(frm) {
+        sumFields(frm);
     }
-
-
 });
 
 function PropietarioTable(frm) {
     if (frm.doc.propietario) {
-        // Fetch data for 'catastro_movimiento'
         frappe.db.get_list('catastro_movimiento', {
             filters: {
                 id_catastro: frm.doc.name,
             },
-            fields: ['name', 'propietario', 'fecha_operacion'] // Fetch only necessary fields
+            fields: ['name', 'propietario', 'fecha_operacion']
         }).then(movimiento_docs => {
-            let movimiento_rows = ''; // Corrected declaration of movimiento_rows
+            let movimiento_rows = '';
     
             if (movimiento_docs.length > 0) {
                 movimiento_docs.forEach(doc => {
@@ -43,7 +49,6 @@ function PropietarioTable(frm) {
             } else {
                 movimiento_rows = `<tr><td colspan="3" style="padding: 8px; text-align: center; border: 1px solid #ddd;">No data available</td></tr>`;
             }
-    
             $('[data-fieldname="movimiento"]').html(`
                 <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #ddd;">
                     <thead style="background-color: #f4f4f4;">
@@ -59,8 +64,6 @@ function PropietarioTable(frm) {
                 </table>
             `);
         });
-    
-        // Fetch data for 'catastro_licencia'
         frappe.db.get_list('catastro_licencia', {
             filters: {
                 id_catastro: frm.doc.name,
@@ -83,7 +86,6 @@ function PropietarioTable(frm) {
             } else {
                 licencia_rows = `<tr><td colspan="5" style="padding: 8px; text-align: center; border: 1px solid #ddd;">No data available</td></tr>`;
             }
-    
             $('[data-fieldname="html_licencia"]').html(`
                 <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
                     <thead style="background-color: #f4f4f4;">
@@ -103,3 +105,10 @@ function PropietarioTable(frm) {
         });
     }
 }    
+function sumFields(frm) {
+    const valor_del_terreno = frm.doc.valor_del_terreno || 0;
+    const valor_de_cultivo = frm.doc.valor_de_cultivo || 0;
+    const valor_de_construccion = frm.doc.valor_de_construccion || 0;
+    const total = valor_del_terreno + valor_de_cultivo + valor_de_construccion;
+    frm.set_value('valor_total', total);
+}

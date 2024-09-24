@@ -25,9 +25,27 @@ frappe.ui.form.on("catastro_movimiento", {
             frm.set_df_property("movimiento_nota", "read_only", 1);
             frm.set_df_property("custom_matricula", "read_only", 1);
         }
+    },
+    valor_del_terreno: function(frm) {
+        sumFields(frm);
+    },
+    valor_de_cultivo: function(frm) {
+        sumFields(frm);
+    },
+    valor_de_construccion: function(frm) {
+        sumFields(frm);
     }
     
 });
+
+
+function sumFields(frm) {
+    const valor_del_terreno = frm.doc.valor_del_terreno || 0;
+    const valor_de_cultivo = frm.doc.valor_de_cultivo || 0;
+    const valor_de_construccion = frm.doc.valor_de_construccion || 0;
+    const total = valor_del_terreno + valor_de_cultivo + valor_de_construccion;
+    frm.set_value('valor_total', total);
+}
     // validate(frm){
     //     if(frm.doc.catastro_movimiento_tipo == "1-INSCRIPCION NUEVA"){
     //         console.log("HELlo");
