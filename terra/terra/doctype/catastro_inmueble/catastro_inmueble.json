@@ -277,7 +277,7 @@
    "fieldname": "estado_catastral",
    "fieldtype": "Select",
    "label": "Estado Catastral:",
-   "options": "CATASTRADO REGULAR\nCATASTRADO IRREGULAR\nEN PROCESO\nSIN OPERAR"
+   "options": "CATASTRADO REGULAR\nCATASTRADO IRREGULAR\nEN PROCESO\nSIN OPERAR\nEN INVESTIGACION"
   },
   {
    "fieldname": "datos_del_terreno_section",
@@ -499,7 +499,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-23 12:55:55.268787",
+ "modified": "2024-09-23 13:46:55.986885",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
