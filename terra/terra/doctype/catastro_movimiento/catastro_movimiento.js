@@ -3,28 +3,31 @@
 
 frappe.ui.form.on("catastro_movimiento", {
     after_save: function(frm) {
-        frm.set_value("finca", "");
-        frm.set_value("folio", "");
-        frm.set_value("libro", "");
-        frm.set_value("catastro_movimiento_tipo", "9-OTRO");
-        frm.set_value("valor_del_terreno", "0");
-        frm.set_value("valor_de_cultivo", "0");
-        frm.set_value("valor_de_construccion", "0");
-        frm.set_value("propietario", "");
-        frm.set_value("ubicación_catastral_dirección", "");
-        frm.set_value("area_del_terreno_en_m2", "0");
-        frm.set_value("area_de_construcción_en_m2", "0");
-        frm.set_value("area_de_cultivos_en_m2", "0");
-        frm.set_value("id_catastro", "");
-        frm.set_value("valor_total", "0");
-        frm.set_value("inmueble_propietario", "");
-        frm.set_value("movimiento_notario_nombre", "");
-        frm.set_value("movimiento_colegiado", "");
-        frm.set_value("matricula_de_propietario", "");
-        frm.set_value("movimiento_nota", "");
-        frm.set_value("custom_matricula", "");
-    },
-   
+        if (!frm.is_new()) {
+            frm.set_df_property("finca", "read_only", 1);
+            frm.set_df_property("folio", "read_only", 1);
+            frm.set_df_property("libro", "read_only", 1);
+            frm.set_df_property("catastro_movimiento_tipo", "read_only", 1);
+            frm.set_df_property("valor_del_terreno", "read_only", 1);
+            frm.set_df_property("valor_de_cultivo", "read_only", 1);
+            frm.set_df_property("valor_de_construccion", "read_only", 1);
+            frm.set_df_property("propietario", "read_only", 1);
+            frm.set_df_property("ubicación_catastral_dirección", "read_only", 1);
+            frm.set_df_property("area_del_terreno_en_m2", "read_only", 1);
+            frm.set_df_property("area_de_construcción_en_m2", "read_only", 1);
+            frm.set_df_property("area_de_cultivos_en_m2", "read_only", 1);
+            frm.set_df_property("id_catastro", "read_only", 1);
+            frm.set_df_property("valor_total", "read_only", 1);
+            frm.set_df_property("inmueble_propietario", "read_only", 1);
+            frm.set_df_property("movimiento_notario_nombre", "read_only", 1);
+            frm.set_df_property("movimiento_colegiado", "read_only", 1);
+            frm.set_df_property("matricula_de_propietario", "read_only", 1);
+            frm.set_df_property("movimiento_nota", "read_only", 1);
+            frm.set_df_property("custom_matricula", "read_only", 1);
+        }
+    }
+    
+});
     // validate(frm){
     //     if(frm.doc.catastro_movimiento_tipo == "1-INSCRIPCION NUEVA"){
     //         console.log("HELlo");
@@ -73,7 +76,7 @@ frappe.ui.form.on("catastro_movimiento", {
     //     CastastroTrimestreTable(frm);
     //     frm.refresh();
     // }
-});
+
 
 // function CastastroTrimestreTable(frm) {
 //     if (frm.doc.propietario) {
