@@ -520,40 +520,17 @@
    "label": "Cuotas"
   },
   {
-<<<<<<< Updated upstream
-   "bold": 1,
-   "fieldname": "custom_tarjeta",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Tarjeta",
-   "translatable": 1,
-   "unique": 1
-  },
-  {
-   "fieldname": "inmueble_copropietario",
-   "fieldtype": "Table",
-   "label": "Inmueble Copropietario",
-   "options": "inmueble_copropietario"
-=======
    "fieldname": "column_break_kogp",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "column_break_mnjt",
    "fieldtype": "Column Break"
->>>>>>> Stashed changes
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
-<<<<<<< Updated upstream
- "modified": "2024-09-25 02:08:29.657574",
-=======
  "modified": "2024-09-25 00:38:14.355914",
->>>>>>> Stashed changes
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
