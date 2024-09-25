@@ -12,17 +12,17 @@ frappe.ui.form.on("catastro_licencia", {
         CatastroInmuebleTable(frm);
         frm.refresh()
     },
-    propietario_inmueble: function(frm) {
+    id_catastro: function(frm) {
         CatastroInmuebleTable(frm);
         frm.refresh()
     }
     
 });
 function CatastroInmuebleTable(frm) {
-    if (frm.doc.propietario_inmueble) {
+    if (frm.doc.id_catastro) {
         frappe.db.get_list('catastro_inmueble', {
             filters: {
-                customer_name: frm.doc.propietario_inmueble,
+                name: frm.doc.id_catastro,
                 // name: ['!=', frm.doc.propietario]
             },
             fields: ['*']

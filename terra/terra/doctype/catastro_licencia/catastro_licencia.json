@@ -9,6 +9,7 @@
   "datos_generales_tab",
   "datos_generales_section",
   "id_catastro",
+  "inmueble_propietario_id",
   "propietario_inmueble",
   "representante_legal",
   "column_break_rdcs",
@@ -121,7 +122,8 @@
    "fieldname": "propietario_inmueble",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Propietario:"
+   "label": "Inmueble Matricula del Propietario",
+   "read_only": 1
   },
   {
    "fieldname": "datos_generales_tab",
@@ -178,11 +180,19 @@
    "fieldname": "html_inmueble",
    "fieldtype": "HTML",
    "label": "html_inmueble"
+  },
+  {
+   "bold": 1,
+   "fetch_from": "id_catastro.propietario",
+   "fieldname": "inmueble_propietario_id",
+   "fieldtype": "Data",
+   "label": "Inmueble Propietario Id",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-15 09:21:38.534949",
+ "modified": "2024-09-24 23:16:42.118418",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_licencia",

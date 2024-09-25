@@ -37,7 +37,7 @@ function PropietarioTable(frm) {
     if (frm.doc.propietario) {
         frappe.db.get_list('catastro_movimiento', {
             filters: {
-                id_catastro: frm.doc.name,
+                propietario: frm.doc.propietario,
             },
             fields: ['name', 'propietario', 'fecha_operacion']
         }).then(movimiento_docs => {

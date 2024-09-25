@@ -8,11 +8,15 @@
   "informaci\u00f3n_catastral_tab",
   "datos_generales_section",
   "propietario",
+  "direcci\u00f3n_de_notificacion",
   "customer_name",
   "column_break_uski",
   "direccion_representante_legal",
   "representante_legal",
-  "direcci\u00f3n_de_notificacion",
+  "lora_section",
+  "dsa",
+  "mora",
+  "cuotas",
   "ubicaci\u00f3n_y_referencias_section",
   "ubicacion_catastral",
   "inmueble_serviciosgl",
@@ -43,8 +47,6 @@
   "tab_break_mcsq",
   "notas_de_servicios_section",
   "nota_servicios",
-  "notas_generales_section",
-  "historico",
   "ficha_catastral_tab",
   "datos_del_terreno_section",
   "inmueble_registro_m2",
@@ -74,7 +76,9 @@
   "html_licencia",
   "movimientos_tab",
   "data_movimiento_section",
-  "movimiento"
+  "movimiento",
+  "notas_generales_section",
+  "historico"
  ],
  "fields": [
   {
@@ -440,7 +444,8 @@
   {
    "fieldname": "tarjeta",
    "fieldtype": "Data",
-   "label": "Tarjeta"
+   "label": "Tarjeta",
+   "read_only": 1
   },
   {
    "fieldname": "html_licencia",
@@ -496,11 +501,31 @@
    "fieldtype": "Table",
    "label": "Inmueble Copropietario",
    "options": "inmueble_copropietario"
+  },
+  {
+   "fieldname": "lora_section",
+   "fieldtype": "Section Break",
+   "label": "Saldos"
+  },
+  {
+   "fieldname": "dsa",
+   "fieldtype": "Data",
+   "label": "Cargo"
+  },
+  {
+   "fieldname": "mora",
+   "fieldtype": "Data",
+   "label": "Mora"
+  },
+  {
+   "fieldname": "cuotas",
+   "fieldtype": "Int",
+   "label": "Cuotas"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-24 20:08:11.861485",
+ "modified": "2024-09-25 00:04:53.892184",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
