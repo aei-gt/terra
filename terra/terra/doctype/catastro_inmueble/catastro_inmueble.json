@@ -29,7 +29,6 @@
   "aldea_sector",
   "colonia_bloque",
   "tarjeta",
-  "custom_tarjeta",
   "datos_del_inmueble_section",
   "finca",
   "folio",
@@ -526,11 +525,17 @@
   {
    "fieldname": "column_break_mnjt",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inmueble_copropietario",
+   "fieldtype": "Table",
+   "label": "Inmueble Copropietario",
+   "options": "inmueble_copropietario"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-25 00:38:14.355914",
+ "modified": "2024-09-25 02:36:25.856339",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
