@@ -32,6 +32,16 @@ frappe.ui.form.on("catastro_inmueble", {
     }
 
 });
+frappe.ui.form.on('inmueble_copropietario', {
+    inmueble_copropietario_add: function(frm, cdt, cdn) {
+        var child_row = locals[cdt][cdn];
+        child_row.property =frm.name;
+        frm.refresh_field(cdt);
+    }
+});
+
+
+
 
 function PropietarioTable(frm) {
     if (frm.doc.propietario) {

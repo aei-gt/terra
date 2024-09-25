@@ -14,6 +14,7 @@
   "propietario",
   "column_break_grhk",
   "custom_matricula",
+  "new_catastro_inmueble",
   "datos_generale_section",
   "id_catastro",
   "tarjeta",
@@ -99,6 +100,8 @@
   },
   {
    "default": "0",
+   "fetch_from": "id_catastro.valor_del_terreno",
+   "fetch_if_empty": 1,
    "fieldname": "valor_del_terreno",
    "fieldtype": "Currency",
    "label": "Valor del Terreno",
@@ -107,6 +110,8 @@
   },
   {
    "default": "0",
+   "fetch_from": "id_catastro.valor_de_construccion",
+   "fetch_if_empty": 1,
    "fieldname": "valor_de_construccion",
    "fieldtype": "Currency",
    "label": "Valor de Construcci\u00f3n",
@@ -115,6 +120,8 @@
   },
   {
    "default": "0",
+   "fetch_from": "id_catastro.valor_de_cultivo",
+   "fetch_if_empty": 1,
    "fieldname": "valor_de_cultivo",
    "fieldtype": "Currency",
    "label": "Valor de Cultivo",
@@ -123,6 +130,7 @@
   },
   {
    "default": "0",
+   "fetch_from": "id_catastro.valor_total",
    "fieldname": "valor_total",
    "fieldtype": "Currency",
    "label": "Valor  Fiscal Afecto",
@@ -275,11 +283,18 @@
    "fieldtype": "Data",
    "label": "Matricula de Propietario",
    "read_only": 1
+  },
+  {
+   "fieldname": "new_catastro_inmueble",
+   "fieldtype": "Link",
+   "label": "New Catastro Inmueble",
+   "options": "catastro_inmueble",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-24 06:17:43.407479",
+ "modified": "2024-09-25 02:02:48.456134",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_movimiento",

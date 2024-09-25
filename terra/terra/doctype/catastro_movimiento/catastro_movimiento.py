@@ -23,13 +23,12 @@ class catastro_movimiento(Document):
             'area_del_terreno_en_m2': self.area_del_terreno_en_m2,
             'area_de_construcción_en_m2': self.area_de_construcción_en_m2,
             'area_de_cultivos_en_m2': self.area_de_cultivos_en_m2,
+            'valor_total': self.valor_total,
         })
-        total_value = (self.valor_del_terreno or 0) + (self.valor_de_construccion or 0) + (self.valor_de_cultivo or 0)
-        doc.db_set('valor_total', total_value)
-        self.valor_total = total_value
         doc.insert()
+        self.new_catastro_inmueble = doc.name
         frappe.msgprint(f"New catastro_inmueble created: {doc.name}. Tarjeta = {doc.tarjeta}")
-        return doc
+        return
 
     def actualizacion_valor(self):
         if self.id_catastro:

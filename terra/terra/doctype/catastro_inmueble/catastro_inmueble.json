@@ -27,6 +27,7 @@
   "aldea_sector",
   "colonia_bloque",
   "tarjeta",
+  "custom_tarjeta",
   "datos_del_inmueble_section",
   "finca",
   "folio",
@@ -43,7 +44,7 @@
   "area_de_cultivos_en_m2",
   "estado_catastral",
   "inmueble_copropietario_section",
-  "tab",
+  "inmueble_copropietario",
   "tab_break_mcsq",
   "notas_de_servicios_section",
   "nota_servicios",
@@ -497,12 +498,6 @@
    "label": "Inmueble Copropietario"
   },
   {
-   "fieldname": "tab",
-   "fieldtype": "Table",
-   "label": "Inmueble Copropietario",
-   "options": "inmueble_copropietario"
-  },
-  {
    "fieldname": "lora_section",
    "fieldtype": "Section Break",
    "label": "Saldos"
@@ -521,11 +516,29 @@
    "fieldname": "cuotas",
    "fieldtype": "Int",
    "label": "Cuotas"
+  },
+  {
+   "bold": 1,
+   "fieldname": "custom_tarjeta",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Tarjeta",
+   "translatable": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "inmueble_copropietario",
+   "fieldtype": "Table",
+   "label": "Inmueble Copropietario",
+   "options": "inmueble_copropietario"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-25 00:04:53.892184",
+ "modified": "2024-09-25 02:08:29.657574",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
