@@ -294,7 +294,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
+<<<<<<< Updated upstream
  "modified": "2024-09-25 09:04:11.907780",
+=======
+ "modified": "2024-09-25 08:29:17.495928",
+>>>>>>> Stashed changes
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_movimiento",
