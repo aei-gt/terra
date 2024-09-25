@@ -110,7 +110,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Finca:",
+   "label": "Finca",
    "reqd": 1
   },
   {
@@ -118,7 +118,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Folio:",
+   "label": "Folio",
    "reqd": 1
   },
   {
@@ -126,14 +126,14 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Libro:",
+   "label": "Libro",
    "reqd": 1
   },
   {
    "default": "GUATEMALA",
    "fieldname": "registro",
    "fieldtype": "Select",
-   "label": "Registro:",
+   "label": "Registro",
    "options": "GUATEMALA\nDERECHOS POSESORIOS\nSIN REGISTRO",
    "reqd": 1
   },
@@ -500,7 +500,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-24 10:01:34.156197",
+ "modified": "2024-09-24 20:08:11.861485",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
