@@ -26,9 +26,11 @@ class catastro_movimiento(Document):
             'valor_total': self.valor_total,
         })
         doc.insert()
+        self.new_terjeta = doc.tarjeta
         self.new_catastro_inmueble = doc.name
         frappe.msgprint(f"New catastro_inmueble created: {doc.name}. Tarjeta = {doc.tarjeta}")
         return
+
 
     def actualizacion_valor(self):
         if self.id_catastro:

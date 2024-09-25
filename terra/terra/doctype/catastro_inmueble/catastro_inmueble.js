@@ -40,14 +40,11 @@ frappe.ui.form.on('inmueble_copropietario', {
     }
 });
 
-
-
-
 function PropietarioTable(frm) {
     if (frm.doc.propietario) {
         frappe.db.get_list('catastro_movimiento', {
             filters: {
-                propietario: frm.doc.propietario,
+                new_catastro_inmueble: frm.doc.name,
             },
             fields: ['name', 'propietario', 'fecha_operacion']
         }).then(movimiento_docs => {
