@@ -12,6 +12,7 @@
   "section_break_wc65",
   "column_break_earq",
   "propietario",
+  "new_tarjeta",
   "column_break_grhk",
   "custom_matricula",
   "new_catastro_inmueble",
@@ -290,11 +291,16 @@
    "label": "New Catastro Inmueble",
    "options": "catastro_inmueble",
    "read_only": 1
+  },
+  {
+   "fieldname": "new_tarjeta",
+   "fieldtype": "Data",
+   "label": "New Tarjeta"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-25 09:04:11.907780",
+ "modified": "2024-09-26 05:30:09.171917",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_movimiento",
