@@ -13,10 +13,10 @@
   "column_break_uski",
   "direccion_representante_legal",
   "representante_legal",
-  "lora_section",
-  "dsa",
+  "saldos_section",
+  "cargo",
   "column_break_kogp",
-  "mora",
+  "mora_",
   "column_break_mnjt",
   "cuotas",
   "ubicaci\u00f3n_y_referencias_section",
@@ -222,7 +222,6 @@
    "options": "sector_manzana"
   },
   {
-   "default": "00-000",
    "fieldname": "colonia_bloque",
    "fieldtype": "Link",
    "label": "Colonia/Bloque:",
@@ -499,21 +498,6 @@
    "label": "Inmueble Copropietario"
   },
   {
-   "fieldname": "lora_section",
-   "fieldtype": "Section Break",
-   "label": "Saldos"
-  },
-  {
-   "fieldname": "dsa",
-   "fieldtype": "Data",
-   "label": "Cargo"
-  },
-  {
-   "fieldname": "mora",
-   "fieldtype": "Data",
-   "label": "Mora"
-  },
-  {
    "fieldname": "cuotas",
    "fieldtype": "Int",
    "label": "Cuotas"
@@ -531,11 +515,28 @@
    "fieldtype": "Table",
    "label": "Inmueble Copropietario",
    "options": "inmueble_copropietario"
+  },
+  {
+   "fieldname": "saldos_section",
+   "fieldtype": "Section Break",
+   "label": "Saldos"
+  },
+  {
+   "default": "0",
+   "fieldname": "cargo",
+   "fieldtype": "Currency",
+   "label": "Cargo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mora_",
+   "fieldtype": "Currency",
+   "label": "Mora"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-25 02:36:25.856339",
+ "modified": "2024-09-27 05:34:42.159763",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
