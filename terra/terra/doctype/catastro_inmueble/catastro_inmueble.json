@@ -73,9 +73,12 @@
   "terreno_interior_ma",
   "catastro_colindancia_table_section",
   "colindantes",
+  "detalle_catastro_licencia_tab",
+  "relacionado_catastro_licencia_section",
+  "html_licencia",
   "detalle_catastro_inmueble_tab",
   "relacionado_catastro_inmueble_section",
-  "html_licencia",
+  "html_inmueble",
   "movimientos_tab",
   "data_movimiento_section",
   "movimiento",
@@ -451,18 +454,17 @@
   {
    "fieldname": "html_licencia",
    "fieldtype": "HTML",
-   "label": "html_licencia"
+   "label": "Html Licencia"
   },
   {
-   "bold": 1,
    "fieldname": "detalle_catastro_inmueble_tab",
    "fieldtype": "Tab Break",
-   "label": "Detalle Catastro Licencia"
+   "label": "Detalle Catastro Inmueble"
   },
   {
    "fieldname": "relacionado_catastro_inmueble_section",
    "fieldtype": "Section Break",
-   "label": "Relacionado Catastro Licencia"
+   "label": "Relacionado Catastro Inmueble"
   },
   {
    "fieldname": "propietario",
@@ -532,11 +534,27 @@
    "fieldname": "mora_",
    "fieldtype": "Currency",
    "label": "Mora"
+  },
+  {
+   "bold": 1,
+   "fieldname": "detalle_catastro_licencia_tab",
+   "fieldtype": "Tab Break",
+   "label": "Detalle Catastro Licencia"
+  },
+  {
+   "fieldname": "relacionado_catastro_licencia_section",
+   "fieldtype": "Section Break",
+   "label": "Relacionado Catastro Licencia"
+  },
+  {
+   "fieldname": "html_inmueble",
+   "fieldtype": "HTML",
+   "label": "Html Inmueble"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-27 05:34:42.159763",
+ "modified": "2024-10-01 02:17:27.494326",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",

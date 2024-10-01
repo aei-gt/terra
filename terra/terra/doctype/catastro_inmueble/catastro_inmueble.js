@@ -42,6 +42,48 @@ frappe.ui.form.on('inmueble_copropietario', {
 
 function PropietarioTable(frm) {
     if (frm.doc.propietario) {
+        frappe.db.get_list('catastro_inmueble', {
+                filters: {
+                    propietario: frm.doc.propietario,
+                    name: ['!=', frm.doc.name]
+                },
+                fields: ['*']
+            }).then(inmueble_docs => {
+                let inmueble_rows = '';
+                if (inmueble_docs.length > 0) {
+                    inmueble_docs.forEach(doc => {
+                        inmueble_rows += `<tr>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.name || ""}</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.propietario || ""}</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.ubicacion_catastral || ""}</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.finca || ""}</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.folio || ""}</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.libro || ""}</td>
+                            <td style="padding: 8px; text-align: left; border: 1px solid #ddd;">${doc.valor_total || ""}</td>
+                        </tr>`;
+                    });
+                } else {
+                    inmueble_rows = `<tr><td colspan="7" style="padding: 8px; text-align: center; border: 1px solid #ddd;">No data available</td></tr>`;
+                }
+                $('[data-fieldname="html_inmueble"]').html(`
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #ddd;">
+                        <thead style="background-color: #f4f4f4;">
+                            <tr>
+                                <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Catastro Inmueble</th>
+                                <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Propietario</th>
+                                <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Ubicación Catastral</th>
+                                <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Finca</th>
+                                <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Folio</th>
+                                <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Libro</th>
+                                <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Valor Fiscal Afecto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${inmueble_rows}
+                        </tbody>
+                    </table>
+                `);
+            });
         frappe.db.get_list('catastro_movimiento', {
             filters: {
                 new_catastro_inmueble: frm.doc.name,
