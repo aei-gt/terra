@@ -9,7 +9,7 @@
  "hide_custom": 0,
  "icon": "project-2",
  "idx": 0,
- "indicator_color": "green",
+ "indicator_color": "",
  "is_hidden": 0,
  "label": "Catastro & Licencia",
  "links": [
@@ -122,13 +122,13 @@
    "type": "Link"
   }
  ],
- "modified": "2024-09-23 11:39:13.547056",
+ "modified": "2024-10-08 13:01:59.384993",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "Catastro & Licencia",
  "number_cards": [],
  "owner": "Administrator",
- "parent_page": "",
+ "parent_page": "HR",
  "public": 1,
  "quick_lists": [],
  "roles": [],
