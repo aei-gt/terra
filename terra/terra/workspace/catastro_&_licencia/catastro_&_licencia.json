@@ -122,7 +122,11 @@
    "type": "Link"
   }
  ],
+<<<<<<< Updated upstream
  "modified": "2024-10-09 12:19:25.627250",
+=======
+ "modified": "2024-10-09 01:32:38.301697",
+>>>>>>> Stashed changes
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "Catastro & Licencia",
