@@ -122,13 +122,13 @@
    "type": "Link"
   }
  ],
- "modified": "2024-10-08 13:01:59.384993",
+ "modified": "2024-10-09 12:19:25.627250",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "Catastro & Licencia",
  "number_cards": [],
  "owner": "Administrator",
- "parent_page": "HR",
+ "parent_page": "",
  "public": 1,
  "quick_lists": [],
  "roles": [],
