@@ -125,8 +125,9 @@ app_license = "mit"
 
 doc_events = {
 	"Customer": {
-		"before_insert": "terra.events.customer.custom_series"
+		"before_insert": "terra.events.customer.custom_series",
 	}
+    
 }
 
 # Scheduled Tasks
