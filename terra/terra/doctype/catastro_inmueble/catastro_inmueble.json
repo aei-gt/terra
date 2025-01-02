@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "format:I-{#####}",
+ "autoname": "format:I-{#}",
  "creation": "2024-05-19 12:10:16.844371",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -554,7 +554,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-01 02:17:27.494326",
+ "modified": "2024-12-29 16:48:22.905504",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",

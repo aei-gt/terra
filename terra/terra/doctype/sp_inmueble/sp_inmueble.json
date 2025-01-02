@@ -1,14 +1,15 @@
 {
  "actions": [],
- "autoname": "format:SP-{YY}-{#}",
- "creation": "2024-12-28 18:19:35.142909",
+ "autoname": "format:SPI{YY}-{#}",
+ "creation": "2024-12-30 11:56:25.153499",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "customer",
-  "customer_type",
+  "inmueble_id",
+  "customer_name",
   "column_break_rasm",
-  "representante_legal",
+  "direccion_inmueble",
   "section_break_dawd",
   "ubicacion_servicio",
   "zona_catastral",
@@ -38,24 +39,8 @@
  ],
  "fields": [
   {
-   "fieldname": "customer",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Propietario Id",
-   "options": "Customer",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_rasm",
    "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:doc.customer_type==\"Company\"",
-   "fetch_from": "customer.custom_representante_legal",
-   "fieldname": "representante_legal",
-   "fieldtype": "Read Only",
-   "label": "Representante Legal",
-   "read_only": 1
   },
   {
    "fieldname": "section_break_dawd",
@@ -64,23 +49,55 @@
   {
    "fieldname": "ubicacion_servicio",
    "fieldtype": "Data",
-   "label": "Ubicaci\u00f3n del Servicio"
+   "label": "Ubicaci\u00f3n Alterna del Servicio"
   },
   {
+   "fetch_from": "inmueble_id.zona_catastral",
    "fieldname": "zona_catastral",
-   "fieldtype": "Link",
+   "fieldtype": "Read Only",
    "label": "Zona",
    "options": "sector_manzana"
+  },
+  {
+   "fetch_from": "inmueble_id.aldea_sector",
+   "fieldname": "aldea_sector",
+   "fieldtype": "Read Only",
+   "label": "Aldea/Sector:",
+   "options": "sector_manzana"
+  },
+  {
+   "fetch_from": "inmueble_id.colonia_bloque",
+   "fieldname": "colonia_bloque",
+   "fieldtype": "Read Only",
+   "label": "Colonia/Bloque",
+   "options": "catastro_colonia_bloque"
   },
   {
    "fieldname": "column_break_rfnw",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "aldea_sector",
-   "fieldtype": "Link",
-   "label": "Aldea/Sector:",
-   "options": "sector_manzana"
+   "fieldname": "tarjeta_gl",
+   "fieldtype": "Data",
+   "label": "Tarjeta GL"
+  },
+  {
+   "fieldname": "image_base",
+   "fieldtype": "Attach Image",
+   "label": "imagen_principal"
+  },
+  {
+   "default": "Today",
+   "description": "Fecha de Inicio del Servicio",
+   "fieldname": "fecha_inicio",
+   "fieldtype": "Date",
+   "label": "Fecha de Inicio",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fecha_fin",
+   "fieldtype": "Date",
+   "label": "Fecha de Finalizaci\u00f3n"
   },
   {
    "fieldname": "section_break_gpmg",
@@ -99,6 +116,21 @@
    "fieldname": "custom_periodo_label",
    "fieldtype": "Read Only",
    "label": "Periodo Asignado"
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Lista de Precios",
+   "link_filters": "[[\"Item Price\",\"item_code\",\"=\",\"eval: doc.item_code\"]]",
+   "options": "Item Price"
+  },
+  {
+   "fetch_from": "price_list.price_list_rate",
+   "fieldname": "price_list_rate",
+   "fieldtype": "Currency",
+   "label": "Precio Base",
+   "precision": "2",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_zqoi",
@@ -123,24 +155,19 @@
    "precision": "2"
   },
   {
-   "fieldname": "total_del_servicio",
-   "fieldtype": "Read Only",
-   "label": "Total del Servicio",
-   "read_only": 1
+   "fieldname": "descripcion",
+   "fieldtype": "Small Text",
+   "label": "Descripci\u00f3n del Servicio"
   },
   {
    "fieldname": "section_break_zqka",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "descripcion",
-   "fieldtype": "Small Text",
-   "label": "Descripci\u00f3n del Servicio"
-  },
-  {
-   "fieldname": "tarjeta_gl",
-   "fieldtype": "Data",
-   "label": "Tarjeta GL"
+   "fieldname": "total_del_servicio",
+   "fieldtype": "Read Only",
+   "label": "Total del Servicio",
+   "read_only": 1
   },
   {
    "fieldname": "ficha_del_servicio_tab",
@@ -160,29 +187,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "colonia_bloque",
-   "fieldtype": "Link",
-   "label": "Colonia/Bloque",
-   "options": "catastro_colonia_bloque"
-  },
-  {
-   "fieldname": "image_base",
-   "fieldtype": "Attach Image",
-   "label": "imagen_principal"
-  },
-  {
-   "description": "Fecha de Inicio del Servicio",
-   "fieldname": "fecha_inicio",
-   "fieldtype": "Date",
-   "label": "Fecha de Inicio",
-   "reqd": 1
-  },
-  {
-   "fieldname": "fecha_fin",
-   "fieldtype": "Date",
-   "label": "Fecha de Finalizaci\u00f3n"
-  },
-  {
    "fieldname": "cuenta_corriente_tab",
    "fieldtype": "Tab Break",
    "label": "Cuenta Corriente"
@@ -193,31 +197,35 @@
    "label": "Saldo Actual"
   },
   {
-   "fetch_from": "customer.customer_type",
-   "fieldname": "customer_type",
-   "fieldtype": "Read Only",
-   "label": "Tipo de Contribuyente"
-  },
-  {
-   "fieldname": "price_list",
+   "fieldname": "inmueble_id",
    "fieldtype": "Link",
-   "label": "Lista de Precios",
-   "options": "Item Price"
+   "in_list_view": 1,
+   "label": "Inmueble Id",
+   "options": "catastro_inmueble",
+   "reqd": 1
   },
   {
-   "fetch_from": "price_list.price_list_rate",
-   "fieldname": "price_list_rate",
-   "fieldtype": "Data",
-   "label": "Precio Base"
+   "fetch_from": "inmueble_id.propietario",
+   "fieldname": "customer_name",
+   "fieldtype": "Read Only",
+   "label": "Propietario"
+  },
+  {
+   "depends_on": "eval:doc.customer_type==\"Company\"",
+   "fetch_from": "inmueble_id.ubicacion_catastral",
+   "fieldname": "direccion_inmueble",
+   "fieldtype": "Read Only",
+   "label": "Direcci\u00f3n del Inmueble",
+   "read_only": 1
   }
  ],
  "image_field": "image_base",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-30 10:07:04.906074",
+ "modified": "2024-12-30 13:35:06.127680",
  "modified_by": "Administrator",
  "module": "TERRA",
- "name": "sp_persona",
+ "name": "sp_inmueble",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -234,6 +242,7 @@
    "write": 1
   }
  ],
+ "search_fields": "inmueble_id, customer_name, item_code",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

@@ -1,7 +1,6 @@
-
 {
  "charts": [],
- "content": "[{\"id\":\"LKMUANWoJR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Catastro &amp; Licencias</span><br>\",\"col\":12}},{\"id\":\"4Q-dmeYq7l\",\"type\":\"card\",\"data\":{\"card_name\":\"Gesti\u00f3n Catastral\",\"col\":4}},{\"id\":\"imhGCIC3Hq\",\"type\":\"card\",\"data\":{\"card_name\":\"Catalogos\",\"col\":4}}]",
+ "content": "[{\"id\":\"LKMUANWoJR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Catastro &amp; Licencias</span><br>\",\"col\":12}},{\"id\":\"4Q-dmeYq7l\",\"type\":\"card\",\"data\":{\"card_name\":\"Gesti\u00f3n Catastral\",\"col\":4}},{\"id\":\"imhGCIC3Hq\",\"type\":\"card\",\"data\":{\"card_name\":\"Catalogos\",\"col\":4}},{\"id\":\"bwW0D5UwtG\",\"type\":\"card\",\"data\":{\"card_name\":\"Servicios P\u00fablicos\",\"col\":4}}]",
  "creation": "2024-09-16 06:14:25.577772",
  "custom_blocks": [],
  "docstatus": 0,
@@ -121,9 +120,38 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Servicios P\u00fablicos",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Servicio a la Persona",
+   "link_count": 0,
+   "link_to": "sp_persona",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Servicio al Inmueble",
+   "link_count": 0,
+   "link_to": "sp_inmueble",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-10-09 12:19:25.627250",
+ "modified": "2024-12-30 13:29:15.609610",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "Catastro & Licencia",
