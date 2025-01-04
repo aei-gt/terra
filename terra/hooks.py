@@ -133,7 +133,7 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 # 	"all": [
 # 		"terra.tasks.all"
 # 	],
@@ -149,7 +149,12 @@ doc_events = {
 # 	"monthly": [
 # 		"terra.tasks.monthly"
 # 	],
-# }
+	"cron": {
+        "0 0 * * *": [
+            "terra.events.cron_job.create_subscription_invoices"
+        ]
+    }
+}
 
 # Testing
 # -------
@@ -227,3 +232,11 @@ doc_events = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": [
+            ["name", "in", ["Sales Invoice-custom_reference_doctype", "Sales Invoice-custom_reference_name"]]
+        ]
+    }
+]
