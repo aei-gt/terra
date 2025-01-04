@@ -46,10 +46,10 @@ def create_subscription_invoices_for_sp_persona(dt):
 				if year_cond:
 					create_recurring_invoice(dt, name)
 
-			elif frequency == "QUARTERLY":
+			elif frequency == "TRIMESTRAL":
 				continue
 			
-			elif frequency == "MONTHLY":
+			elif frequency == "MENSUAL":
 				if year_cond or month_cond:
 					create_recurring_invoice(dt, name)
 					
