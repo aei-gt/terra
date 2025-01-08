@@ -137,9 +137,6 @@ scheduler_events = {
 # 	"all": [
 # 		"terra.tasks.all"
 # 	],
-# 	"daily": [
-# 		"terra.tasks.daily"
-# 	],
 # 	"hourly": [
 # 		"terra.tasks.hourly"
 # 	],
@@ -149,11 +146,9 @@ scheduler_events = {
 # 	"monthly": [
 # 		"terra.tasks.monthly"
 # 	],
-	"cron": {
-        "0 0 * * *": [
+	"daily": [
             "terra.events.cron_job.create_subscription_invoices"
         ]
-    }
 }
 
 # Testing

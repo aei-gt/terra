@@ -34,8 +34,13 @@
   "ficha_del_servicio_tab",
   "coordenada_gps",
   "ubicacion_map",
+  "column_break_birs",
+  "link_in_map",
   "cuenta_corriente_tab",
-  "saldo_actual"
+  "generated_invoices",
+  "saldo_actual",
+  "qurately_invoice",
+  "yearly_invoice"
  ],
  "fields": [
   {
@@ -216,12 +221,41 @@
    "fieldtype": "Link",
    "label": "Territorio",
    "options": "Territory"
+  },
+  {
+   "fieldname": "column_break_birs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "link_in_map",
+   "fieldtype": "Data",
+   "label": "link In Map"
+  },
+  {
+   "fieldname": "generated_invoices",
+   "fieldtype": "Table",
+   "label": "Generated Invoices",
+   "options": "Generated Invoices"
+  },
+  {
+   "default": "0",
+   "fieldname": "qurately_invoice",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Qurately invoice"
+  },
+  {
+   "default": "0",
+   "fieldname": "yearly_invoice",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Yearly Invoice"
   }
  ],
  "image_field": "image_base",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-08 09:07:49.823913",
+ "modified": "2025-01-08 15:30:34.095227",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "sp_persona",

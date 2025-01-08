@@ -1,6 +1,6 @@
 import frappe
 from frappe import _
-from frappe.utils import nowdate, getdate, add_months, get_last_day, add_days
+from frappe.utils import nowdate, getdate, add_months, get_last_day, add_days,add_years
 
 @frappe.whitelist()
 def create_recurring_invoice(doctype, name):
@@ -43,13 +43,23 @@ def create_recurring_invoice(doctype, name):
             elif doc.custom_periodo_label == "DIARIO":
                 next_start_date = add_days(last_due_date, 1)
                 next_due_date = next_start_date
+            else: 
+                frappe.throw("You  Already Created Invoice for this Period")
         else:
             if doc.custom_periodo_label == "MENSUAL":
                 next_start_date = getdate(doc.fecha_inicio).replace(day=1)
                 next_due_date = get_last_day(next_start_date)
             elif doc.custom_periodo_label == "DIARIO":
                 next_start_date = add_days(doc.fecha_inicio, 1)
-                next_due_date=next_start_date 
+                next_due_date=next_start_date
+            elif doc.custom_periodo_label == "TRIMESTRAL" and doc.qurately_invoice==0:
+                next_start_date = add_months(doc.fecha_inicio.replace(day=1), 2)
+                next_due_date = get_last_day(next_start_date)
+                doc.qurately_invoice=1
+            elif doc.custom_periodo_label == "ANUAL" and doc.yearly_invoice==0:
+                next_start_date = add_years(doc.fecha_inicio, 1)
+                next_due_date=next_start_date
+                doc.yearly_invoice=1 
 
         si_doc = frappe.get_doc({
             "doctype": "Sales Invoice",
@@ -68,7 +78,10 @@ def create_recurring_invoice(doctype, name):
 
         si_doc.save()
         si_doc.submit()
-
+        doc.append("generated_invoices", {
+            "sales_invoice": si_doc.name,
+        })
+        doc.save()
         invoice_log_doc.db_set("status", "Invoiced")
         invoice_log_doc.save()
 
