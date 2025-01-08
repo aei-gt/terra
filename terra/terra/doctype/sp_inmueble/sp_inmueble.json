@@ -25,6 +25,7 @@
   "custom_periodo_label",
   "price_list",
   "price_list_rate",
+  "territory",
   "column_break_zqoi",
   "multiplicador_item",
   "mora_item",
@@ -217,12 +218,18 @@
    "fieldtype": "Read Only",
    "label": "Direcci\u00f3n del Inmueble",
    "read_only": 1
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "label": "Territorio",
+   "options": "Territory"
   }
  ],
  "image_field": "image_base",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-30 13:35:06.127680",
+ "modified": "2025-01-08 09:04:44.931461",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "sp_inmueble",

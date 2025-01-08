@@ -24,6 +24,7 @@
   "custom_periodo_label",
   "price_list",
   "price_list_rate",
+  "territory",
   "column_break_zqoi",
   "multiplicador_item",
   "mora_item",
@@ -209,12 +210,18 @@
    "fieldname": "price_list_rate",
    "fieldtype": "Data",
    "label": "Precio Base"
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "label": "Territorio",
+   "options": "Territory"
   }
  ],
  "image_field": "image_base",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-30 10:07:04.906074",
+ "modified": "2025-01-08 09:07:49.823913",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "sp_persona",

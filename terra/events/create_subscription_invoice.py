@@ -58,6 +58,7 @@ def create_recurring_invoice(doctype, name):
             "due_date": next_due_date, 
             "custom_reference_doctype": doctype,
             "custom_reference_name": name,
+            "territory":doc.get("territory")
         })
         si_doc.append("items", {
             "item_code": doc.item_code,
