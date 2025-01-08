@@ -33,9 +33,13 @@ frappe.ui.form.on("sp_inmueble", {
             });
         }
     }
-    if(frm.doc.link_in_map){
-        frm.add_custom_button(__('Open Location'), function() {
-            window.open(frm.doc.link_in_map, '_blank');
+    if (frm.doc.coordenada_gps) { 
+        frm.add_custom_button(__('Open Location'), function () {
+            let coordinates = frm.doc.coordenada_gps; 
+            let googleMapsUrl = `https://www.google.com/maps/place/${coordinates}`; 
+            
+            // Open the URL in a new tab
+            window.open(googleMapsUrl, '_blank');
         });
     }
         frm.set_query('price_list', function () {

@@ -34,8 +34,6 @@
   "ficha_del_servicio_tab",
   "coordenada_gps",
   "ubicacion_map",
-  "column_break_birs",
-  "link_in_map",
   "cuenta_corriente_tab",
   "generated_invoices",
   "saldo_actual",
@@ -223,15 +221,6 @@
    "options": "Territory"
   },
   {
-   "fieldname": "column_break_birs",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "link_in_map",
-   "fieldtype": "Data",
-   "label": "link In Map"
-  },
-  {
    "fieldname": "generated_invoices",
    "fieldtype": "Table",
    "label": "Generated Invoices",
@@ -255,7 +244,7 @@
  "image_field": "image_base",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-08 15:30:34.095227",
+ "modified": "2025-01-08 16:58:28.904654",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "sp_persona",
