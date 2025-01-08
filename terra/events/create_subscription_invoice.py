@@ -43,6 +43,7 @@ def create_recurring_invoice(doctype, name):
 		)
 		
 		si_doc.save()
+		si_doc.submit()
 		invoice_log_doc.db_set("status", "Invoiced")
 		invoice_log_doc.save()
 		

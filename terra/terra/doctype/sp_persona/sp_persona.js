@@ -19,16 +19,23 @@ frappe.ui.form.on("sp_persona", {
                 });
             });
 
-            frm.add_custom_button(__('Check Cron Job (Temp Button)'), function () {
-                frappe.call({
-                    method: "terra.events.cron_job.create_subscription_invoices",
+            // frm.add_custom_button(__('Check Cron Job (Temp Button)'), function () {
+            //     frappe.call({
+            //         method: "terra.events.cron_job.create_subscription_invoices",
                     
-                    args: {
-                        doctype: frm.doc.doctype,
-                        name: frm.doc.name,
+            //         args: {
+            //             doctype: frm.doc.doctype,
+            //             name: frm.doc.name,
+            //         }
+            //     });
+            // });
+            frm.set_query('price_list', function () {
+                return {
+                    filters: {
+                        item_code:frm.doc.item_code,
                     }
-                });
+                };
             });
-        }
     }
+    },
 });
