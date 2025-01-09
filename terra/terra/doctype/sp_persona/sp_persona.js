@@ -45,33 +45,35 @@ frappe.ui.form.on("sp_persona", {
         frm.set_query('price_list', function () {
             return {
                 filters: {
-                    item_code:frm.doc.item_code,
+                    item_code: frm.doc.item_code,
+                    // Add a custom condition to exclude specific codes
+                    // price_list_name: ["not in", ["SPRVI14A", "other_code_to_exclude"]],
                 }
             };
         });
-        frm.fields_dict.price_list.$input.on('click', function() {
-            console.log("price_list field clicked!");
-            const interval = setInterval(function() {
-                console.log("Checking for listbox...");
-                const listbox = document.querySelector('#awesomplete_list_8');
-                if (listbox) {
-                    console.log("Listbox found. Processing...");
-                    const items = listbox.querySelectorAll('div[role="option"]');
-                    items.forEach(item => {
-                        const span = item.querySelector('span.small');
-                        if (span) {
-                            const text = span.textContent;
-                            // if (text.includes('SPAMTP1-6') || text.includes('SPAMTP1-7')) {
-                                const updatedText = text.split(',').slice(1).join(',');
-                                console.log("Updating item:", updatedText);
-                                span.textContent = updatedText.trim();
-                            // }
-                        }
-                    });
-                }
-                clearInterval(interval);
-            }, 500); 
-        });
+        // frm.fields_dict.price_list.$input.on('click', function() {
+        //     console.log("price_list field clicked!");
+        //     const interval = setInterval(function() {
+        //         console.log("Checking for listbox...");
+        //         const listbox = document.querySelector('#awesomplete_list_8');
+        //         if (listbox) {
+        //             console.log("Listbox found. Processing...");
+        //             const items = listbox.querySelectorAll('div[role="option"]');
+        //             items.forEach(item => {
+        //                 const span = item.querySelector('span.small');
+        //                 if (span) {
+        //                     const text = span.textContent;
+        //                     // if (text.includes('SPAMTP1-6') || text.includes('SPAMTP1-7')) {
+        //                         const updatedText = text.split(',').slice(1).join(',');
+        //                         console.log("Updating item:", updatedText);
+        //                         span.textContent = updatedText.trim();
+        //                     // }
+        //                 }
+        //             });
+        //         }
+        //         clearInterval(interval);
+        //     }, 800); 
+        // });
     }
     },
 });

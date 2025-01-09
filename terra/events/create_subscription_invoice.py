@@ -29,7 +29,7 @@ def create_recurring_invoice(doctype, name):
             filters={
                 "custom_reference_doctype": doctype,
                 "custom_reference_name": name,
-                "docstatus": 1 
+                # "docstatus": 1 
             },
             fields=["due_date"],
             # order_by="posting_date desc",
@@ -57,14 +57,16 @@ def create_recurring_invoice(doctype, name):
                 next_due_date = get_last_day(next_start_date)
                 doc.qurately_invoice=1
             elif doc.custom_periodo_label == "ANUAL" and doc.yearly_invoice==0:
-                next_start_date = add_years(doc.fecha_inicio, 1)
-                next_due_date=next_start_date
-                doc.yearly_invoice=1 
+                current_year = getdate(doc.fecha_inicio).year
+                next_start_date = getdate(f"{current_year}-01-01")
+                next_due_date = getdate(f"{current_year}-12-31") 
+                doc.yearly_invoice=1
 
         si_doc = frappe.get_doc({
             "doctype": "Sales Invoice",
             "customer": doc.get(fields_map["customer"][doctype]),
-            "posting_date": nowdate(),
+            "set_posting_time":1,
+            "posting_date": next_start_date,
             "due_date": next_due_date, 
             "custom_reference_doctype": doctype,
             "custom_reference_name": name,
@@ -77,9 +79,13 @@ def create_recurring_invoice(doctype, name):
         })
 
         si_doc.save()
-        si_doc.submit()
+        # si_doc.submit()
+        total_amount=float(doc.multiplicador_item)*float(doc.price_list_rate)
         doc.append("generated_invoices", {
             "sales_invoice": si_doc.name,
+            "posting_date": next_start_date,
+            "due_date": next_due_date,
+            "amount": total_amount 
         })
         doc.save()
         invoice_log_doc.db_set("status", "Invoiced")

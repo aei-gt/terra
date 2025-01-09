@@ -70,7 +70,7 @@ frappe.ui.form.on("sp_inmueble", {
                     });
                 }
                 clearInterval(interval);
-            }, 500);
+            }, 800);
         });
 
     },

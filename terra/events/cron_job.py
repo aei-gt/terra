@@ -86,6 +86,7 @@ def create_recurring_invoice(doctype, name):
 		si_doc = frappe.get_doc({
 			"doctype": "Sales Invoice",
 			"customer": doc.get(fields_map["customer"][doctype]),
+			"set_posting_time":1,
 			"posting_date": nowdate(),
 			"due_date": nowdate(),
 			"custom_reference_doctype": doctype,
@@ -102,6 +103,14 @@ def create_recurring_invoice(doctype, name):
 		
 		si_doc.save()
 		si_doc.submit()
+		total_amount=float(doc.multiplicador_item)*float(doc.price_list_rate)
+		doc.append("generated_invoices", {
+            "sales_invoice": si_doc.name,
+            "posting_date": nowdate(),
+            "due_date": nowdate(),
+            "amount": total_amount 
+        })
+		doc.save()
 		invoice_log_doc.db_set("status", "Invoiced")
 		invoice_log_doc.save()
 		return{
