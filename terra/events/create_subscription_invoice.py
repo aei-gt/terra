@@ -79,7 +79,7 @@ def create_recurring_invoice(doctype, name):
         })
 
         si_doc.save()
-        # si_doc.submit()
+        si_doc.submit()
         total_amount=float(doc.multiplicador_item)*float(doc.price_list_rate)
         doc.append("generated_invoices", {
             "sales_invoice": si_doc.name,
