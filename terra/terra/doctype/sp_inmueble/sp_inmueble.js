@@ -38,7 +38,6 @@ frappe.ui.form.on("sp_inmueble", {
             let coordinates = frm.doc.coordenada_gps; 
             let googleMapsUrl = `https://www.google.com/maps/place/${coordinates}`; 
             
-            // Open the URL in a new tab
             window.open(googleMapsUrl, '_blank');
         });
     }
@@ -61,11 +60,9 @@ frappe.ui.form.on("sp_inmueble", {
                         const span = item.querySelector('span.small');
                         if (span) {
                             const text = span.textContent;
-                            // if (text.includes('SPAMTP1-6') || text.includes('SPAMTP1-7')) {
                                 const updatedText = text.split(',').slice(1).join(',');
                                 console.log("Updating item:", updatedText);
                                 span.textContent = updatedText.trim();
-                            // }
                         }
                     });
                 }

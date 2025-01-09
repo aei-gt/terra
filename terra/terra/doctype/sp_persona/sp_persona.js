@@ -37,8 +37,6 @@ frappe.ui.form.on("sp_persona", {
             frm.add_custom_button(__('Open Location'), function () {
                 let coordinates = frm.doc.coordenada_gps; 
                 let googleMapsUrl = `https://www.google.com/maps/place/${coordinates}`; 
-                
-                // Open the URL in a new tab
                 window.open(googleMapsUrl, '_blank');
             });
         }
@@ -46,34 +44,30 @@ frappe.ui.form.on("sp_persona", {
             return {
                 filters: {
                     item_code: frm.doc.item_code,
-                    // Add a custom condition to exclude specific codes
-                    // price_list_name: ["not in", ["SPRVI14A", "other_code_to_exclude"]],
                 }
             };
         });
-        // frm.fields_dict.price_list.$input.on('click', function() {
-        //     console.log("price_list field clicked!");
-        //     const interval = setInterval(function() {
-        //         console.log("Checking for listbox...");
-        //         const listbox = document.querySelector('#awesomplete_list_8');
-        //         if (listbox) {
-        //             console.log("Listbox found. Processing...");
-        //             const items = listbox.querySelectorAll('div[role="option"]');
-        //             items.forEach(item => {
-        //                 const span = item.querySelector('span.small');
-        //                 if (span) {
-        //                     const text = span.textContent;
-        //                     // if (text.includes('SPAMTP1-6') || text.includes('SPAMTP1-7')) {
-        //                         const updatedText = text.split(',').slice(1).join(',');
-        //                         console.log("Updating item:", updatedText);
-        //                         span.textContent = updatedText.trim();
-        //                     // }
-        //                 }
-        //             });
-        //         }
-        //         clearInterval(interval);
-        //     }, 800); 
-        // });
+        frm.fields_dict.price_list.$input.on('click', function() {
+            console.log("price_list field clicked!");
+            const interval = setInterval(function() {
+                console.log("Checking for listbox...");
+                const listbox = document.querySelector('#awesomplete_list_8');
+                if (listbox) {
+                    console.log("Listbox found. Processing...");
+                    const items = listbox.querySelectorAll('div[role="option"]');
+                    items.forEach(item => {
+                        const span = item.querySelector('span.small');
+                        if (span) {
+                            const text = span.textContent;
+                                const updatedText = text.split(',').slice(1).join(',');
+                                console.log("Updating item:", updatedText);
+                                span.textContent = updatedText.trim();
+                        }
+                    });
+                }
+                clearInterval(interval);
+            }, 800); 
+        });
     }
     },
 });
