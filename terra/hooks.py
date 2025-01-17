@@ -126,7 +126,10 @@ app_license = "mit"
 doc_events = {
 	"Customer": {
 		"before_insert": "terra.events.customer.custom_series",
-	}
+	},
+    "Payment Entry": {
+    "on_submit": "terra.events.create_subscription_invoice.on_invoice_update"
+    }
     
 }
 

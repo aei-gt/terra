@@ -39,8 +39,29 @@ frappe.ui.form.on("sp_inmueble", {
             let googleMapsUrl = `https://www.google.com/maps/place/${coordinates}`; 
             
             window.open(googleMapsUrl, '_blank');
-        });
-    }
+            // if (!frm.doc.latitude || !frm.doc.longitude || !frm.doc.device_id) {
+        //  if (frm.doc.coordenada_gps) {
+            // frm.add_custom_button(__('Open Location'), function() {
+            //     let coordina = frm.doc.coordenada_gps;
+
+            //     // Split latitude and longitude from coordenada_gps
+            //     let [latitude, longitude] = coordina.split(',');
+
+            //     // Validate coordinates
+            //     if (!latitude || !longitude || isNaN(latitude) || isNaN(longitude)) {
+            //         frappe.msgprint(__('Invalid GPS coordinates provided.'));
+            //         return;
+            //     }
+
+            //     // Update geolocation field
+            //     frm.set_value('location', `${latitude},${longitude}`);
+
+            //     // Alert user
+            //     frappe.msgprint(__('Geolocation field has been updated.'));
+            // // });
+        // }
+    })
+    
         frm.set_query('price_list', function () {
             return {
                 filters: {
@@ -70,5 +91,27 @@ frappe.ui.form.on("sp_inmueble", {
             }, 800);
         });
 
-    },
+    }
+}
 });
+
+frappe.ui.form.on('Generated Invoices', {
+    amount: function (frm, cdt, cdn) {
+        console.log("aaa");
+        calculate_total_amount(frm, "total_amount", "generated_invoices");
+    }, 
+    generated_invoices_remove: function (frm, cdt, cdn) {
+        console.log("aaa");
+        calculate_total_amount(frm, "total_amount", "generated_invoices");
+    }
+});
+const calculate_total_amount = (frm, field_name, table_name) => {
+    let total = 0;
+    if (frm.doc[table_name]) {
+        frm.doc[table_name].forEach(row => {
+            total += flt(row.amount);
+        });
+    }
+    frm.set_value(field_name, total);
+    frm.refresh_field(field_name);
+};

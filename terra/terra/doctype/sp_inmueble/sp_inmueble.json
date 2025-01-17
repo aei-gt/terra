@@ -37,9 +37,13 @@
   "ubicacion_map",
   "cuenta_corriente_tab",
   "generated_invoices",
-  "saldo_actual",
   "qurately_invoice",
-  "yearly_invoice"
+  "yearly_invoice",
+  "section_break_hjpm",
+  "column_break_mzfg",
+  "saldo_actual",
+  "column_break_xhgk",
+  "total_amount"
  ],
  "fields": [
   {
@@ -247,12 +251,30 @@
    "fieldtype": "Table",
    "label": "Generated Invoices",
    "options": "Generated Invoices"
+  },
+  {
+   "fieldname": "section_break_hjpm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_mzfg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xhgk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Importe total",
+   "read_only": 1
   }
  ],
  "image_field": "image_base",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-08 16:57:59.241495",
+ "modified": "2025-01-17 01:45:13.617572",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "sp_inmueble",

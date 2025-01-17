@@ -36,9 +36,13 @@
   "ubicacion_map",
   "cuenta_corriente_tab",
   "generated_invoices",
-  "saldo_actual",
   "qurately_invoice",
-  "yearly_invoice"
+  "yearly_invoice",
+  "section_break_ltzm",
+  "column_break_ssxo",
+  "saldo_actual",
+  "column_break_atdz",
+  "total_amount"
  ],
  "fields": [
   {
@@ -230,21 +234,36 @@
    "default": "0",
    "fieldname": "qurately_invoice",
    "fieldtype": "Check",
-   "hidden": 1,
    "label": "Qurately invoice"
   },
   {
    "default": "0",
    "fieldname": "yearly_invoice",
    "fieldtype": "Check",
-   "hidden": 1,
    "label": "Yearly Invoice"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Importe total"
+  },
+  {
+   "fieldname": "column_break_ssxo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ltzm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_atdz",
+   "fieldtype": "Column Break"
   }
  ],
  "image_field": "image_base",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-09 10:25:31.055350",
+ "modified": "2025-01-17 02:07:22.349028",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "sp_persona",
