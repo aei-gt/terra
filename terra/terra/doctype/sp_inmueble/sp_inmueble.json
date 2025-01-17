@@ -133,7 +133,6 @@
    "options": "Item Price"
   },
   {
-   "fetch_from": "price_list.price_list_rate",
    "fieldname": "price_list_rate",
    "fieldtype": "Currency",
    "label": "Precio Base",
@@ -250,7 +249,8 @@
    "fieldname": "generated_invoices",
    "fieldtype": "Table",
    "label": "Generated Invoices",
-   "options": "Generated Invoices"
+   "options": "Generated Invoices",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_hjpm",
@@ -274,7 +274,7 @@
  "image_field": "image_base",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-17 01:45:13.617572",
+ "modified": "2025-01-17 04:52:00.871112",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "sp_inmueble",

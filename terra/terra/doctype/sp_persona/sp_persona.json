@@ -213,10 +213,10 @@
    "options": "Item Price"
   },
   {
-   "fetch_from": "price_list.price_list_rate",
    "fieldname": "price_list_rate",
    "fieldtype": "Data",
-   "label": "Precio Base"
+   "label": "Precio Base",
+   "read_only": 1
   },
   {
    "fieldname": "territory",
@@ -228,24 +228,28 @@
    "fieldname": "generated_invoices",
    "fieldtype": "Table",
    "label": "Generated Invoices",
-   "options": "Generated Invoices"
+   "options": "Generated Invoices",
+   "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "qurately_invoice",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Qurately invoice"
   },
   {
    "default": "0",
    "fieldname": "yearly_invoice",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Yearly Invoice"
   },
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Importe total"
+   "label": "Importe total",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_ssxo",
@@ -263,7 +267,7 @@
  "image_field": "image_base",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-17 02:07:22.349028",
+ "modified": "2025-01-17 04:38:05.184980",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "sp_persona",
