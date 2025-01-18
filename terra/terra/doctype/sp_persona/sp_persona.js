@@ -27,10 +27,10 @@ frappe.ui.form.on("sp_persona", {
                             const formattedDueDate = formatDate(due_date);
                             frappe.msgprint(__(`Sales Invoice '{0}' created successfully for the period {1} to {2}.`, 
                                 [invoice_name, formattedNextStartDate, formattedDueDate]));
-                                frm.refresh_field("generated_invoices")
+                            }
                         }
-                    }
-                });
+                    });
+                    frm.refresh_field("generated_invoices")
             });
         }
     }
