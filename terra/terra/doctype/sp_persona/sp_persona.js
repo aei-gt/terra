@@ -27,12 +27,15 @@ frappe.ui.form.on("sp_persona", {
                             const formattedDueDate = formatDate(due_date);
                             frappe.msgprint(__(`Sales Invoice '{0}' created successfully for the period {1} to {2}.`, 
                                 [invoice_name, formattedNextStartDate, formattedDueDate]));
+                                frm.refresh_field("generated_invoices")
+                                frm.refresh()
                             }
                         }
                     });
-                    frm.refresh_field("generated_invoices")
-            });
-        }
+                    frm.refresh_field("generated_invoices") 
+                });
+            }
+            
     }
         if (frm.doc.coordenada_gps) { 
             frm.add_custom_button(__('Open Location'), function () {
@@ -78,7 +81,6 @@ frappe.ui.form.on("sp_persona", {
     },
     price_list(frm){
         frappe.db.get_doc("Item Price", frm.doc.price_list).then(priceListDoc => {
-            console.log(priceListDoc.price_list_rate);
             frm.set_value('price_list_rate', priceListDoc.price_list_rate);
         })
         if(frm.doc.custom_periodo_label!="UNICO"){

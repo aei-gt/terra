@@ -27,12 +27,14 @@ frappe.ui.form.on("sp_inmueble", {
                             const formattedDueDate = formatDate(due_date);
                             frappe.msgprint(__(`Sales Invoice '{0}' created successfully for the period {1} to {2}.`, 
                                 [invoice_name, formattedNextStartDate, formattedDueDate]));
+                                frm.refresh_field("generated_invoices")
+                                frm.refresh()
                             }
                         }
                     });
-                    frm.refresh_field("generated_invoices")
-            });
-        }
+                    frm.refresh_field("generated_invoices");
+                });
+            }
     }
     if (frm.doc.coordenada_gps) { 
         frm.add_custom_button(__('Open Location'), function () {
