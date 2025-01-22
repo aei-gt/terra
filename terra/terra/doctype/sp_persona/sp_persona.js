@@ -72,6 +72,31 @@ frappe.ui.form.on("sp_persona", {
                 clearInterval(interval);
             }, 800); 
         });
+        frm.fields_dict.generated_invoices.grid.wrapper.find('.grid-row').each(function () {
+            let row_doc = $(this).data('doc');
+            if (row_doc) {
+                let $status_cell = $(this).find('.grid-static-col[data-fieldname="status"]');
+                if (row_doc.status === "Unpaid") {
+                    $status_cell.css({
+                        "background-color": "#bd3e0c",
+                        "color": "white",
+                        "font-weight": "bold",
+                    }).addClass('indicator-pill #bd3e0c');
+                } else if (row_doc.status === "Paid") {
+                    $status_cell.css({
+                        "background-color": "#16794c",
+                        "color": "white",
+                        "font-weight": "bold",
+                    }).addClass('indicator-pill #16794c');
+                }else if (row_doc.status === "Overdue") {
+                    $status_cell.css({
+                        "background-color": "#851111",
+                        "color": "white",
+                        "font-weight": "bold",
+                    }).addClass('indicator-pill  #851111');
+                }
+            }
+        });
     },
     custom_periodo_label(frm){
         if(frm.doc.custom_periodo_label==="UNICO"){
