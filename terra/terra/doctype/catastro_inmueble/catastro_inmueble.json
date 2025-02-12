@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "autoname": "format:I-{#}",
  "creation": "2024-05-19 12:10:16.844371",
  "doctype": "DocType",
@@ -10,9 +11,11 @@
   "propietario",
   "direcci\u00f3n_de_notificacion",
   "customer_name",
+  "nim_propietario",
   "column_break_uski",
   "direccion_representante_legal",
   "representante_legal",
+  "sincronizado_gl",
   "saldos_section",
   "cargo",
   "column_break_kogp",
@@ -47,6 +50,11 @@
   "inmueble_copropietario_section",
   "inmueble_copropietario",
   "tab_break_mcsq",
+  "sp_inmueble_services",
+  "section_break_pxbf",
+  "column_break_jdal",
+  "column_break_guqo",
+  "total_amount",
   "notas_de_servicios_section",
   "nota_servicios",
   "ficha_catastral_tab",
@@ -527,8 +535,7 @@
    "default": "0",
    "fieldname": "cargo",
    "fieldtype": "Currency",
-   "label": "Cargo",
-   "read_only": 1
+   "label": "Cargo"
   },
   {
    "fieldname": "mora_",
@@ -550,11 +557,46 @@
    "fieldname": "html_inmueble",
    "fieldtype": "HTML",
    "label": "Html Inmueble"
+  },
+  {
+   "fieldname": "nim_propietario",
+   "fieldtype": "Data",
+   "label": "NIM Propietario"
+  },
+  {
+   "default": "0",
+   "fieldname": "sincronizado_gl",
+   "fieldtype": "Check",
+   "label": "Sincronizado GL"
+  },
+  {
+   "fieldname": "sp_inmueble_services",
+   "fieldtype": "Table",
+   "label": "Sp Inmueble Services",
+   "options": "Sp Inumeble Services"
+  },
+  {
+   "fieldname": "section_break_pxbf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jdal",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_guqo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-29 16:48:22.905504",
+ "modified": "2025-02-12 08:55:18.661414",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
