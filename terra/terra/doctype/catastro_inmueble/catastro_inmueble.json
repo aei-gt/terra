@@ -24,7 +24,7 @@
   "cuotas",
   "ubicaci\u00f3n_y_referencias_section",
   "ubicacion_catastral",
-  "inmueble_serviciosgl",
+  "gltosam",
   "grupo_fha",
   "inmueble_estado",
   "column_break_geyd",
@@ -274,12 +274,6 @@
    "fieldtype": "Data",
    "label": "Direcci\u00f3n del Representante Legal:",
    "read_only": 1
-  },
-  {
-   "bold": 1,
-   "fieldname": "inmueble_serviciosgl",
-   "fieldtype": "Data",
-   "label": "C\u00f3digo SERVICIOS GL:"
   },
   {
    "bold": 1,
@@ -592,11 +586,17 @@
    "fieldtype": "Currency",
    "label": "Total Amount",
    "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "gltosam",
+   "fieldtype": "Data",
+   "label": "C\u00f3digo SERVICIOS GL:"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-12 08:55:18.661414",
+ "modified": "2025-02-19 11:18:42.788808",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
