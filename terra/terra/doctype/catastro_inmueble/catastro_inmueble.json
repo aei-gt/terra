@@ -15,7 +15,10 @@
   "column_break_uski",
   "direccion_representante_legal",
   "representante_legal",
-  "sincronizado_gl",
+  "sincroniza_to_gl",
+  "sincroniza_to_sam",
+  "location_gps",
+  "map_location",
   "saldos_section",
   "cargo",
   "column_break_kogp",
@@ -24,12 +27,12 @@
   "cuotas",
   "ubicaci\u00f3n_y_referencias_section",
   "ubicacion_catastral",
-  "gltosam",
+  "servicio_gl_id",
   "grupo_fha",
   "inmueble_estado",
   "column_break_geyd",
   "zona_catastral",
-  "aldea_sector",
+  "sector_manzana",
   "colonia_bloque",
   "tarjeta",
   "datos_del_inmueble_section",
@@ -37,6 +40,7 @@
   "folio",
   "libro",
   "registro",
+  "ffl_unificado",
   "column_break_mora",
   "valor_del_terreno",
   "valor_de_construccion",
@@ -225,12 +229,6 @@
    "fieldtype": "Link",
    "label": "Zona:",
    "options": "catastro_zona"
-  },
-  {
-   "fieldname": "aldea_sector",
-   "fieldtype": "Link",
-   "label": "Aldea/Sector:",
-   "options": "sector_manzana"
   },
   {
    "fieldname": "colonia_bloque",
@@ -429,7 +427,7 @@
   {
    "fieldname": "notas_generales_section",
    "fieldtype": "Tab Break",
-   "label": "Notas Generales"
+   "label": "Observaciones Generales"
   },
   {
    "fieldname": "notas_de_servicios_section",
@@ -484,7 +482,7 @@
   {
    "fieldname": "data_movimiento_section",
    "fieldtype": "Section Break",
-   "label": "Relacionado Movimiento"
+   "label": "Movimientos Realizados al Inmueble"
   },
   {
    "fieldname": "movimiento",
@@ -529,7 +527,8 @@
    "default": "0",
    "fieldname": "cargo",
    "fieldtype": "Currency",
-   "label": "Cargo"
+   "label": "Cargo",
+   "read_only": 1
   },
   {
    "fieldname": "mora_",
@@ -558,15 +557,9 @@
    "label": "NIM Propietario"
   },
   {
-   "default": "0",
-   "fieldname": "sincronizado_gl",
-   "fieldtype": "Check",
-   "label": "Sincronizado GL"
-  },
-  {
    "fieldname": "sp_inmueble_services",
    "fieldtype": "Table",
-   "label": "Sp Inmueble Services",
+   "label": "Servicios Asignados al Inmueble",
    "options": "Sp Inumeble Services"
   },
   {
@@ -588,15 +581,50 @@
    "read_only": 1
   },
   {
+   "default": "0",
+   "fieldname": "sincroniza_to_gl",
+   "fieldtype": "Check",
+   "label": "Sincronizar a GL"
+  },
+  {
+   "default": "0",
+   "fieldname": "sincroniza_to_sam",
+   "fieldtype": "Check",
+   "label": "Sincronizar a SAM"
+  },
+  {
    "bold": 1,
-   "fieldname": "gltosam",
+   "fieldname": "servicio_gl_id",
    "fieldtype": "Data",
-   "label": "C\u00f3digo SERVICIOS GL:"
+   "label": "C\u00f3digo de Inmueble GL:"
+  },
+  {
+   "description": "Ejemplo: 14.4652,-90.4412",
+   "fieldname": "location_gps",
+   "fieldtype": "Data",
+   "label": "Ubicaci\u00f3n GPS"
+  },
+  {
+   "fieldname": "map_location",
+   "fieldtype": "Button",
+   "label": "Mapa"
+  },
+  {
+   "fieldname": "ffl_unificado",
+   "fieldtype": "Data",
+   "label": "FFL Unificado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sector_manzana",
+   "fieldtype": "Link",
+   "label": "Sector/Manzana:",
+   "options": "sector_manzana"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-20 02:28:37.611931",
+ "modified": "2025-02-25 10:09:03.815391",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
@@ -616,7 +644,7 @@
    "write": 1
   }
  ],
- "search_fields": "ubicacion_catastral",
+ "search_fields": "ubicacion_catastral, ffl_unificado, propietario",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
