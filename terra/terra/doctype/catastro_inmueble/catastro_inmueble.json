@@ -39,8 +39,8 @@
   "finca",
   "folio",
   "libro",
-  "registro",
   "ffl_unificado",
+  "registro",
   "column_break_mora",
   "valor_del_terreno",
   "valor_de_construccion",
@@ -612,6 +612,7 @@
   {
    "fieldname": "ffl_unificado",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "label": "FFL Unificado",
    "read_only": 1
   },
@@ -624,7 +625,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-25 10:09:03.815391",
+ "modified": "2025-03-01 02:46:16.310566",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
