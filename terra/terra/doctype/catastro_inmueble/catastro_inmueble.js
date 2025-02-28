@@ -7,6 +7,7 @@ frappe.ui.form.on("catastro_inmueble", {
         frm.add_custom_button('Catastro Base on Propietario', function() {
             frappe.set_route("query-report", "Catastro Contribuyente", { propietario: frm.doc.propietario });
         });
+        update_ffl_unificado(frm);
     },
 
     onload: function(frm) {
@@ -29,7 +30,16 @@ frappe.ui.form.on("catastro_inmueble", {
 
     valor_de_construccion: function(frm) {
         sumFields(frm);
-    }
+    },
+    finca: function(frm) {
+        update_ffl_unificado(frm);
+    },
+    folio: function(frm) {
+        update_ffl_unificado(frm);
+    },
+    libro: function(frm) {
+        update_ffl_unificado(frm);
+    },
 
 });
 frappe.ui.form.on('inmueble_copropietario', {
@@ -166,4 +176,11 @@ function sumFields(frm) {
     const valor_de_construccion = frm.doc.valor_de_construccion || 0;
     const total = valor_del_terreno + valor_de_cultivo + valor_de_construccion;
     frm.set_value('valor_total', total);
+}
+function update_ffl_unificado(frm) {
+    if (frm.doc.finca && frm.doc.folio && frm.doc.libro) {
+        frm.set_value('ffl_unificado', `${frm.doc.finca}-${frm.doc.folio}-${frm.doc.libro}`);
+    } else {
+        frm.set_value('ffl_unificado', '');
+    }
 }
