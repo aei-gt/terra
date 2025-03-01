@@ -166,14 +166,14 @@
    "default": "0",
    "fieldname": "valor_del_terreno",
    "fieldtype": "Currency",
-   "label": "Valor del Terreno:",
+   "label": "Valor del Terreno",
    "precision": "2"
   },
   {
    "default": "0",
    "fieldname": "valor_total",
    "fieldtype": "Currency",
-   "label": "Valor  Fiscal Afecto:",
+   "label": "Valor  Fiscal Afecto",
    "precision": "2",
    "read_only": 1
   },
@@ -185,21 +185,21 @@
    "default": "0",
    "fieldname": "area_del_terreno_en_m2",
    "fieldtype": "Float",
-   "label": "Area del Terreno en M2:",
+   "label": "Area del Terreno en M2",
    "precision": "2"
   },
   {
    "default": "0",
    "fieldname": "area_de_construcci\u00f3n_en_m2",
    "fieldtype": "Float",
-   "label": "Area de Construcci\u00f3n en M2:",
+   "label": "Area de Construcci\u00f3n en M2",
    "precision": "2"
   },
   {
    "default": "0",
    "fieldname": "area_de_cultivos_en_m2",
    "fieldtype": "Float",
-   "label": "Area de Cultivos en M2:",
+   "label": "Area de Cultivos en M2",
    "precision": "2"
   },
   {
@@ -217,7 +217,7 @@
   {
    "fieldname": "grupo_fha",
    "fieldtype": "Link",
-   "label": "Grupo de FHA:",
+   "label": "Grupo de FHA",
    "options": "catastro_fha"
   },
   {
@@ -227,33 +227,33 @@
   {
    "fieldname": "zona_catastral",
    "fieldtype": "Link",
-   "label": "Zona:",
+   "label": "Zona",
    "options": "catastro_zona"
   },
   {
    "fieldname": "colonia_bloque",
    "fieldtype": "Link",
-   "label": "Colonia/Bloque:",
+   "label": "Colonia/Bloque",
    "options": "catastro_colonia_bloque"
   },
   {
    "default": "0",
    "fieldname": "valor_de_construccion",
    "fieldtype": "Currency",
-   "label": "Valor de Construcci\u00f3n:",
+   "label": "Valor de Construcci\u00f3n",
    "precision": "2"
   },
   {
    "default": "0",
    "fieldname": "valor_de_cultivo",
    "fieldtype": "Currency",
-   "label": "Valor de Cultivo:",
+   "label": "Valor de Cultivo",
    "precision": "2"
   },
   {
    "fieldname": "direcci\u00f3n_de_notificacion",
    "fieldtype": "Data",
-   "label": "Direcci\u00f3n de Notificaci\u00f3n:",
+   "label": "Direcci\u00f3n de Notificaci\u00f3n",
    "read_only": 1
   },
   {
@@ -270,7 +270,7 @@
   {
    "fieldname": "direccion_representante_legal",
    "fieldtype": "Data",
-   "label": "Direcci\u00f3n del Representante Legal:",
+   "label": "Direcci\u00f3n del Representante Legal",
    "read_only": 1
   },
   {
@@ -285,7 +285,7 @@
    "default": "SIN OPERAR",
    "fieldname": "estado_catastral",
    "fieldtype": "Select",
-   "label": "Estado Catastral:",
+   "label": "Estado Catastral",
    "options": "CATASTRADO REGULAR\nCATASTRADO IRREGULAR\nEN PROCESO\nSIN OPERAR\nEN INVESTIGACION"
   },
   {
@@ -459,7 +459,7 @@
   {
    "fieldname": "detalle_catastro_inmueble_tab",
    "fieldtype": "Tab Break",
-   "label": "Detalle Catastro Inmueble"
+   "label": "Inmuebles Relacionados"
   },
   {
    "fieldname": "relacionado_catastro_inmueble_section",
@@ -539,7 +539,7 @@
    "bold": 1,
    "fieldname": "detalle_catastro_licencia_tab",
    "fieldtype": "Tab Break",
-   "label": "Detalle Catastro Licencia"
+   "label": "Detalle Catastro Licencias"
   },
   {
    "fieldname": "relacionado_catastro_licencia_section",
@@ -577,7 +577,7 @@
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount",
+   "label": "Total Adeudado",
    "read_only": 1
   },
   {
@@ -596,7 +596,7 @@
    "bold": 1,
    "fieldname": "servicio_gl_id",
    "fieldtype": "Data",
-   "label": "C\u00f3digo de Inmueble GL:"
+   "label": "C\u00f3digo de Inmueble GL"
   },
   {
    "description": "Ejemplo: 14.4652,-90.4412",
@@ -618,13 +618,13 @@
   {
    "fieldname": "sector_manzana",
    "fieldtype": "Link",
-   "label": "Sector/Manzana:",
+   "label": "Sector/Manzana",
    "options": "sector_manzana"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-25 10:09:03.815391",
+ "modified": "2025-02-28 20:28:31.618042",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",

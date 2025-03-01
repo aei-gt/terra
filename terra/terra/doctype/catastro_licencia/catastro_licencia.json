@@ -20,6 +20,7 @@
   "licencia_tipo",
   "column_break_bmsw",
   "licencia_valor",
+  "licencia_por_operar",
   "licencia_operada",
   "section_break_rvpt",
   "licencia_descripcion",
@@ -38,7 +39,7 @@
    "fieldname": "id_catastro",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "ID Inmueble de Catastro:",
+   "label": "ID Inmueble de Catastro",
    "options": "catastro_inmueble",
    "reqd": 1
   },
@@ -47,7 +48,7 @@
    "fetch_from": "id_catastro.representante_legal",
    "fieldname": "representante_legal",
    "fieldtype": "Data",
-   "label": "Representante Legal:",
+   "label": "Representante Legal",
    "read_only": 1
   },
   {
@@ -57,17 +58,17 @@
   {
    "fieldname": "fecha_solicitud",
    "fieldtype": "Date",
-   "label": "Fecha de Solicitud:"
+   "label": "Fecha de Solicitud"
   },
   {
    "fieldname": "fecha_emicion",
    "fieldtype": "Date",
-   "label": "Fecha de Emisi\u00f3n:"
+   "label": "Fecha de Emisi\u00f3n"
   },
   {
    "fieldname": "fecha_finaliza",
    "fieldtype": "Date",
-   "label": "Fecha de Finalizaci\u00f3n:"
+   "label": "Fecha de Finalizaci\u00f3n"
   },
   {
    "fieldname": "datos_generales_section",
@@ -85,7 +86,7 @@
    "fieldname": "licencia_valor",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Valor Total de la Licencia:",
+   "label": "Valor Total de la Licencia",
    "reqd": 1
   },
   {
@@ -97,7 +98,7 @@
    "default": "VIVIENDA FORMAL",
    "fieldname": "licencia_tipo",
    "fieldtype": "Select",
-   "label": "Tipo de Construcci\u00f3n:",
+   "label": "Tipo de Construcci\u00f3n",
    "options": "VIVIENDA MINIMA\nVIVIENDA FORMAL\nURBANIZCION\nOTRO"
   },
   {
@@ -108,13 +109,12 @@
    "default": "0",
    "fieldname": "licencia_operada",
    "fieldtype": "Check",
-   "label": "Operada en Catastro:",
-   "options": "0"
+   "label": "Licencia Operada"
   },
   {
    "fieldname": "licencia_descripcion",
    "fieldtype": "Small Text",
-   "label": "Descripci\u00f3n:"
+   "label": "Descripci\u00f3n"
   },
   {
    "bold": 1,
@@ -139,14 +139,14 @@
    "default": "0",
    "fieldname": "licencia_area_construccion",
    "fieldtype": "Float",
-   "label": "\u00c1rea de Construcci\u00f3n (M2):",
+   "label": "\u00c1rea de Construcci\u00f3n (M2)",
    "precision": "2"
   },
   {
    "default": "1",
    "fieldname": "licencia_niveles",
    "fieldtype": "Int",
-   "label": "Niveles:"
+   "label": "Niveles"
   },
   {
    "fieldname": "column_break_xzbk",
@@ -156,14 +156,14 @@
    "default": "SIN FACTOR EDAD",
    "fieldname": "licencia_factor",
    "fieldtype": "Select",
-   "label": "Categor\u00eda/Factor:",
+   "label": "Categor\u00eda/Factor",
    "options": "SIN FACTOR EDAD"
   },
   {
    "default": "TIPO \"A\"",
    "fieldname": "licencia_categoria",
    "fieldtype": "Select",
-   "label": "Tipo:",
+   "label": "Tipo",
    "options": "TIPO \"A\"\nTIPO \"B\"\nTIPO \"C\""
   },
   {
@@ -188,11 +188,18 @@
    "fieldtype": "Data",
    "label": "Inmueble Propietario Id",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "licencia_por_operar",
+   "fieldtype": "Check",
+   "label": "Operar en Catastro",
+   "options": "0"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-24 23:16:42.118418",
+ "modified": "2025-02-28 20:25:58.602429",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_licencia",

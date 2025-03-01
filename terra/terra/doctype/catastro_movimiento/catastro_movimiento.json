@@ -19,6 +19,7 @@
   "datos_generale_section",
   "id_catastro",
   "tarjeta",
+  "licencia_numero",
   "column_break_vvax",
   "inmueble_propietario",
   "matricula_de_propietario",
@@ -66,7 +67,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Tipo de Movimiento / Procedencia",
-   "options": "1-INSCRIPCION NUEVA\n2-DESMEMBRACION\n3-TRASPASO\n4-ACTUALIZACION DE VALOR\n5-UNIFICACION\n9-OTRO",
+   "options": "1-INSCRIPCION NUEVA\n2-DESMEMBRACION\n3-TRASPASO\n4-ACTUALIZACION DE VALOR\n5-UNIFICACION\n6-REGISTRO DE LICENCIA\n9-OTRO",
    "reqd": 1
   },
   {
@@ -296,11 +297,17 @@
    "fieldname": "new_tarjeta",
    "fieldtype": "Data",
    "label": "New Tarjeta"
+  },
+  {
+   "fieldname": "licencia_numero",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Numero de Licencia"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-26 05:30:09.171917",
+ "modified": "2025-02-28 20:31:00.442184",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_movimiento",
