@@ -625,11 +625,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
-<<<<<<< HEAD
  "modified": "2025-02-28 20:28:31.618042",
-=======
- "modified": "2025-03-01 02:46:16.310566",
->>>>>>> f022abf1d3398ce48285b4c86f04f3c0b7b44278
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
