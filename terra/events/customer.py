@@ -23,6 +23,5 @@ def format_with_leading_zeros(number, digits):
 
 
 def autoname(doc, method):
-    frappe.msgprint("autoname")
     if doc.naming_series:
         doc.name = make_autoname(doc.naming_series)  
