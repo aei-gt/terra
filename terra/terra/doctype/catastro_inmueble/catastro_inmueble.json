@@ -61,6 +61,8 @@
   "total_amount",
   "notas_de_servicios_section",
   "nota_servicios",
+  "cuenta_corriente",
+  "table_kjmi",
   "ficha_catastral_tab",
   "datos_del_terreno_section",
   "inmueble_registro_m2",
@@ -621,11 +623,22 @@
    "fieldtype": "Link",
    "label": "Sector/Manzana",
    "options": "sector_manzana"
+  },
+  {
+   "fieldname": "cuenta_corriente",
+   "fieldtype": "Tab Break",
+   "label": "Cuenta Corriente"
+  },
+  {
+   "fieldname": "table_kjmi",
+   "fieldtype": "Table",
+   "label": "Detalle",
+   "options": "catastro_inmueble_cc"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 20:28:31.618042",
+ "modified": "2025-03-05 10:46:34.688981",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
