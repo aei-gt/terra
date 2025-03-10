@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_import": 1,
- "autoname": "format:I-{#}",
+ "autoname": "format:{#}",
  "creation": "2024-05-19 12:10:16.844371",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -461,7 +461,7 @@
   {
    "fieldname": "detalle_catastro_inmueble_tab",
    "fieldtype": "Tab Break",
-   "label": "Inmuebles Relacionados"
+   "label": "Otros Inmuebles"
   },
   {
    "fieldname": "relacionado_catastro_inmueble_section",
@@ -541,7 +541,7 @@
    "bold": 1,
    "fieldname": "detalle_catastro_licencia_tab",
    "fieldtype": "Tab Break",
-   "label": "Detalle Catastro Licencias"
+   "label": "Licencias"
   },
   {
    "fieldname": "relacionado_catastro_licencia_section",
@@ -638,7 +638,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-05 10:46:34.688981",
+ "modified": "2025-03-09 19:26:41.044446",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
