@@ -1,5 +1,5 @@
 import frappe
-
+from frappe.model.naming import make_autoname
 
 def custom_series(doc, method=None):
     digits = 6
@@ -19,3 +19,9 @@ def custom_series(doc, method=None):
 
 def format_with_leading_zeros(number, digits):
     return str(number).zfill(digits)
+
+
+
+def autoname(doc, method):
+    if doc.naming_series:
+        doc.name = make_autoname(doc.naming_series)  

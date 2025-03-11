@@ -1,0 +1,63 @@
+{
+ "charts": [
+  {
+   "chart_name": "Sp Persona Sale Data Chart",
+   "label": "Sp Persona Sale Data Chart"
+  },
+  {
+   "chart_name": "Sp Inmueble Sale Data Chart",
+   "label": "Sp Inmueble Sale Data Chart"
+  }
+ ],
+ "content": "[{\"id\":\"aijI5SvUxh\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h2\\\"><span class=\\\"h4\\\">Sp</span> <span class=\\\"h4\\\">Persona Sale Invoices</span></span>\",\"col\":12}},{\"id\":\"KdrvHG_xJ7\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sp Persona Paid\",\"col\":4}},{\"id\":\"wfD6ecqxP3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sp Persona Unpaid\",\"col\":4}},{\"id\":\"BLI-hxKGSx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sp Persona Partly Paid\",\"col\":4}},{\"id\":\"r0CMoRObpJ\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Sp Persona Sale Data Chart\",\"col\":12}},{\"id\":\"k62L8UQJc0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b></b></span><span class=\\\"h4\\\">Sp Inmueble Sale Data Chart</span>\",\"col\":12}},{\"id\":\"P-_eeBISWr\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sp Inmueble Paid\",\"col\":4}},{\"id\":\"hsWspMoW5E\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sp Inmueble Unpaid\",\"col\":4}},{\"id\":\"-Cp_96ugax\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sp Inmueble Partly Paid\",\"col\":4}},{\"id\":\"jLedPIfb2a\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Sp Inmueble Sale Data Chart\",\"col\":12}}]",
+ "creation": "2025-01-08 09:22:08.423648",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "table",
+ "idx": 1,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Sales Invoice Log",
+ "links": [],
+ "modified": "2025-01-08 10:11:23.269215",
+ "modified_by": "Administrator",
+ "module": "TERRA",
+ "name": "Sales Invoice Log",
+ "number_cards": [
+  {
+   "label": "Sp Persona Paid",
+   "number_card_name": "Sp Persona Paid"
+  },
+  {
+   "label": "Sp Persona Partly Paid",
+   "number_card_name": "Sp Persona Partly Paid"
+  },
+  {
+   "label": "Sp Inmueble Paid",
+   "number_card_name": "Sp Inmueble Paid"
+  },
+  {
+   "label": "Sp Inmueble Unpaid",
+   "number_card_name": "Sp Inmueble Unpaid"
+  },
+  {
+   "label": "Sp Persona Unpaid",
+   "number_card_name": "Sp Persona Unpaid"
+  },
+  {
+   "label": "Sp Inmueble Partly Paid",
+   "number_card_name": "Sp Inmueble Partly Paid"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 40.2,
+ "shortcuts": [],
+ "title": "Sales Invoice Log"
+}

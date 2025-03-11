@@ -126,19 +126,21 @@ app_license = "mit"
 doc_events = {
 	"Customer": {
 		"before_insert": "terra.events.customer.custom_series",
-	}
+        "autoname": "terra.events.customer.autoname",
+        
+	},
+    "Payment Entry": {
+    "on_submit": "terra.events.create_subscription_invoice.on_invoice_update"
+    }
     
 }
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 # 	"all": [
 # 		"terra.tasks.all"
-# 	],
-# 	"daily": [
-# 		"terra.tasks.daily"
 # 	],
 # 	"hourly": [
 # 		"terra.tasks.hourly"
@@ -149,7 +151,10 @@ doc_events = {
 # 	"monthly": [
 # 		"terra.tasks.monthly"
 # 	],
-# }
+	"daily": [
+            "terra.events.cron_job.create_subscription_invoices"
+        ]
+}
 
 # Testing
 # -------
@@ -227,3 +232,11 @@ doc_events = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": [
+            ["name", "in", ["Sales Invoice-custom_reference_doctype", "Sales Invoice-custom_reference_name"]]
+        ]
+    }
+]
