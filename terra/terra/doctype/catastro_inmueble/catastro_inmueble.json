@@ -62,7 +62,12 @@
   "notas_de_servicios_section",
   "nota_servicios",
   "cuenta_corriente",
-  "table_kjmi",
+  "cc_detalle_table",
+  "section_break_dsim",
+  "get_total",
+  "column_break_egim",
+  "coutas",
+  "total",
   "ficha_catastral_tab",
   "datos_del_terreno_section",
   "inmueble_registro_m2",
@@ -630,7 +635,32 @@
    "label": "Cuenta Corriente"
   },
   {
-   "fieldname": "table_kjmi",
+   "fieldname": "section_break_dsim",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "get_total",
+   "fieldtype": "Button",
+   "label": "Get Total"
+  },
+  {
+   "fieldname": "column_break_egim",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "coutas",
+   "fieldtype": "Int",
+   "label": "Coutas",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cc_detalle_table",
    "fieldtype": "Table",
    "label": "Detalle",
    "options": "catastro_inmueble_cc"
@@ -638,7 +668,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-09 19:26:41.044446",
+ "modified": "2025-04-08 05:05:00.731384",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",

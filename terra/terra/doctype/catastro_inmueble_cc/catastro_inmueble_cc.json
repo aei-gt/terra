@@ -18,37 +18,45 @@
   {
    "fieldname": "cc_descripcion",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Descripcion"
   },
   {
    "fieldname": "cc_vencimiento",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Vencimiento"
   },
   {
    "fieldname": "cc_estado",
-   "fieldtype": "Data",
-   "label": "Estado"
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Estado",
+   "options": "\nPAGADO\nPOR_PAGAR"
   },
   {
    "fieldname": "cc_monto",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Monto",
    "precision": "2"
   },
   {
    "fieldname": "cc_documento_tipo",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Tipo Documento"
   },
   {
    "fieldname": "cc_documento_numero",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Numero Documento"
   },
   {
    "fieldname": "cc_inmueble_id",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Inmueble ID",
    "options": "catastro_inmueble"
   }
@@ -56,7 +64,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-05 10:39:44.347732",
+ "modified": "2025-04-08 05:00:22.433601",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble_cc",

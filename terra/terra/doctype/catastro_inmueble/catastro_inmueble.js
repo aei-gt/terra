@@ -40,6 +40,22 @@ frappe.ui.form.on("catastro_inmueble", {
     libro: function(frm) {
         update_ffl_unificado(frm);
     },
+    get_total: function(frm) {
+        let total = 0;
+        let coutas = 0;
+        let rows = frm.doc.cc_detalle_table || [];
+    
+        for (let i = 0; i < rows.length; i++) {
+            let row = rows[i];
+            if (row.cc_estado === "POR_PAGAR") {
+                total += flt(row.cc_monto);
+                coutas += 1;
+            }
+        }
+    
+        frm.set_value('total', total);
+        frm.set_value('coutas', coutas);
+    },
 
 });
 frappe.ui.form.on('inmueble_copropietario', {
@@ -49,6 +65,7 @@ frappe.ui.form.on('inmueble_copropietario', {
         frm.refresh_field(cdt);
     }
 });
+
 
 function PropietarioTable(frm) {
     if (frm.doc.propietario) {
