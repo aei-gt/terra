@@ -53,14 +53,8 @@ frappe.ui.form.on("catastro_inmueble", {
                 let total = 0;
                 let coutas = 0;
                 let rows = frm.doc.cc_detalle_table || [];
-                console.log(rows);
-                
-    
                 for (let i = 0; i < rows.length; i++) {
                     let row = rows[i];
-                    console.log(row.cc_estado);
-                    
-    
                     if (row.cc_estado === "POR PAGAR" && row.cc_vencimiento) {
                         let row_date = new Date(row.cc_vencimiento);
                         let row_month = row_date.getMonth();
