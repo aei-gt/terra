@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe.utils import flt, getdate
 from frappe.model.document import Document
 class catastro_inmueble(Document):
    
@@ -20,7 +21,27 @@ class catastro_inmueble(Document):
 
         formatted_number = format_with_leading_zeros(current_number, digits)
         self.tarjeta = f"{formatted_number}-{prefix}"
-
+    @frappe.whitelist()
+    def calculate_details(self):
+        current_period = frappe.db.get_single_value('Periodo Actual', 'periodo')
+        if not current_period:
+            frappe.throw('Current period not set in "Periodo Actual" Doctype')
+        period_date = getdate(current_period)
+        period_month = period_date.month
+        period_year = period_date.year
+        total = 0.0
+        coutas = 0
+        rows = self.get("cc_detalle_table") or []
+        for row in rows:
+            if row.cc_estado == "POR PAGAR" and row.cc_vencimiento:
+                row_date = getdate(row.cc_vencimiento)
+                if row_date.month == period_month and row_date.year == period_year:
+                    total += flt(row.cc_monto)
+                    coutas += 1
+        self.total = total
+        self.coutas = coutas
+        self.save()
+        frappe.db.commit()
 def format_with_leading_zeros(number, digits):
     return str(number).zfill(digits)
     

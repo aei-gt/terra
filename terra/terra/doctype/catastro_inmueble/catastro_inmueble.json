@@ -663,12 +663,13 @@
    "fieldname": "cc_detalle_table",
    "fieldtype": "Table",
    "label": "Detalle",
-   "options": "catastro_inmueble_cc"
+   "options": "catastro_inmueble_cc",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-08 05:05:00.731384",
+ "modified": "2025-05-19 05:10:38.964167",
  "modified_by": "Administrator",
  "module": "TERRA",
  "name": "catastro_inmueble",
@@ -688,6 +689,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "search_fields": "ubicacion_catastral, ffl_unificado, propietario",
  "sort_field": "modified",
  "sort_order": "DESC",
