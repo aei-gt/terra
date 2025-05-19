@@ -41,37 +41,12 @@ frappe.ui.form.on("catastro_inmueble", {
         update_ffl_unificado(frm);
     },
     get_total: function(frm) {
-        // First, fetch the current active period from "Periodo Actual"
-        frappe.db.get_value('Periodo Actual', 'Periodo Actual', 'periodo')
-        .then(r => {
-            if (r.message.periodo) {
-                let current_period = r.message.periodo;
-                let period_date = new Date(current_period);
-                let period_month = period_date.getMonth(); // 0-indexed (0 = Jan)
-                let period_year = period_date.getFullYear();
-    
-                let total = 0;
-                let coutas = 0;
-                let rows = frm.doc.cc_detalle_table || [];
-                for (let i = 0; i < rows.length; i++) {
-                    let row = rows[i];
-                    if (row.cc_estado === "POR PAGAR" && row.cc_vencimiento) {
-                        let row_date = new Date(row.cc_vencimiento);
-                        let row_month = row_date.getMonth();
-                        let row_year = row_date.getFullYear();
-    
-                        if (row_month === period_month && row_year === period_year) {
-                            total += flt(row.cc_monto);
-                            coutas += 1;
-                        }
-                    }
+        frm.call('calculate_details',)
+            .then(r => {
+                if (r.message) {
+                    let linked_doc = r.message;
                 }
-                frm.set_value('total', total);
-                frm.set_value('coutas', coutas);
-            } else {
-                frappe.msgprint(__('Current period not set in "Periodo Actual" Doctype'));
-            }
-        });
+            })
     }
 });
 frappe.ui.form.on('inmueble_copropietario', {
